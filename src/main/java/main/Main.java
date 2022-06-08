@@ -1,4 +1,4 @@
-package vmcs;
+package main;
 
 import javafx.application.Application;
 
