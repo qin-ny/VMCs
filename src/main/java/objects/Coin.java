@@ -2,7 +2,7 @@ package objects;
 
 public class Coin {
     private String name;
-    private int weight; //面值
+    private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量
 
     public Coin(String name, int weight, int quantity){
@@ -11,6 +11,13 @@ public class Coin {
         this.quantity = quantity;
     }
 
+    /**
+     * calculates the total value of the coin type
+     * @return the total value of the coin type
+     */
+    public int getTotalValue(){
+        return weight * quantity;
+    }
 
     public String getName() {
         return name;

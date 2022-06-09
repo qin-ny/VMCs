@@ -20,14 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VMCs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VMCs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InterfaceMaintainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InterfaceMaintainerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaintainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaintainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MachineData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/objects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Drink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/objects/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Machine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +116,7 @@
       <updated>1654677010263</updated>
       <workItem from="1654677013230" duration="5856000" />
       <workItem from="1654689395995" duration="769000" />
-      <workItem from="1654696873954" duration="8188000" />
+      <workItem from="1654696873954" duration="19593000" />
     </task>
     <servers />
   </component>
@@ -144,10 +140,10 @@
       <screen x="0" y="25" width="1680" height="964" />
     </state>
     <state x="328" y="85" key="#Project_Structure/0.25.1680.964@0.25.1680.964" timestamp="1654677028883" />
-    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser" timestamp="1654749767773">
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser" timestamp="1654757972144">
       <screen x="0" y="25" width="1680" height="965" />
     </state>
-    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.965@0.25.1680.965" timestamp="1654749767773" />
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.965@0.25.1680.965" timestamp="1654757972144" />
     <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.966@0.25.1680.966" timestamp="1654744194097" />
     <state width="798" height="257" key="GridCell.Tab.0.bottom" timestamp="1654700903828">
       <screen x="0" y="25" width="1680" height="965" />
