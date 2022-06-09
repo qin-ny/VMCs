@@ -20,15 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/VMCs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VMCs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/CustomerPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/MachineryPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/MaintainerPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/SimulatorControlPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nus/Start.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InterfaceMaintainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InterfaceMaintainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaintainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaintainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Machine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -52,16 +54,31 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24482758" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="objects" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -103,7 +120,7 @@
       <updated>1654677010263</updated>
       <workItem from="1654677013230" duration="5856000" />
       <workItem from="1654689395995" duration="769000" />
-      <workItem from="1654696873954" duration="3365000" />
+      <workItem from="1654696873954" duration="8188000" />
     </task>
     <servers />
   </component>
@@ -127,30 +144,48 @@
       <screen x="0" y="25" width="1680" height="964" />
     </state>
     <state x="328" y="85" key="#Project_Structure/0.25.1680.964@0.25.1680.964" timestamp="1654677028883" />
-    <state width="798" height="258" key="GridCell.Tab.0.bottom" timestamp="1654696865018">
-      <screen x="0" y="25" width="1680" height="966" />
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser" timestamp="1654749767773">
+      <screen x="0" y="25" width="1680" height="965" />
+    </state>
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.965@0.25.1680.965" timestamp="1654749767773" />
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.966@0.25.1680.966" timestamp="1654744194097" />
+    <state width="798" height="257" key="GridCell.Tab.0.bottom" timestamp="1654700903828">
+      <screen x="0" y="25" width="1680" height="965" />
     </state>
     <state width="1319" height="257" key="GridCell.Tab.0.bottom/0.25.1680.964@0.25.1680.964" timestamp="1654685836679" />
+    <state width="798" height="257" key="GridCell.Tab.0.bottom/0.25.1680.965@0.25.1680.965" timestamp="1654700903828" />
     <state width="798" height="258" key="GridCell.Tab.0.bottom/0.25.1680.966@0.25.1680.966" timestamp="1654696865018" />
-    <state width="798" height="258" key="GridCell.Tab.0.center" timestamp="1654696865017">
-      <screen x="0" y="25" width="1680" height="966" />
+    <state width="798" height="257" key="GridCell.Tab.0.center" timestamp="1654700903828">
+      <screen x="0" y="25" width="1680" height="965" />
     </state>
     <state width="1319" height="257" key="GridCell.Tab.0.center/0.25.1680.964@0.25.1680.964" timestamp="1654685836678" />
+    <state width="798" height="257" key="GridCell.Tab.0.center/0.25.1680.965@0.25.1680.965" timestamp="1654700903828" />
     <state width="798" height="258" key="GridCell.Tab.0.center/0.25.1680.966@0.25.1680.966" timestamp="1654696865017" />
-    <state width="798" height="258" key="GridCell.Tab.0.left" timestamp="1654696865016">
-      <screen x="0" y="25" width="1680" height="966" />
+    <state width="798" height="257" key="GridCell.Tab.0.left" timestamp="1654700903827">
+      <screen x="0" y="25" width="1680" height="965" />
     </state>
     <state width="1319" height="257" key="GridCell.Tab.0.left/0.25.1680.964@0.25.1680.964" timestamp="1654685836678" />
+    <state width="798" height="257" key="GridCell.Tab.0.left/0.25.1680.965@0.25.1680.965" timestamp="1654700903827" />
     <state width="798" height="258" key="GridCell.Tab.0.left/0.25.1680.966@0.25.1680.966" timestamp="1654696865016" />
-    <state width="798" height="258" key="GridCell.Tab.0.right" timestamp="1654696865017">
-      <screen x="0" y="25" width="1680" height="966" />
+    <state width="798" height="257" key="GridCell.Tab.0.right" timestamp="1654700903828">
+      <screen x="0" y="25" width="1680" height="965" />
     </state>
     <state width="1319" height="257" key="GridCell.Tab.0.right/0.25.1680.964@0.25.1680.964" timestamp="1654685836679" />
+    <state width="798" height="257" key="GridCell.Tab.0.right/0.25.1680.965@0.25.1680.965" timestamp="1654700903828" />
     <state width="798" height="258" key="GridCell.Tab.0.right/0.25.1680.966@0.25.1680.966" timestamp="1654696865017" />
-    <state x="44" y="139" key="SettingsEditor" timestamp="1654697095671">
-      <screen x="0" y="25" width="1680" height="966" />
+    <state x="44" y="139" key="SettingsEditor" timestamp="1654700964060">
+      <screen x="0" y="25" width="1680" height="965" />
     </state>
     <state x="487" y="85" key="SettingsEditor/0.25.1680.964@0.25.1680.964" timestamp="1654678897540" />
+    <state x="44" y="139" key="SettingsEditor/0.25.1680.965@0.25.1680.965" timestamp="1654700964060" />
     <state x="44" y="139" key="SettingsEditor/0.25.1680.966@0.25.1680.966" timestamp="1654697095671" />
+    <state x="973" y="404" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1654700742832">
+      <screen x="0" y="25" width="1680" height="965" />
+    </state>
+    <state x="973" y="404" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.25.1680.965@0.25.1680.965" timestamp="1654700742832" />
+    <state x="1039" y="325" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1654700888887">
+      <screen x="0" y="25" width="1680" height="965" />
+    </state>
+    <state x="1039" y="325" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.25.1680.965@0.25.1680.965" timestamp="1654700888887" />
   </component>
 </project>

@@ -1,4 +1,6 @@
 package controller;
 
-public class InterfaceMaintainerController {
+public interface InterfaceMaintainerController {
+    void generateView();
+
 }
