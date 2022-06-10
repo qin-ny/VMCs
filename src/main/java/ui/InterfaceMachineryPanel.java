@@ -1,4 +1,4 @@
 package ui;
 
-public class InterfaceMachineryPanel {
+public interface InterfaceMachineryPanel {
 }
