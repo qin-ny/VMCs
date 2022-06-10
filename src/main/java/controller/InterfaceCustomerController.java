@@ -1,4 +1,5 @@
 package controller;
 
-public class InterfaceCustomerController {
+public interface InterfaceCustomerController {
+    void generateView();
 }

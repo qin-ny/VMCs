@@ -35,4 +35,8 @@ public class Drink {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public Boolean isAvailable() {
+        return quantity == 0;
+    }
 }
