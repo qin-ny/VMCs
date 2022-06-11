@@ -1,0 +1,67 @@
+{
+  "password": "abc123",
+  "slots": [
+    {
+      "drink": {
+        "name": "Coca-Cola",
+        "price": 75
+      },
+      "quantity": 5
+    },
+    {
+      "drink": {
+        "name": "Fanta",
+        "price": 75
+      },
+      "quantity": 6
+    },
+    {
+      "drink": {
+        "name": "Sarsi",
+        "price": 50
+      },
+      "quantity": 2
+    },
+    {
+      "drink": {
+        "name": "Soya Bean",
+        "price": 60
+      },
+      "quantity": 5
+    },
+    {
+      "drink": {
+        "name": "Coca-Cola",
+        "price": 75
+      },
+      "quantity": 7
+    }
+  ],
+  "coins": [
+    {
+      "name": "5c",
+      "weight": 5,
+      "quantity": 22
+    },
+    {
+      "name": "10c",
+      "weight": 10,
+      "quantity": 37
+    },
+    {
+      "name": "20c",
+      "weight": 20,
+      "quantity": 9
+    },
+    {
+      "name": "50c",
+      "weight": 50,
+      "quantity": 12
+    },
+    {
+      "name": "$1",
+      "weight": 100,
+      "quantity": 10
+    }
+  ]
+}

@@ -34,16 +34,16 @@ public class CustomerController implements InterfaceCustomerController, ActionLi
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "brand":
-                String brand = customerPanel.getBrand();
-                Optional<Drink> t = machine.getDrinkByName(brand);
-                boolean avl;
-                if (t.isPresent() && t.get().isAvailable()) {
-                    avl = true;
-                    this.brand = brand;
-                } else avl = false;
-                customerPanel.ShowAwailability(avl);
-                break;
+//            case "brand":
+//                String brand = customerPanel.getBrand();
+//                Optional<Drink> t = machine.getDrinkByName(brand);
+//                boolean avl;
+//                if (t.isPresent() && t.get().isAvailable()) { //TODO 需要通过index判断对应slot, 并从slot中获取数量
+//                    avl = true;
+//                    this.brand = brand;
+//                } else avl = false;
+//                customerPanel.ShowAwailability(avl);
+//                break;
             case "entercoins":
                 this.customerInput = customerPanel.getCoins();
                 if (checkValidation()) {

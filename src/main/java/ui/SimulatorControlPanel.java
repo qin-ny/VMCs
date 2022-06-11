@@ -37,10 +37,10 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
 
     private List<Button> getActiveButtons() {
         List<Button> buttons = new ArrayList<>();
-        List<Panel> activatePanels = start_obj.getActivatingPanels();
-        for (Panel panel: activatePanels) {
-            Button button = new Button("Activate " + panel.name);
-            setButtonStyle(button, 200, 0);
+//        List<Panel> activatePanels = start_obj.getActivatingPanels();
+//        for (Panel panel: activatePanels) {
+//            Button button = new Button("Activate " + panel.name);
+//            setButtonStyle(button, 200, 0);
 
 //            button.setOnAction(new EventHandler<ActionEvent>() {
 //                @Override
@@ -48,23 +48,23 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
 //                    Button bu = (Button) actionEvent.getSource();
 //                }
 //            });
-            button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-//                mouseEvent.getClickCount() == 1 &&
-                    if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY.name())){
-                        if (isSimulated()) {
-                            activePanel(panel);
-                        } else {
-                            createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
-
-                        }
-                    }
-                }
-            });
-
-            buttons.add(button);
-        }
+//            button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+//                @Override
+//                public void handle(MouseEvent mouseEvent) {
+////                mouseEvent.getClickCount() == 1 &&
+//                    if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY.name())){
+//                        if (isSimulated()) {
+//                            activePanel(panel);
+//                        } else {
+//                            createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
+//
+//                        }
+//                    }
+//                }
+//            });
+//
+//            buttons.add(button);
+//        }
         return buttons;
     }
 

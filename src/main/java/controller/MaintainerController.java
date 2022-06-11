@@ -60,7 +60,7 @@ public class MaintainerController implements InterfaceMaintainerController, Acti
 //                maintainerPanel.setSelectedDrink(drinkName); //记录已选择的饮料名
                 Drink drink = getDrink(drinkName);
 //                maintainerPanel.displayDrinkPrice(drink.getPrice()); //展示饮料价格
-//                maintainerPanel.displayDrinkQuantity(drink.getQuantity()); //展示饮料数量
+//                maintainerPanel.displayDrinkQuantity(drink.getQuantity()); //展示饮料数量 TODO 需要通过index判断对应slot, 并从slot中获取数量
             case "drinkPriceChanged":
 //                String selectedDrinkName = maintainerPanel.getSelectedDrink(); //获得已选择的饮料名
 //                int newPrice = maintainerPanel.getDrinkPrice();  //获得（新）饮料价格

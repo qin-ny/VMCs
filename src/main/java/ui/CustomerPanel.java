@@ -227,13 +227,13 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
 //            priceLabel.setLayoutX(60);
 
             Button stockButton = new Button();
-            if (drink.getQuantity() <= 0) {
-                stockButton.setText("Not In Stock");
-                setButtonStyle(stockButton, failureColor, failureColor, failureColor, 0, 150, 30, false);
-            } else {
-                stockButton.setText("In Stock");
-                setButtonStyle(stockButton, successColor, successColor, successColor, 0, 150, 30, false);
-            }
+//            if (drink.getQuantity() <= 0) { //TODO 需要通过index判断对应slot, 并从slot中获取数量
+//                stockButton.setText("Not In Stock");
+//                setButtonStyle(stockButton, failureColor, failureColor, failureColor, 0, 150, 30, false);
+//            } else {
+//                stockButton.setText("In Stock");
+//                setButtonStyle(stockButton, successColor, successColor, successColor, 0, 150, 30, false);
+//            }
             bPane.setRight(stockButton);
             contentVBox.getChildren().add(bPane);
         }
@@ -285,11 +285,11 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
 
     @Override
     public List<Drink> getDrinks() {
-        drinks.add(new Drink("Colo", 5, 5));
-        drinks.add(new Drink("Mineral Water", 10, 5));
-        drinks.add(new Drink("Fanta", 15, 1));
-        drinks.add(new Drink("Sarsi", 20, 0));
-        drinks.add(new Drink("Tea", 25, 5));
+//        drinks.add(new Drink("Colo", 5, 5));
+//        drinks.add(new Drink("Mineral Water", 10, 5));
+//        drinks.add(new Drink("Fanta", 15, 1));
+//        drinks.add(new Drink("Sarsi", 20, 0));
+//        drinks.add(new Drink("Tea", 25, 5));
         return drinks;
     }
 
