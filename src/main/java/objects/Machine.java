@@ -1,18 +1,20 @@
 package objects;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class Machine {
+    private final static String SGD = "c";
+
     private transient Door door;
     private String password;
     private List<Slot> slots;
     private List<Coin> coins;
     private transient Set<Drink> drinks;
+    private Map<String, Coin> currentEnteredCoins;
 
-
+    public String getMoneyType() {
+        return SGD;
+    }
 
     public Machine(List<Slot> slots, List<Coin> coins, String password) {
         this.door = new Door(false);
@@ -20,7 +22,49 @@ public class Machine {
         this.slots = slots;
         this.coins = coins;
         this.drinks = recordAllDrinks(slots);
+        this.currentEnteredCoins = new HashMap<>();
     }
+
+    public int getCurrentEnteredMoney() {
+        int currentTotalCash = 0;
+        for (Coin coin: currentEnteredCoins.values()) {
+            currentTotalCash += coin.getWeight() * coin.getQuantity();
+        }
+        return currentTotalCash;
+    }
+
+    public Optional<Coin> getCurrentEnteredCoin(String name) {
+        return Optional.of(currentEnteredCoins.get(name));
+    }
+
+    public void setCurrentMoney(Coin coin, int quantity) {
+        if (currentEnteredCoins.containsKey(coin.getName())) {
+            currentEnteredCoins.get(coin.getName()).setQuantity(quantity);
+        } else {
+            currentEnteredCoins.put(coin.getName(), new Coin(coin.getName(), coin.getWeight(), quantity));
+        }
+
+    }
+
+    public void addCurrentMoney(Coin coin) {
+        if (currentEnteredCoins.containsKey(coin.getName())) {
+            currentEnteredCoins.get(coin.getName()).setQuantity(currentEnteredCoins.get(coin.getName()).getQuantity() + 1);
+        } else {
+            currentEnteredCoins.put(coin.getName(), new Coin(coin.getName(), coin.getWeight(), 1));
+        }
+    }
+
+    public void saveCurrentMoney() {
+        for (Coin coin: coins) {
+            if (currentEnteredCoins.containsKey(coin.getName())){
+                Coin currentCoin = currentEnteredCoins.get(coin.getName());
+                coin.setQuantity(currentCoin.getQuantity() + coin.getQuantity());
+                currentCoin.setQuantity(0);
+            }
+        }
+
+    }
+
 
     /**
      * Check if the input a correct password.
@@ -48,6 +92,20 @@ public class Machine {
         }
         return Optional.empty();
     }
+
+    public Optional<Slot> getSlotByIndex(String index) {
+        int slotIndex = Integer.parseInt(index);
+        Slot slot = slots.get(slotIndex);
+        if (slot != null) return Optional.of(slot);
+        return Optional.empty();
+    }
+
+    public Optional<Slot> getSlotByIndex(int index) {
+        Slot slot = slots.get(index);
+        if (slot != null) return Optional.of(slot);
+        return Optional.empty();
+    }
+
 
     /**
      * check if the Coin name exist in the drinks,

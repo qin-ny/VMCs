@@ -1,28 +1,27 @@
 package controller;
 
 import javafx.scene.control.Button;
+import main.Start;
 import objects.Coin;
 import objects.Drink;
 import objects.Machine;
-import ui.InterfaceMaintainerPanel;
+import handler.InterfaceMaintainerPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Optional;
 
 /**
  * This is implementation of InterfaceMaintainerController, which contains the method generateView for displaying
  * the maintainer panel, corresponding actions from its maintainerPanel will be listened and triggered by this
  * controller class. This class manipulates Machine and InterfaceMaintainerPanel as a controller.
  */
-public class MaintainerController implements InterfaceMaintainerController, ActionListener {
+public class MaintainerController extends BaseController implements InterfaceMaintainerController, ActionListener {
 
     private Machine machine;
     private InterfaceMaintainerPanel maintainerPanel;
 
-    public MaintainerController(Machine machine, InterfaceMaintainerPanel maintainerPanel){
-        this.machine = machine;
-        this.maintainerPanel = maintainerPanel;
+    public MaintainerController(Start startObj){
+        super(startObj);
     }
 
 
@@ -60,17 +59,17 @@ public class MaintainerController implements InterfaceMaintainerController, Acti
 //                maintainerPanel.setSelectedDrink(drinkName); //记录已选择的饮料名
                 Drink drink = getDrink(drinkName);
 //                maintainerPanel.displayDrinkPrice(drink.getPrice()); //展示饮料价格
-//                maintainerPanel.displayDrinkQuantity(drink.getQuantity()); //展示饮料数量 TODO 需要通过index判断对应slot, 并从slot中获取数量
+//                maintainerPanel.displayDrinkQuantity(drink.getQuantity()); //展示饮料数量
             case "drinkPriceChanged":
 //                String selectedDrinkName = maintainerPanel.getSelectedDrink(); //获得已选择的饮料名
 //                int newPrice = maintainerPanel.getDrinkPrice();  //获得（新）饮料价格
 //                Drink selectedDrink = getDrink(selectedDrinkName);
 //                selectedDrink.setPrice(newPrice);
             case "totalCashPressed":
-                int totalCash = machine.getTotalCash();
+//                int totalCash = machine.getTotalCash();
 //                maintainerPanel.displayTotalCash(totalCash); //展示硬币总金额
             case "collectCoinsPressed":
-                int totalCashCollected = machine.collectAllCoins();
+//                int totalCashCollected = machine.collectAllCoins();
 //                maintainerPanel.displayCollectedCash(totalCashCollected); //展示获取到的硬币总金额
 //                maintainerPanel.displayTotalCash(0); //展示硬币总金额 0
             case "logout":
@@ -86,8 +85,8 @@ public class MaintainerController implements InterfaceMaintainerController, Acti
      * @throws IllegalArgumentException if the coin name does not exist in the machine
      */
     private Coin getCoin(String coinName) throws IllegalArgumentException{
-        Optional<Coin> validateCoin = machine.getCoinByName(coinName);
-        if(validateCoin.isPresent()) return validateCoin.get();
+//        Optional<Coin> validateCoin = machine.getCoinByName(coinName);
+//        if(validateCoin.isPresent()) return validateCoin.get();
         throw new IllegalArgumentException("coin type not exist");
     }
 
@@ -98,8 +97,8 @@ public class MaintainerController implements InterfaceMaintainerController, Acti
      * @throws IllegalArgumentException if the drink name does not exist in the machine
      */
     private Drink getDrink(String drinkName) throws IllegalArgumentException{
-        Optional<Drink> validateDrink = machine.getDrinkByName(drinkName);
-        if(validateDrink.isPresent()) return validateDrink.get();
+//        Optional<Drink> validateDrink = machine.getDrinkByName(drinkName);
+//        if(validateDrink.isPresent()) return validateDrink.get();
         throw new IllegalArgumentException("drink type not exist");
     }
 

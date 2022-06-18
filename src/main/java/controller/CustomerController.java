@@ -1,17 +1,17 @@
 package controller;
 
+import main.Start;
 import objects.Coin;
 import objects.Drink;
 import objects.Machine;
-import ui.InterfaceCustomerPanel;
-import ui.InterfaceCustomerPanelTest;
+import handler.InterfaceCustomerPanelTest;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Optional;
 import java.util.Set;
 
-public class CustomerController implements InterfaceCustomerController, ActionListener {
+public class CustomerController extends BaseController implements InterfaceCustomerController, ActionListener {
     private Machine machine;
 
     private InterfaceCustomerPanelTest customerPanel;
@@ -19,9 +19,8 @@ public class CustomerController implements InterfaceCustomerController, ActionLi
     String brand;
     Set<Coin> customerInput;
 
-    public CustomerController(Machine machine, InterfaceCustomerPanelTest customerPanel) {
-        this.machine = machine;
-        this.customerPanel = customerPanel;
+    public CustomerController(Start startObj) {
+        super(startObj);
     }
 
 
@@ -34,16 +33,17 @@ public class CustomerController implements InterfaceCustomerController, ActionLi
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-//            case "brand":
-//                String brand = customerPanel.getBrand();
+            case "brand":
+                String brand = customerPanel.getBrand();
 //                Optional<Drink> t = machine.getDrinkByName(brand);
+//                Optional<Drink> t = Optional.of(new Drink("", 1, 1));
 //                boolean avl;
-//                if (t.isPresent() && t.get().isAvailable()) { //TODO 需要通过index判断对应slot, 并从slot中获取数量
+//                if (t.isPresent() && t.get().isAvailable()) {
 //                    avl = true;
 //                    this.brand = brand;
 //                } else avl = false;
 //                customerPanel.ShowAwailability(avl);
-//                break;
+                break;
             case "entercoins":
                 this.customerInput = customerPanel.getCoins();
                 if (checkValidation()) {
@@ -63,6 +63,7 @@ public class CustomerController implements InterfaceCustomerController, ActionLi
             totalInput += coin.getTotalValue();
         }
 
-        return totalInput >= machine.getDrinkByName(brand).get().getPrice();
+        return false;
+//        return totalInput >= machine.getDrinkByName(brand).get().getPrice();
     }
 }

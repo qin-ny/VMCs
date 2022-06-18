@@ -1,4 +1,4 @@
-package ui;
+package handler;
 
 public interface InterfaceMachineryPanel {
 }

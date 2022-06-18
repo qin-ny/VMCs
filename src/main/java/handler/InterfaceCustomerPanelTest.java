@@ -1,4 +1,4 @@
-package ui;
+package handler;
 
 import objects.Coin;
 import java.util.Set;

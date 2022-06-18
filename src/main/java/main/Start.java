@@ -1,67 +1,49 @@
 package main;
 
+import controller.*;
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import handler.*;
+import util.JsonMachineConverter;
+import view.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Start extends Application {
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
+
+    public static Map<String, BaseController> controllers = new HashMap<String, BaseController>(){};
+    public static Map<String, Panel> panels = new HashMap<String, Panel>(){};
+    public static Map<String, BaseView> views = new HashMap<String, BaseView>(){};
+    public static JsonMachineConverter jsonMachineConverter;
+
+
+    private DataController data_controller;
+
+    public DataController getDataController() { return data_controller; }
 
     @Override
     public void start(Stage stage) throws Exception {
-        Button button = new Button("test");
-        button.setLayoutX(200);
-        button.setLayoutY(200);
-        button.setFont(Font.font("sans-serif", 20));
+        controllers.put("operatorController", new OperatorController(this));
+        controllers.put("maintainerController", new MaintainerController(this));
+        controllers.put("customerController", new CustomerController(this));
 
-        button.setPrefWidth(100);
-        button.setPrefHeight(100);
+        panels.put("machineryPanel", new MachineryPanel());
+        panels.put("simulatorControlPanel", new SimulatorControlPanel());
+        panels.put("maintainerPanel", new MaintainerPanel());
+        panels.put("customerPanel", new CustomerPanel());
 
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf("#0099FF"),
-                new CornerRadii(20),
-                new Insets(10)
-        );
-        Background bg = new Background(bgf);
+        views.put("machineryPanelView", new MachineryPanelView());
+        views.put("simulatorControlPanelView", new SimulatorControlPanelView());
+        views.put("maintainerPanelView", new MaintainerPanelView());
+        views.put("customerPanelView", new CustomerPanelView());
 
-        button.setBackground(bg);
-        button.setOpacity(0.8);
-//        button.set
+        jsonMachineConverter = new JsonMachineConverter();
 
-        AnchorPane pane = new AnchorPane();
+        data_controller = new DataController();
 
-//        pane.getChildren().add(button);
-
-//        Platform.runLater(new Runnable() {
-//          @Override
-//          public void run() {
-//
-//          }
-//        }
-//        );
-
-        Group group = new Group();
-        group.getChildren().add(button);
-
-        Scene scene = new Scene(group);
-
-        stage.setScene(scene);
-        stage.setMaxWidth(500);
-        stage.setMaxHeight(500);
-        stage.setOpacity(0.9);
-        stage.setTitle("test");
-        stage.show();
+        views.get("simulatorControlPanelView").init();
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="handler.SimulatorControlPanelController"
+            prefHeight="350.0" prefWidth="300.0"
+            styleClass="frameBPane">
+    <top>
+        <BorderPane>
+            <center>
+                <Label styleClass="fxml_title" text="Simulator Control Panel"/>
+            </center>
+        </BorderPane>
+    </top>
+
+    <center>
+        <HBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="superVBox">
+                <VBox alignment="CENTER" styleClass="VBSystemButtons">
+                    <Button fx:id="beginSimulation" text="Begin Simulation" onAction="#handleButtonAction"/>
+                    <Button fx:id="endSimulation" text="End Simulation"  onAction="#handleButtonAction"/>
+                </VBox>
+                <VBox alignment="CENTER" styleClass="VBActiveButtons">
+                    <Button fx:id="customerPanel" text="Activate Customer Panel"  onAction="#handleButtonAction"/>
+                    <Button fx:id="maintainerPanel" text="Activate Maintainer Panel"  onAction="#handleButtonAction"/>
+                    <Button fx:id="machineryPanel" text="Activate Machinery Panel"  onAction="#handleButtonAction"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

@@ -1,24 +1,20 @@
-package ui;
+package handler;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import objects.Coin;
 import objects.Drink;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
@@ -34,7 +30,6 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
         this.name = "Customer Panel";
         this.title = "VMCs - " + name;
         this.caption.setText("Soft Drink Dispenser");
-        this.stage.setTitle(title);
         this.totalInsertedMoney = 0;
         this.coinButtons = new ArrayList<Button>();
         this.drinks = new ArrayList<Drink>();
@@ -118,8 +113,9 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
         button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY)){
+                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY.name())){
                     if (isSelected) {
+                        button.getText();
 //                        totalInsertedMoney += button.getText();
                     }
                 }
@@ -197,7 +193,7 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
                 RadioButton selectedButton = (RadioButton) t1;
                 for (Drink drink: drinks) {
-                    if (drink.getName() == selectedButton.getText()) {
+                    if (drink.getName().equals(selectedButton.getText())) {
                         selectedDrink = drink;
                         isSelected = true;
                         break;
@@ -227,13 +223,13 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
 //            priceLabel.setLayoutX(60);
 
             Button stockButton = new Button();
-//            if (drink.getQuantity() <= 0) { //TODO 需要通过index判断对应slot, 并从slot中获取数量
-//                stockButton.setText("Not In Stock");
-//                setButtonStyle(stockButton, failureColor, failureColor, failureColor, 0, 150, 30, false);
-//            } else {
-//                stockButton.setText("In Stock");
-//                setButtonStyle(stockButton, successColor, successColor, successColor, 0, 150, 30, false);
-//            }
+            if (drink.getPrice() <= 0) {
+                stockButton.setText("Not In Stock");
+                setButtonStyle(stockButton, failureColor, failureColor, failureColor, 0, 150, 30, false);
+            } else {
+                stockButton.setText("In Stock");
+                setButtonStyle(stockButton, successColor, successColor, successColor, 0, 150, 30, false);
+            }
             bPane.setRight(stockButton);
             contentVBox.getChildren().add(bPane);
         }
@@ -274,6 +270,8 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
 
     }
 
+
+
     @Override
     public List<String> getSupportedCoins() {
         List<String> coins = new ArrayList<String>();
@@ -285,12 +283,13 @@ public class CustomerPanel extends Panel implements InterfaceCustomerPanel {
 
     @Override
     public List<Drink> getDrinks() {
-//        drinks.add(new Drink("Colo", 5, 5));
-//        drinks.add(new Drink("Mineral Water", 10, 5));
-//        drinks.add(new Drink("Fanta", 15, 1));
-//        drinks.add(new Drink("Sarsi", 20, 0));
-//        drinks.add(new Drink("Tea", 25, 5));
         return drinks;
+    }
+
+    @Override
+    public Coin getCoinByName(String name) {
+//        start_obj.getCustomerController()
+        return null;
     }
 
 }

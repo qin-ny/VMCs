@@ -1,9 +1,10 @@
-package ui;
+package handler;
 
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -11,11 +12,18 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import main.Start;
+
+import java.io.IOException;
 
 public abstract class Panel implements InterfacePanel {
 
+    protected Start start_obj;
+    protected String fxmlPath;
+    protected String cssPath;
     protected String name;
     protected String title;
+
     protected Stage stage = new Stage();
     protected Label caption = new Label();
     protected final String normalFontFamily = "sans-serif";
@@ -23,6 +31,8 @@ public abstract class Panel implements InterfacePanel {
     protected final String coinLabelColor = "#FF9933";
     protected final String successColor = "#33CC33";
     protected final String failureColor = "#CC3300";
+    protected final static String baseFxmlPath = "../fxml/";
+    protected final static String baseCssPath = "../css/";
 
 
     @Override
@@ -152,7 +162,7 @@ public abstract class Panel implements InterfacePanel {
     protected abstract HBox getCenterHBox();
 
     @Override
-    public void init() {
+    public void init() throws IOException {
         BorderPane bPane = getBorderPane();
 
 //        PasswordField pass = new PasswordField();
@@ -166,9 +176,22 @@ public abstract class Panel implements InterfacePanel {
 
 //        Group group = new Group();
 //        group.getChildren().add(button);
+//        Parent root = FXMLLoader.load(getClass().getResource("fxml/simulator_control_panel.fxml"),
+//                ResourceBundle.getBundle("config/config"));
+//        URL resource = getClass().getResource("");
+//        System.out.println(resource.toString());
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/simulator_control_panel.fxml"));
 
-        Scene scene = new Scene(bPane);
+//        Label caption = (Label) root.lookup("#caption");
+//        caption.setText("test");
+
+//        Scene scene = new Scene(bPane);
+        Scene scene = new Scene(root);
+
+        scene.getStylesheets().add(getClass().getResource("../css/panel.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(this.cssPath).toExternalForm());
         scene.getRoot().setStyle("-fx-font-family: " + normalFontFamily);
+        this.stage.setTitle(title);
         stage.setScene(scene);
         stage.setMinWidth(300);
         stage.setMinHeight(350);

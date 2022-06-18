@@ -1,4 +1,4 @@
-package ui;
+package handler;
 
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -9,7 +9,6 @@ public class MachineryPanel extends Panel implements InterfaceMachineryPanel {
         this.name = "Machinery Panel";
         this.title = "VMCs - " + name;
         this.caption.setText(name);
-        this.stage.setTitle(title);
     }
 
     @Override

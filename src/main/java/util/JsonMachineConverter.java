@@ -8,31 +8,47 @@ import objects.Slot;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JsonMachineConverter {
 
+    public Machine machine;
+    private boolean simulationStatus;
+
     //测试json转换
-    public static void main(String[] args) {
-        machineObjectToJson(jsonToMachineObject().get());
+//    public static void main(String[] args) {
+//        machineObjectToJson(jsonToMachineObject().get());
+//    }
+
+    public JsonMachineConverter() {
+        jsonToMachineObject();
+        this.simulationStatus = false;
     }
 
-    /**
-     *
-     * @return
-     */
-    public static Optional<Machine> jsonToMachineObject() {
+    public void beginSimulation() {
+        this.simulationStatus = true;
+    }
+
+    public void endSimulation() {
+        this.simulationStatus = false;
+    }
+
+    public boolean getSimulationStatus() {
+        return this.simulationStatus;
+    }
+
+    private void jsonToMachineObject() {
         Gson gson = new Gson();
         try {
             Reader reader = new BufferedReader(new FileReader(Constants.DATA_SOURCE));
             Machine sallowConversion = gson.fromJson(reader, Machine.class);
-            Machine machine = unifyDrink(sallowConversion);
+            this.machine = unifyDrink(sallowConversion);
 //            System.out.println(gson.toJson(machine));
             reader.close();
-            return Optional.of(machine);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return Optional.empty();
     }
 
     /**
@@ -40,11 +56,14 @@ public class JsonMachineConverter {
      * @param sallowConversion
      * @return
      */
-    private static Machine unifyDrink(Machine sallowConversion){
+    private Machine unifyDrink(Machine sallowConversion){
         String password = sallowConversion.getPassword();
         List<Slot> slots = new ArrayList<>();
         List<Coin> coins = sallowConversion.getCoins();
         Map<String, Drink> drinksMap = new HashMap<>();
+
+        coins = coins.stream().sorted(Comparator.comparing(Coin::getWeight).reversed())
+                .collect(Collectors.toList());
 
         sallowConversion.getSlots().forEach(slot -> {
             String drinkName = slot.getDrink().getName();
@@ -66,7 +85,7 @@ public class JsonMachineConverter {
      *
      * @param machine
      */
-    public static void machineObjectToJson(Machine machine) {
+    public void machineObjectToJson(Machine machine) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(machine);
         try {

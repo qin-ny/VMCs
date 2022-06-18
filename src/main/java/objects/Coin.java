@@ -1,6 +1,10 @@
 package objects;
 
 public class Coin {
+    private final static String SGD = "c";
+    private final static String USD = "$";
+    private final static String CNY = "y";
+
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量

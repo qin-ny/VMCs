@@ -1,39 +1,30 @@
-package ui;
+package handler;
 
-import controller.OperatorController;
-import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
-import main.Start;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SimulatorControlPanel extends Panel implements InterfaceSimulatorControlPanel {
 
-    private Start start_obj;
 
-    public SimulatorControlPanel(Start start_obj) {
+    public SimulatorControlPanel() {
         this.name = "Simulator Control Panel";
         title = "VMCs - " + name;
         this.caption.setText(name);
-        this.stage.setTitle(title);
-        this.start_obj = start_obj;
+        this.fxmlPath = baseFxmlPath + "simulator_control_panel.fxml";
+        this.cssPath = baseCssPath + "simulator_control_panel.css";
     }
+
 
     private List<Button> getActiveButtons() {
         List<Button> buttons = new ArrayList<>();
@@ -41,13 +32,13 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
 //        for (Panel panel: activatePanels) {
 //            Button button = new Button("Activate " + panel.name);
 //            setButtonStyle(button, 200, 0);
-
-//            button.setOnAction(new EventHandler<ActionEvent>() {
-//                @Override
-//                public void handle(ActionEvent actionEvent) {
-//                    Button bu = (Button) actionEvent.getSource();
-//                }
-//            });
+//
+////            button.setOnAction(new EventHandler<ActionEvent>() {
+////                @Override
+////                public void handle(ActionEvent actionEvent) {
+////                    Button bu = (Button) actionEvent.getSource();
+////                }
+////            });
 //            button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
 //                @Override
 //                public void handle(MouseEvent mouseEvent) {
@@ -57,7 +48,6 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
 //                            activePanel(panel);
 //                        } else {
 //                            createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
-//
 //                        }
 //                    }
 //                }
@@ -74,7 +64,7 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
         button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY)){
+                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY.name())){
                     beginSimulation();
                 }
             }
@@ -88,7 +78,7 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
         button.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY)){
+                if (mouseEvent.getButton().name().equals(MouseButton.PRIMARY.name())){
                     endSimulation();
                 }
             }
@@ -183,6 +173,15 @@ public class SimulatorControlPanel extends Panel implements InterfaceSimulatorCo
 
     @Override
     public void activePanel(Panel panel) {
-        panel.init();
+        try {
+            panel.init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+//    @FXML
+//    private void initialize() {
+//
+//    }
 }

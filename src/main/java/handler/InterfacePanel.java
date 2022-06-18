@@ -1,6 +1,5 @@
-package ui;
+package handler;
 
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -8,11 +7,12 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
+
+import java.io.IOException;
 
 public interface InterfacePanel {
 
-    public void init();
+    public void init() throws IOException;
 
     public void exit();
 

@@ -1,4 +1,4 @@
-package ui;
+package handler;
 
 import objects.Coin;
 import objects.Drink;
@@ -11,4 +11,5 @@ public interface InterfaceCustomerPanel {
 
     public List<Drink> getDrinks();
 
+    public Coin getCoinByName(String name);
 }
