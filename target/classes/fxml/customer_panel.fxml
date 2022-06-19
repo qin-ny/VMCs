@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="handler.CustomerPanelController"
+            prefHeight="350.0" prefWidth="300.0"
+            styleClass="frameBPane">
+    <top>
+        <BorderPane>
+            <center>
+                <Label styleClass="fxml_title" text="Customer Panel"/>
+            </center>
+        </BorderPane>
+    </top>
+    <center>
+        <HBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="superVBox">
+                <VBox alignment="CENTER" styleClass="coinVBox">
+                    <Label text="Enter Coins Here"/>
+                    <ScrollPane styleClass="coinScrollPane">
+                        <HBox alignment="CENTER" fx:id="coinMenuHBox">
+                            <Button styleClass="coinButton" text="Invalid" fx:id="invalidCoin" onAction="#handleButtonAction"/>
+                        </HBox>
+                    </ScrollPane>
+                    <Label fx:id="enterStatusLabel" styleClass="successLabel" text="Invalid Coin"/>
+                    <HBox alignment="CENTER" styleClass="totalMoneyHBox">
+                        <Label text="Total Money Inserted: "/>
+                        <Label alignment="CENTER" fx:id="totalMoneyLabel" styleClass="visibleLabel" text="0 c"/>
+                    </HBox>
+                </VBox>
+                <VBox alignment="CENTER" styleClass="drinkVBox">
+                    <ScrollPane styleClass="drinkScrollPane">
+                        <VBox fx:id="drinkMenuVBox">
+
+                        </VBox>
+                    </ScrollPane>
+                </VBox>
+                <Label text="No Change Available" fx:id="noChangeAvaLabel" styleClass="successLabel"/>
+                <Button text="Terminate And Return Cash" fx:id="terminateButton" onAction="#handleButtonAction"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <BorderPane>
+            <center>
+                <VBox alignment="CENTER" styleClass="bottomVBox">
+                    <BorderPane styleClass="collectCoinBPane">
+                        <left>
+                            <Label text="Collect Coins: "/>
+                        </left>
+                        <right>
+                            <Label alignment="CENTER" fx:id="collectCoinLabel" styleClass="visibleLabel" text="0 c"/>
+                        </right>
+                    </BorderPane>
+                    <BorderPane styleClass="collectCanBPane">
+                        <left>
+                            <Label text="Collect Can Here: "/>
+                        </left>
+                        <right>
+                            <Label alignment="CENTER" fx:id="collectCanLabel" styleClass="visibleLabel" text="No Can"/>
+                        </right>
+                    </BorderPane>
+                </VBox>
+            </center>
+        </BorderPane>
+    </bottom>
+</BorderPane>

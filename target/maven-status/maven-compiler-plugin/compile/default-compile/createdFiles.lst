@@ -19,7 +19,6 @@ ui/SimulatorControlPanel$3.class
 ui/CustomerPanel.class
 controller/InterfaceOperatorController.class
 ui/Panel$1.class
-util/JsonUtil.class
 ui/MachineryPanel.class
 controller/CustomerController.class
 ui/InterfaceSimulatorControlPanel.class
@@ -27,6 +26,8 @@ objects/Coin.class
 ui/Panel$3.class
 ui/InterfaceMachineryPanel.class
 ui/Panel.class
+util/Constants.class
+util/JsonMachineConverter.class
 objects/Slot.class
 ui/CustomerPanel$2.class
 ui/SimulatorControlPanel$2.class

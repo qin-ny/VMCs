@@ -5,9 +5,11 @@
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/CustomerController.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/InterfaceOperatorController.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/objects/Slot.java
+/Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/util/JsonMachineConverter.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/objects/Door.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/CustomerPanel.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/SimulatorControlPanel.java
+/Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/util/Constants.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/InterfaceMaintainerPanel.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/Panel.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/OperatorController.java
@@ -18,7 +20,6 @@
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/InterfaceCustomerPanelTest.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/InterfacePanel.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/InterfaceMaintainerController.java
-/Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/util/JsonUtil.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/objects/Drink.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/MaintainerPanel.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/ui/MachineryPanel.java

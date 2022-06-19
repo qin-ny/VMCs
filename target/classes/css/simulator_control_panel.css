@@ -1,0 +1,9 @@
+
+
+.VBSystemButtons, .VBActiveButtons {
+    -fx-spacing: 10;
+}
+
+.superVBox {
+    -fx-spacing: 20;
+}

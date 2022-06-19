@@ -250,6 +250,7 @@ public class CustomerPanelController implements Initializable {
                 handleInvalidCoin(view, button);
             case "terminateButton":
                 handleTerminateTransaction(view, button);
+                break;
             default:
                 handleNormalCoin(view, button);
 

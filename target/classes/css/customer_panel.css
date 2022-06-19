@@ -1,0 +1,128 @@
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+
+.coinButton {
+    -fx-pref-width: 80;
+    -fx-pref-height: 30;
+    -fx-background-radius: 0;
+}
+
+.superVBox {
+    -fx-spacing: 20;
+}
+
+.coinVBox {
+    -fx-spacing: 10;
+}
+
+.drinkVBox {
+    -fx-spacing: 10;
+    -fx-border-color: #00CCFF;
+    -fx-border-width: 1;
+}
+
+.bottomVBox {
+    -fx-spacing: 10;
+}
+
+#coinMenuHBox {
+    -fx-spacing: 2;
+}
+
+.totalMoneyHBox {
+    -fx-spacing: 5;
+}
+
+#drinkMenuVBox {
+    -fx-spacing: 10;
+}
+/*#successButton, #failureButton {*/
+/*    -fx-pref-width: 150;*/
+/*    -fx-pref-height: 30;*/
+/*}*/
+
+/*#failureButton {*/
+/*    -fx-pref-width: 150;*/
+/*    -fx-pref-height: 30;*/
+/*}*/
+
+/*radio-button {*/
+/*    -fx-pref-width: 100;*/
+/*    -fx-pref-height: 30;*/
+/*    -fx-background-radius: 10;*/
+/*    -fx-font-size: 15;*/
+/*    -fx-opacity: 0.8;*/
+/*    -fx-background-color: #CCCCFF;*/
+/*    -fx-cursor: hand;*/
+/*}*/
+
+.drinkRadioButton {
+    -fx-pref-width: 100;
+    -fx-pref-height: 30;
+    -fx-background-color: #CCCCFF;
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+.drinkRadioButton:hover {
+    -fx-background-color: #99CCFF;
+}
+
+.drinkRadioButton:focused {
+    -fx-background-color: #0099FF;
+}
+
+.drinkRadioButton:selected {
+    -fx-background-color: #0099FF;
+}
+
+
+.unFocusRadioButton {
+    -fx-pref-width: 100;
+    -fx-pref-height: 30;
+    -fx-background-color: #C0C0C0;
+    -fx-cursor: null;
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+    -fx-opacity: 0.8;
+}
+
+
+#noChangeAvaLabel {
+    -fx-pref-width: 200;
+}
+
+#terminateButton {
+    -fx-pref-width: 250;
+}
+
+.coinScrollPane {
+    -fx-max-width: 250;
+}
+
+.drinkScrollPane {
+    -fx-max-width: 320;
+}
+
+.collectCoinBPane, .collectCanBPane {
+    -fx-max-width: 200;
+}
+
+.drinkBPane {
+    -fx-min-width: 300;
+}
+
+.drinkPriceLabel {
+    -fx-min-width: 30;
+    -fx-background-color: #FF9933;
+    -fx-background-radius: 0;
+    -fx-font-size: 16;
+    -fx-alignment: center;
+}
