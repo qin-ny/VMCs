@@ -19,25 +19,26 @@
         </BorderPane>
     </top>
     <center>
-        <HBox alignment="CENTER">
-            <VBox alignment="CENTER" styleClass="superVBox">
-                <VBox alignment="CENTER" styleClass="coinVBox">
+        <HBox styleClass="box2Spacing">
+            <VBox styleClass="box20Spacing">
+                <VBox styleClass="box10Spacing">
                     <Label text="Enter Coins Here"/>
                     <ScrollPane styleClass="coinScrollPane">
-                        <HBox alignment="CENTER" fx:id="coinMenuHBox">
+                        <HBox alignment="CENTER" fx:id="coinMenuHBox" styleClass="box2Spacing">
+                            <!--this is the place for adding coin item-->
                             <Button styleClass="coinButton" text="Invalid" fx:id="invalidCoin" onAction="#handleButtonAction"/>
                         </HBox>
                     </ScrollPane>
                     <Label fx:id="enterStatusLabel" styleClass="successLabel" text="Invalid Coin"/>
-                    <HBox alignment="CENTER" styleClass="totalMoneyHBox">
+                    <HBox alignment="CENTER" styleClass="box5Spacing">
                         <Label text="Total Money Inserted: "/>
                         <Label alignment="CENTER" fx:id="totalMoneyLabel" styleClass="visibleLabel" text="0 c"/>
                     </HBox>
                 </VBox>
-                <VBox alignment="CENTER" styleClass="drinkVBox">
+                <VBox styleClass="borderVBox">
                     <ScrollPane styleClass="drinkScrollPane">
-                        <VBox fx:id="drinkMenuVBox">
-
+                        <VBox fx:id="drinkMenuVBox" styleClass="box10Spacing">
+                            <!--this is the place for adding slot item-->
                         </VBox>
                     </ScrollPane>
                 </VBox>
@@ -50,13 +51,13 @@
     <bottom>
         <BorderPane>
             <center>
-                <VBox alignment="CENTER" styleClass="bottomVBox">
+                <VBox alignment="CENTER" styleClass="box10Spacing">
                     <BorderPane styleClass="collectCoinBPane">
                         <left>
                             <Label text="Collect Coins: "/>
                         </left>
                         <right>
-                            <Label alignment="CENTER" fx:id="collectCoinLabel" styleClass="visibleLabel" text="0 c"/>
+                            <Label fx:id="collectCoinLabel" styleClass="visibleLabel" text="0 c"/>
                         </right>
                     </BorderPane>
                     <BorderPane styleClass="collectCanBPane">
@@ -64,7 +65,7 @@
                             <Label text="Collect Can Here: "/>
                         </left>
                         <right>
-                            <Label alignment="CENTER" fx:id="collectCanLabel" styleClass="visibleLabel" text="No Can"/>
+                            <Label fx:id="collectCanLabel" styleClass="visibleLabel" text="No Can"/>
                         </right>
                     </BorderPane>
                 </VBox>

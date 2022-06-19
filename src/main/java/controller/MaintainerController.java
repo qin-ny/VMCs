@@ -15,13 +15,13 @@ import java.awt.event.ActionListener;
  * the maintainer panel, corresponding actions from its maintainerPanel will be listened and triggered by this
  * controller class. This class manipulates Machine and InterfaceMaintainerPanel as a controller.
  */
-public class MaintainerController extends BaseController implements InterfaceMaintainerController, ActionListener {
+public class MaintainerController implements InterfaceMaintainerController, ActionListener {
 
     private Machine machine;
     private InterfaceMaintainerPanel maintainerPanel;
 
     public MaintainerController(Start startObj){
-        super(startObj);
+
     }
 
 

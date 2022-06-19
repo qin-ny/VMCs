@@ -20,13 +20,13 @@
     </top>
 
     <center>
-        <HBox alignment="CENTER">
-            <VBox alignment="CENTER" styleClass="superVBox">
-                <VBox alignment="CENTER" styleClass="VBSystemButtons">
+        <HBox styleClass="box2Spacing">
+            <VBox styleClass="box20Spacing">
+                <VBox styleClass="box10Spacing">
                     <Button fx:id="beginSimulation" text="Begin Simulation" onAction="#handleButtonAction"/>
                     <Button fx:id="endSimulation" text="End Simulation"  onAction="#handleButtonAction"/>
                 </VBox>
-                <VBox alignment="CENTER" styleClass="VBActiveButtons">
+                <VBox styleClass="box10Spacing">
                     <Button fx:id="customerPanel" text="Activate Customer Panel"  onAction="#handleButtonAction"/>
                     <Button fx:id="maintainerPanel" text="Activate Maintainer Panel"  onAction="#handleButtonAction"/>
                     <Button fx:id="machineryPanel" text="Activate Machinery Panel"  onAction="#handleButtonAction"/>

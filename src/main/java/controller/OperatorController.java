@@ -4,10 +4,9 @@ import main.Start;
 
 import java.io.IOException;
 
-public class OperatorController extends BaseController implements InterfaceOperatorController {
+public class OperatorController implements InterfaceOperatorController {
 
     public OperatorController(Start startObj) {
-        super(startObj);
     }
 
 
@@ -23,10 +22,6 @@ public class OperatorController extends BaseController implements InterfaceOpera
 
     @Override
     public void activePanel(String panelName) {
-        try {
-            Start.panels.get(panelName).init();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 }

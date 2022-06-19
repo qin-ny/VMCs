@@ -1,18 +1,16 @@
 package objects;
 
 public class Coin {
-    private final static String SGD = "c";
-    private final static String USD = "$";
-    private final static String CNY = "y";
-
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量
+    private int currentEnteredQuantity;
 
     public Coin(String name, int weight, int quantity){
         this.name = name;
         this.weight = weight;
         this.quantity = quantity;
+        this.currentEnteredQuantity = 0;
     }
 
     /**
@@ -20,7 +18,20 @@ public class Coin {
      * @return the total value of the coin type
      */
     public int getTotalValue(){
-        return weight * quantity;
+        return weight * (quantity + currentEnteredQuantity);
+    }
+
+    public int getCurrentEnteredTotalValue() {
+        return weight * currentEnteredQuantity;
+    }
+
+    public void saveCurrentEnteredValue() {
+        this.quantity += this.currentEnteredQuantity;
+        this.currentEnteredQuantity = 0;
+    }
+
+    public void enter(int number) {
+        this.currentEnteredQuantity += number;
     }
 
     public String getName() {
@@ -39,11 +50,21 @@ public class Coin {
         this.weight = weight;
     }
 
+    public int getTotalQuantity() {return quantity;}
+
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getCurrentEnteredQuantity() {
+        return currentEnteredQuantity;
+    }
+
+    public void setCurrentEnteredQuantity(int quantity) {
+        this.currentEnteredQuantity = quantity;
     }
 }

@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-public class CustomerPanelController implements Initializable {
+public class CustomerPanelController extends BaseController implements Initializable {
     @FXML
     public HBox coinMenuHBox;
     @FXML
@@ -49,8 +49,9 @@ public class CustomerPanelController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
         initCoinMenuHBox();
-        initDrinkMenuVBox();
+        initDrinkMenuVBox(view);
     }
 
     private void initCoinMenuHBox() {
@@ -71,14 +72,16 @@ public class CustomerPanelController implements Initializable {
         }
     }
 
-    private void initDrinkMenuVBox() {
+    private void initDrinkMenuVBox(CustomerPanelView view) {
         List<Slot> slots = Start.jsonMachineConverter.machine.getSlots();
         String moneyType = Start.jsonMachineConverter.machine.getMoneyType();
-        ToggleGroup toggleGroup = ((CustomerPanelView) Start.views.get("customerPanelView")).getDrinkToggleGroup();
+//        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
+        ToggleGroup toggleGroup = view.getDrinkToggleGroup();
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-                CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
+//                CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
+                if (nValue == null) return;
                 purchaseDrink(view, (RadioButton) nValue);
 //                System.out.println(nValue.toString());
 //                handleToggleSelection(observableValue, oValue, nValue, slots);
@@ -87,23 +90,21 @@ public class CustomerPanelController implements Initializable {
         int index = 0;
         for (Slot slot: slots) {
             BorderPane drinkBPane = new BorderPane();
-            drinkBPane.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index)));
+//            drinkBPane.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index)));
             drinkBPane.getStyleClass().add("drinkBPane");
 
             RadioButton radioButton = new RadioButton(slot.getDrink().getName());
-            radioButton.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index), "button"));
-            radioButton.getStyleClass().remove("radio-button");
-            radioButton.getStyleClass().add("toggle-button");
+            radioButton.setId(getUniqueId("slot", index, "button"));
+            setRadioButton(radioButton, toggleGroup);
             drinkBPane.setLeft(radioButton);
-            radioButton.setToggleGroup(toggleGroup);
 
             Label priceLabel = new Label(slot.getDrink().getPrice() + " " + moneyType);
-            priceLabel.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index), "price"));
+            priceLabel.setId(getUniqueId("slot", index, "price"));
             priceLabel.getStyleClass().add("drinkPriceLabel");
             drinkBPane.setCenter(priceLabel);
 
             Label stockLabel = new Label();
-            stockLabel.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index), "stock"));
+            stockLabel.setId(getUniqueId("slot", index, "stock"));
             if (slot.getQuantity() <= 0) {
                 disableSlot(radioButton, stockLabel);
             } else {
@@ -114,18 +115,8 @@ public class CustomerPanelController implements Initializable {
 
             index++;
         }
-
-        ((CustomerPanelView) Start.views.get("customerPanelView")).setDrinkToggleGroup(toggleGroup);
-    }
-
-    private void setSuccessLabel(Label label) {
-        label.getStyleClass().add("successLabel");
-        label.getStyleClass().remove("failureLabel");
-    }
-
-    public void setFailureLabel(Label label) {
-        label.getStyleClass().add("failureLabel");
-        label.getStyleClass().remove("successLabel");
+//        view.setDrinkToggleGroup(toggleGroup);
+//        ((CustomerPanelView) Start.views.get("customerPanelView")).setDrinkToggleGroup(toggleGroup);
     }
 
     // return the final quantity of specified slot
@@ -138,7 +129,12 @@ public class CustomerPanelController implements Initializable {
     }
 
     private void handleInvalidCoin(CustomerPanelView view, Button button) {
-        view.setFailureLabel(enterStatusLabel);
+        Toggle selectedToggle = view.getDrinkToggleGroup().getSelectedToggle();
+        if (selectedToggle == null) {
+            return;
+        }
+        setFailureLabel(enterStatusLabel);
+        collectCoinLabel.setText("Invalid Coin");
     }
 
     private void refundMoney(int requiredMoney, String moneyType, List<Coin> coins) {
@@ -166,10 +162,21 @@ public class CustomerPanelController implements Initializable {
         collectCoinLabel.setText(refundMoney + " " + moneyType);
     }
 
+    private String getUniqueId(String type, int index, String suffix) {
+        return String.join("-", "slot", String.valueOf(index), suffix);
+    }
+
+    private void unFocusSlot(CustomerPanelView view, RadioButton selectedSlotButton) {
+        selectedSlotButton.setSelected(false);
+    }
+
     private void purchaseDrink(CustomerPanelView view, RadioButton selectedSlotButton) {
         String moneyType = Start.jsonMachineConverter.machine.getMoneyType();
-        String[] valueList = selectedSlotButton.getId().split(";");
+//        System.out.println(selectedSlotButton.getId());
+        String[] valueList = selectedSlotButton.getId().split("-");
+//        System.out.println(Arrays.toString(selectedSlotButton.getId().split(";")));
         Slot selectedSlot = Start.jsonMachineConverter.machine.getSlotByIndex(valueList[1]).get();
+
         int currentEnteredMoney = Start.jsonMachineConverter.machine.getCurrentEnteredMoney();
         int drinkPrice = selectedSlot.getDrink().getPrice();
 
@@ -184,16 +191,16 @@ public class CustomerPanelController implements Initializable {
 
         if (currentEnteredMoney >= drinkPrice) {
             int slotFinalQuantity = popDrink(selectedSlot);
+
+            unFocusSlot(view, selectedSlotButton);
+
             Start.jsonMachineConverter.machine.saveCurrentMoney();
             currentEnteredMoney -= drinkPrice;
 
             if (slotFinalQuantity <= 0) {
+                System.out.println(getUniqueId("slot", Integer.parseInt(valueList[1]), "stock"));
                 Label slotStockLabel = (Label) view.getStage().getScene().lookup(
-                        "#" + String.join(
-                                ";",
-                                selectedSlot.getDrink().getName(),
-                                valueList[1],
-                                "stock")
+                        "#" + getUniqueId("slot", Integer.parseInt(valueList[1]), "stock")
                 );
                 disableSlot(selectedSlotButton, slotStockLabel);
             }
@@ -211,10 +218,14 @@ public class CustomerPanelController implements Initializable {
         if (selectedToggle == null) {
             return;
         }
+
+        setSuccessLabel(enterStatusLabel);
+
         RadioButton selectedSlotButton = (RadioButton) selectedToggle;
 
         Coin coin = Start.jsonMachineConverter.machine.getCoinByName(button.getText()).get();
-        Start.jsonMachineConverter.machine.addCurrentMoney(coin);
+        coin.enter(1);
+//        Start.jsonMachineConverter.machine.addCurrentMoney(coin);
         purchaseDrink(view, selectedSlotButton);
     }
 
@@ -226,6 +237,7 @@ public class CustomerPanelController implements Initializable {
     }
 
     private void disableSlot(RadioButton radioButton, Label stockLabel) {
+
         radioButton.setDisable(true);
         radioButton.getStyleClass().add("unFocusRadioButton");
 
@@ -235,7 +247,7 @@ public class CustomerPanelController implements Initializable {
     }
 
     private void activateSlot(RadioButton radioButton, Label stockLabel) {
-        radioButton.getStyleClass().add("drinkRadioButton");
+        radioButton.getStyleClass().add("radioButton");
 
         stockLabel.setText("In Stock");
         setSuccessLabel(stockLabel);
@@ -248,14 +260,14 @@ public class CustomerPanelController implements Initializable {
         switch (button.getId()) {
             case "invalidCoin":
                 handleInvalidCoin(view, button);
+                break;
             case "terminateButton":
                 handleTerminateTransaction(view, button);
                 break;
             default:
                 handleNormalCoin(view, button);
-
+                break;
         }
-
     }
 
 //    public void handleToggleSelection(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue, List<Slot> slots) {

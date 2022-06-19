@@ -66,10 +66,6 @@ public abstract class BaseView {
         button.setStyle("-fx-background-color: #33CC33");
     }
 
-    public void setFailureLabel(Label label) {
-        label.getStyleClass().remove("successLabel");
-        label.getStyleClass().add("failureLabel");
-    }
 
     public Stage getStage() {
         return this.stage;

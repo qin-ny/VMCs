@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.Optional;
 import java.util.Set;
 
-public class CustomerController extends BaseController implements InterfaceCustomerController, ActionListener {
+public class CustomerController implements InterfaceCustomerController, ActionListener {
     private Machine machine;
 
     private InterfaceCustomerPanelTest customerPanel;
@@ -20,7 +20,6 @@ public class CustomerController extends BaseController implements InterfaceCusto
     Set<Coin> customerInput;
 
     public CustomerController(Start startObj) {
-        super(startObj);
     }
 
 
