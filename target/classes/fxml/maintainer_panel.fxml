@@ -9,13 +9,67 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="handler.MaintainerPanelController"
-            prefHeight="350.0" prefWidth="300.0">
+            prefHeight="350.0" prefWidth="300.0"
+            styleClass="frameBPane">
     <top>
-        <BorderPane>
-            <center>
-                <Label styleClass="fxml_title" text="Customer Panel"/>
-            </center>
-        </BorderPane>
+        <VBox styleClass="box5Spacing">
+            <BorderPane>
+                <center>
+                    <Label styleClass="fxml_title" text="Customer Panel"/>
+                </center>
+            </BorderPane>
+            <HBox styleClass="box2Spacing">
+                <Label text="Password: "/>
+                <PasswordField fx:id="maintainerPasswdField" promptText="input password here..."/>
+            </HBox>
+            <HBox styleClass="box5Spacing">
+                <Label text="Valid Password" styleClass="originLabel" fx:id="validPasswdLabel"/>
+                <Label text="Invalid Password" styleClass="originLabel" fx:id="invalidPasswdLabel"/>
+            </HBox>
+        </VBox>
     </top>
 
+    <center>
+        <VBox styleClass="box20Spacing">
+            <Label text="Quantity of Coins Available"/>
+            <HBox styleClass="box5Spacing">
+                <ScrollPane>
+                    <VBox fx:id="coinContentVBox" styleClass="borderVBox">
+                        <!--this is the place for adding coin item-->
+                    </VBox>
+                </ScrollPane>
+                <Label fx:id="availableCoinNumLabel" styleClass="visibleLabel"/>
+            </HBox>
+            <Label text="Quantity of Coins Available"/>
+            <HBox styleClass="box5Spacing">
+                <VBox>
+                    <ScrollPane>
+                        <VBox fx:id="slotContentVBox" styleClass="borderVBox">
+                            <!--this is the place for adding coin item-->
+                        </VBox>
+                    </ScrollPane>
+                </VBox>
+                <Label fx:id="availableSlotNumLabel" styleClass="visibleLabel"/>
+            </HBox>
+            <HBox styleClass="box2Spacing">
+                <Label text="Brand Price"/>
+                <TextField styleClass="brandPriceTextField"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox styleClass="box10Spacing">
+            <HBox styleClass="box5Spacing">
+                <Button fx:id="showTotalCashButton" text="Show Total Cash Held"/>
+                <Label styleClass="visibleLabel"/>
+            </HBox>
+            <Button fx:id="collectAllCashButton" text="Press to Collect All Cash"/>
+            <HBox styleClass="box5Spacing">
+                <Label text="Collect Cash: "/>
+                <Label styleClass="visibleLabel"/>
+            </HBox>
+            <Button text="Press Here when Finished"/>
+        </VBox>
+    </bottom>
 </BorderPane>

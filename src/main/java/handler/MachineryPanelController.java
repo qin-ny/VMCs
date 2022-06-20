@@ -57,7 +57,6 @@ public class MachineryPanelController implements Initializable {
             coinQuantity.setId(String.join(";", coin.getName(), String.valueOf(index)));
             coinQuantity.getStyleClass().add("coinQuantity");
 
-            // force the field to be numeric only
             coinQuantity.textProperty().addListener(new ChangeListener<String>() {
                 @Override
                 public void changed(ObservableValue<? extends String> observable, String oldValue,
@@ -132,16 +131,15 @@ public class MachineryPanelController implements Initializable {
         int newQuantity;
         try{
             newQuantity = Integer.parseInt(newQuantityString);
+            coin.setQuantity(newQuantity);
         } catch (NumberFormatException e){
             System.out.println("Invalid integer parsing " + e.getMessage());
             return;
-        }
-        if(newQuantity >= 0 && newQuantity <= 40){
-            coin.setQuantity(newQuantity);
-            coinWarning.setVisible(false);
-        } else {
+        } catch (IllegalArgumentException e){
             coinWarning.setVisible(true);
+            return;
         }
+        coinWarning.setVisible(false);
     }
 
     private void updateSlotQuantity(Slot slot, String newQuantityString) {

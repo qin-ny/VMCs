@@ -1,6 +1,6 @@
-
 * {
     -fx-font-family: sans-serif;
+    /*-fx-font-size: 12;*/
 }
 
 .button, .radio-button {
@@ -20,6 +20,44 @@
     -fx-background-color: #66CCFF;
 }
 
+.radioButton {
+    -fx-pref-width: 100;
+    -fx-pref-height: 30;
+    -fx-background-color: #CCCCFF;
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+.radioButton:hover {
+    -fx-background-color: #99CCFF;
+}
+
+.radioButton:focused {
+    -fx-background-color: #0099FF;
+}
+
+.radioButton:selected {
+    -fx-background-color: #0099FF;
+}
+
+.borderVBox {
+    -fx-spacing: 10;
+    -fx-border-color: #00CCFF;
+    -fx-border-width: 1;
+    -fx-alignment: center;
+    -fx-padding: 2;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+
 .fxml_title {
     /*-fx-background-color: #00ff00;*/
     -fx-font-size: 20;
@@ -27,12 +65,13 @@
 }
 
 .frameBPane {
-    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-padding: 20;
 }
 
-.label {
-    -fx-font-size: 16;
-}
+/*.label {*/
+/*    -fx-font-size: 16;*/
+/*}*/
 
 .visibleLabel {
     -fx-min-width: 30;
@@ -66,4 +105,42 @@
     -fx-background-color: #C0C0C0;
     -fx-background-radius: 0;
     -fx-alignment: center;
+}
+
+.unFocusRadioButton {
+    -fx-pref-width: 100;
+    -fx-pref-height: 30;
+    -fx-background-color: #C0C0C0;
+    -fx-cursor: null;
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+    -fx-opacity: 0.8;
+}
+
+.box2Spacing {
+    -fx-spacing: 2;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
+}
+
+.box5Spacing {
+    -fx-spacing: 5;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
+}
+
+.box10Spacing {
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
+}
+
+.box20Spacing {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: transparent;
 }

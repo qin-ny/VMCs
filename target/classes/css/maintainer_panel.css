@@ -1,0 +1,13 @@
+
+#maintainerPasswdField {
+    -fx-pref-column-count: 6;
+}
+
+.brandPriceTextField {
+    -fx-min-width: 80;
+    /*-fx-border-width: 1;*/
+    /*-fx-border-color: #969696;*/
+    /*-fx-background-color: #FF9933;*/
+    /*-fx-background-radius: 0;*/
+    /*-fx-alignment: center;*/
+}

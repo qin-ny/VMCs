@@ -9,7 +9,7 @@ public class Coin {
     public Coin(String name, int weight, int quantity){
         this.name = name;
         this.weight = weight;
-        this.quantity = quantity;
+        this.setQuantity(quantity);
         this.currentEnteredQuantity = 0;
     }
 
@@ -30,8 +30,8 @@ public class Coin {
         this.currentEnteredQuantity = 0;
     }
 
-    public void enter(int number) {
-        this.currentEnteredQuantity += number;
+    public void enterCoin() {
+        this.currentEnteredQuantity += 1;
     }
 
     public String getName() {
@@ -50,14 +50,16 @@ public class Coin {
         this.weight = weight;
     }
 
-    public int getTotalQuantity() {return quantity;}
-
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantity(int quantity) throws IllegalArgumentException{
+        if(quantity >= 0 && quantity <= 40){
+            this.quantity = quantity;
+        } else {
+            throw new IllegalArgumentException("Coin quantity should between 0 and 40");
+        }
     }
 
     public int getCurrentEnteredQuantity() {

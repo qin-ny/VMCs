@@ -6,25 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import main.Start;
 import objects.Coin;
-import objects.Drink;
 import objects.Slot;
 import view.CustomerPanelView;
-import view.SimulatorControlPanelView;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class CustomerPanelController extends BaseController implements Initializable {
     @FXML
@@ -224,7 +217,7 @@ public class CustomerPanelController extends BaseController implements Initializ
         RadioButton selectedSlotButton = (RadioButton) selectedToggle;
 
         Coin coin = Start.jsonMachineConverter.machine.getCoinByName(button.getText()).get();
-        coin.enter(1);
+        coin.enterCoin();
 //        Start.jsonMachineConverter.machine.addCurrentMoney(coin);
         purchaseDrink(view, selectedSlotButton);
     }
