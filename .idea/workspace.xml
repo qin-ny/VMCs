@@ -33,40 +33,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/TestSuit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineData.json" beforeDir="false" afterPath="$PROJECT_DIR$/MachineData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handler/CustomerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/CustomerPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handler/MachineryPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/MachineryPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/OperatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/OperatorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/customer_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/customer_panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/maintainer_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/maintainer_panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/simulator_control_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/simulator_control_panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/customer_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/customer_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/simulator_control_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/simulator_control_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Slot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/BaseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/BaseView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/objects/CoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/objects/CoinTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +93,33 @@
       <recent name="objects" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CoinTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="VMCs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Start" />
+      <module name="VMCs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
@@ -171,31 +167,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoinTest.setCoinName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VMCs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="objects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.CoinTest" />
-      <option name="METHOD_NAME" value="setCoinName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSuit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VMCs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestSuit" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="vendingMach [hpi:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -222,20 +193,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Start" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CoinTest" />
       <item itemvalue="JUnit.CoinTest.getCurrentEnteredTotalValue" />
       <item itemvalue="JUnit.CoinTest.getTotalValueAfterOneCoinEntered" />
-      <item itemvalue="JUnit.CoinTest.setCoinName" />
-      <item itemvalue="JUnit.TestSuit" />
       <item itemvalue="Maven.vendingMach [hpi:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Start" />
         <item itemvalue="JUnit.CoinTest" />
         <item itemvalue="JUnit.CoinTest.getCurrentEnteredTotalValue" />
         <item itemvalue="JUnit.CoinTest.getTotalValueAfterOneCoinEntered" />
-        <item itemvalue="JUnit.CoinTest.setCoinName" />
-        <item itemvalue="JUnit.TestSuit" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +231,7 @@
       <workItem from="1655117939233" duration="993000" />
       <workItem from="1655124484692" duration="4571000" />
       <workItem from="1655187687964" duration="19087000" />
-      <workItem from="1655617584121" duration="35075000" />
+      <workItem from="1655617584121" duration="36415000" />
     </task>
     <servers />
   </component>

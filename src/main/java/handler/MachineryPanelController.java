@@ -146,16 +146,15 @@ public class MachineryPanelController implements Initializable {
         int newQuantity;
         try{
             newQuantity = Integer.parseInt(newQuantityString);
+            slot.setQuantity(newQuantity);
         } catch (NumberFormatException e){
             System.out.println("Invalid integer parsing " + e.getMessage());
             return;
-        }
-        if(newQuantity >= 0 && newQuantity <= 20){
-            slot.setQuantity(newQuantity);
-            drinkWarning.setVisible(false);
-        } else {
+        }catch (IllegalArgumentException e){
             drinkWarning.setVisible(true);
+            return;
         }
+        drinkWarning.setVisible(false);
     }
 
 

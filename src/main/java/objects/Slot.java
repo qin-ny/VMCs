@@ -26,7 +26,11 @@ public class Slot {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantity(int quantity) throws IllegalArgumentException{
+        if(quantity >= 0 && quantity <= 20){
+            this.quantity = quantity;
+        } else {
+            throw new IllegalArgumentException("Coin quantity should between 0 and 20");
+        }
     }
 }
