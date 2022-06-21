@@ -20,7 +20,7 @@
             </BorderPane>
             <HBox styleClass="box2Spacing">
                 <Label text="Password: "/>
-                <PasswordField fx:id="maintainerPasswdField" promptText="input password here..."/>
+                <PasswordField fx:id="maintainerPasswdField" promptText="input password here..." onKeyPressed="#handleFieldAction"/>
             </HBox>
             <HBox styleClass="box5Spacing">
                 <Label text="Valid Password" styleClass="originLabel" fx:id="validPasswdLabel"/>
@@ -53,7 +53,7 @@
             </HBox>
             <HBox styleClass="box2Spacing">
                 <Label text="Brand Price"/>
-                <TextField styleClass="brandPriceTextField"/>
+                <TextField fx:id="slotPriceTField" styleClass="slotPriceTextField" onKeyPressed="#handleFieldAction"/>
             </HBox>
         </VBox>
     </center>
@@ -61,15 +61,15 @@
     <bottom>
         <VBox styleClass="box10Spacing">
             <HBox styleClass="box5Spacing">
-                <Button fx:id="showTotalCashButton" text="Show Total Cash Held"/>
-                <Label styleClass="visibleLabel"/>
+                <Button fx:id="showTotalCashButton" text="Show Total Cash Held" onAction="#handleButtonAction"/>
+                <Label fx:id="showTotalCashLabel" styleClass="visibleLabel"/>
             </HBox>
-            <Button fx:id="collectAllCashButton" text="Press to Collect All Cash"/>
+            <Button fx:id="collectAllCashButton" text="Press to Collect All Cash" onAction="#handleButtonAction"/>
             <HBox styleClass="box5Spacing">
                 <Label text="Collect Cash: "/>
-                <Label styleClass="visibleLabel"/>
+                <Label fx:id="collectCashLabel" styleClass="visibleLabel"/>
             </HBox>
-            <Button text="Press Here when Finished"/>
+            <Button fx:id="logoutButton" text="Press Here when Finished" onAction="#handleButtonAction"/>
         </VBox>
     </bottom>
 </BorderPane>

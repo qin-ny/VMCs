@@ -61,10 +61,10 @@ public class MachineryPanelController implements Initializable {
                 @Override
                 public void changed(ObservableValue<? extends String> observable, String oldValue,
                                     String newValue) {
-                     if (!newValue.matches("/^[1-9][0-9]*$/")) {
+                    if (!newValue.matches("/^[1-9][0-9]*$/")) {
                         coinQuantity.setText(newValue.replaceAll("\\D", ""));
                     }
-                     updateCoinQuantity(coin, newValue);
+                    updateCoinQuantity(coin, newValue);
                 }
             });
 

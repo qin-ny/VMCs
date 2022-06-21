@@ -6,18 +6,25 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import main.Start;
 import objects.Coin;
+import objects.Drink;
 import objects.Slot;
 import view.CustomerPanelView;
+import view.SimulatorControlPanelView;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class CustomerPanelController extends BaseController implements Initializable {
     @FXML
@@ -42,7 +49,7 @@ public class CustomerPanelController extends BaseController implements Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
+        CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
         initCoinMenuHBox();
         initDrinkMenuVBox(view);
     }
@@ -155,32 +162,17 @@ public class CustomerPanelController extends BaseController implements Initializ
         collectCoinLabel.setText(refundMoney + " " + moneyType);
     }
 
-    private String getUniqueId(String type, int index, String suffix) {
-        return String.join("-", "slot", String.valueOf(index), suffix);
-    }
-
     private void unFocusSlot(CustomerPanelView view, RadioButton selectedSlotButton) {
         selectedSlotButton.setSelected(false);
     }
 
     private void purchaseDrink(CustomerPanelView view, RadioButton selectedSlotButton) {
         String moneyType = Start.getMachine().getMoneyType();
-//        System.out.println(selectedSlotButton.getId());
-        String[] valueList = selectedSlotButton.getId().split("-");
-//        System.out.println(Arrays.toString(selectedSlotButton.getId().split(";")));
-        Slot selectedSlot = Start.getMachine().getSlotByIndex(valueList[1]).get();
+        int slotIndex = getSlotIndexByFXId(selectedSlotButton.getId());
+        Slot selectedSlot = Start.getMachine().getSlotByIndex(slotIndex).get();
 
         int currentEnteredMoney = Start.getMachine().getCurrentEnteredMoney();
         int drinkPrice = selectedSlot.getDrink().getPrice();
-
-//        Label testStockLabel = (Label) view.getStage().getScene().lookup(
-//                "#" + String.join(
-//                        ";",
-//                        selectedSlot.getDrink().getName(),
-//                        valueList[1],
-//                        "stock")
-//        );
-//        System.out.println(testStockLabel);
 
         if (currentEnteredMoney >= drinkPrice) {
             int slotFinalQuantity = popDrink(selectedSlot);
@@ -191,9 +183,9 @@ public class CustomerPanelController extends BaseController implements Initializ
             currentEnteredMoney -= drinkPrice;
 
             if (slotFinalQuantity <= 0) {
-                System.out.println(getUniqueId("slot", Integer.parseInt(valueList[1]), "stock"));
+//                System.out.println(getUniqueId("slot", slotIndex, "stock"));
                 Label slotStockLabel = (Label) view.getStage().getScene().lookup(
-                        "#" + getUniqueId("slot", Integer.parseInt(valueList[1]), "stock")
+                        "#" + getUniqueId("slot", slotIndex, "stock")
                 );
                 disableSlot(selectedSlotButton, slotStockLabel);
             }
@@ -217,7 +209,7 @@ public class CustomerPanelController extends BaseController implements Initializ
         RadioButton selectedSlotButton = (RadioButton) selectedToggle;
 
         Coin coin = Start.getMachine().getCoinByName(button.getText()).get();
-        coin.enterCoin();
+        coin.enterCoin(1);
 //        Start.jsonMachineConverter.machine.addCurrentMoney(coin);
         purchaseDrink(view, selectedSlotButton);
     }
@@ -247,7 +239,7 @@ public class CustomerPanelController extends BaseController implements Initializ
     }
 
     public void handleButtonAction(ActionEvent actionEvent) {
-        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
+        CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
         Button button = (Button)actionEvent.getSource();
 
         switch (button.getId()) {

@@ -26,7 +26,7 @@ public class Slot {
         return quantity;
     }
 
-    public void setQuantity(int quantity) throws IllegalArgumentException{
+    public void setQuantity(int quantity) {
         if(quantity >= 0 && quantity <= 20){
             this.quantity = quantity;
         } else {

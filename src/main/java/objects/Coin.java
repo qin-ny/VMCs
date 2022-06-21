@@ -4,12 +4,12 @@ public class Coin {
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量
-    private transient int currentEnteredQuantity;
+    private int currentEnteredQuantity;
 
     public Coin(String name, int weight, int quantity){
         this.name = name;
         this.weight = weight;
-        this.setQuantity(quantity);
+        this.quantity = quantity;
         this.currentEnteredQuantity = 0;
     }
 
@@ -30,8 +30,8 @@ public class Coin {
         this.currentEnteredQuantity = 0;
     }
 
-    public void enterCoin() {
-        this.currentEnteredQuantity += 1;
+    public void enterCoin(int number) {
+        this.currentEnteredQuantity += number;
     }
 
     public String getName() {
@@ -50,11 +50,13 @@ public class Coin {
         this.weight = weight;
     }
 
+    public int getTotalQuantity() {return quantity + currentEnteredQuantity;}
+
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) throws IllegalArgumentException{
+    public void setQuantity(int quantity) {
         if(quantity >= 0 && quantity <= 40){
             this.quantity = quantity;
         } else {

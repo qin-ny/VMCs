@@ -10,8 +10,6 @@ public class Machine {
     private List<Slot> slots;
     private List<Coin> coins;
     private transient Set<Drink> drinks;
-
-
 //    private Map<String, Coin> currentEnteredCoins;
 
     public String getMoneyType() {
@@ -32,12 +30,16 @@ public class Machine {
         for (Coin coin: coins) {
             currentTotalCash += coin.getCurrentEnteredTotalValue();
         }
-//
-//        int currentTotalCash = 0;
-//        for (Coin coin: currentEnteredCoins.values()) {
-//            currentTotalCash += coin.getWeight() * coin.getQuantity();
-//        }
         return currentTotalCash;
+    }
+
+    public int collectALlCash() {
+        int allCash = getTotalCash();
+        for (Coin coin: coins) {
+             coin.setQuantity(0);
+             coin.setCurrentEnteredQuantity(0);
+        }
+        return allCash;
     }
 
 //    public Optional<Coin> getCurrentEnteredCoin(String name) {
@@ -71,6 +73,18 @@ public class Machine {
 //            }
         }
 
+    }
+
+    /**
+     * calculates the total cash in the machine
+     * @return the total cash in the machine
+     */
+    public int getTotalCash(){
+        int totalCash = 0;
+        for(Coin coin: coins){
+            totalCash += coin.getTotalValue();
+        }
+        return totalCash;
     }
 
 
@@ -127,17 +141,7 @@ public class Machine {
         return Optional.empty();
     }
 
-    /**
-     * calculates the total cash in the machine
-     * @return the total cash in the machine
-     */
-    public int getTotalCash(){
-        int totalCash = 0;
-        for(Coin coin: coins){
-            totalCash += coin.getTotalValue();
-        }
-        return totalCash;
-    }
+
 
     /**
      * collect all coins from the machine
