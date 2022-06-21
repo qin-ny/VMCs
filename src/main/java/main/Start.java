@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class Start extends Application {
 
-    public static enum ViewType {
+    public enum ViewType {
         MACHINERY_PANEL_VIEW,
         SIMULATOR_CONTROL_PANEL_VIEW,
         MAINTAINER_PANEL_VIEW,
@@ -31,7 +31,6 @@ public class Start extends Application {
     private static Machine machine;
     private static boolean simulationStatus;
 
-//    public static JsonMachineConverter jsonMachineConverter;
 
     public static BaseView getView(ViewType view) {
         return views.get(view);

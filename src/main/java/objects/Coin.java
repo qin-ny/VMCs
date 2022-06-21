@@ -4,7 +4,7 @@ public class Coin {
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量
-    private int currentEnteredQuantity;
+    private transient int currentEnteredQuantity;
 
     public Coin(String name, int weight, int quantity){
         this.name = name;

@@ -3,7 +3,7 @@
     -fx-pref-column-count: 6;
 }
 
-.brandPriceTextField {
+.slotPriceTextField {
     -fx-min-width: 80;
     /*-fx-border-width: 1;*/
     /*-fx-border-color: #969696;*/

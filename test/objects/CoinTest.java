@@ -73,7 +73,7 @@ public class CoinTest {
 
     @Test
     public void enterOneFiveCentsCoin() {
-        fiveCents.enterCoin();
+        fiveCents.enterCoin(1);
         assertEquals(1, fiveCents.getCurrentEnteredQuantity());
     }
 
@@ -85,26 +85,25 @@ public class CoinTest {
 
     @Test
     public void getTotalValueAfterOneCoinEntered() {
-        fiveCents.enterCoin();
+        fiveCents.enterCoin(1);
         assertEquals(5, fiveCents.getTotalValue());
     }
 
     @Test
     public void getCurrentEnteredTotalValue1() {
-        tenCents.enterCoin();
+        tenCents.enterCoin(1);
         assertEquals(10, tenCents.getCurrentEnteredTotalValue());
     }
 
     @Test
     public void getCurrentEnteredTotalValue2() {
-        tenCents.enterCoin();
-        tenCents.enterCoin();
+        tenCents.enterCoin(2);
         assertEquals(20, tenCents.getCurrentEnteredTotalValue());
     }
 
     @Test
     public void saveCurrentEnteredValue1() {
-        twentyCents.enterCoin();
+        twentyCents.enterCoin(1);
         assertEquals(19, twentyCents.getQuantity());
         assertEquals(1, twentyCents.getCurrentEnteredQuantity());
 
@@ -115,8 +114,7 @@ public class CoinTest {
 
     @Test
     public void saveCurrentEnteredValue2() {
-        twentyCents.enterCoin();
-        twentyCents.enterCoin();
+        twentyCents.enterCoin(2);
         assertEquals(19, twentyCents.getQuantity());
         assertEquals(2, twentyCents.getCurrentEnteredQuantity());
 
@@ -127,21 +125,19 @@ public class CoinTest {
 
     @Test
     public void getCurrentEnteredQuantity1() {
-        oneDollar.enterCoin();
+        oneDollar.enterCoin(1);
         assertEquals(1, oneDollar.getCurrentEnteredQuantity());
     }
 
     @Test
     public void getCurrentEnteredQuantity2() {
-        oneDollar.enterCoin();
-        oneDollar.enterCoin();
+        oneDollar.enterCoin(2);
         assertEquals(2, oneDollar.getCurrentEnteredQuantity());
     }
 
     @Test
     public void setCurrentEnteredQuantity() {
-        oneDollar.enterCoin();
-        oneDollar.enterCoin();
+        oneDollar.enterCoin(2);
         assertEquals(2, oneDollar.getCurrentEnteredQuantity());
 
         oneDollar.setCurrentEnteredQuantity(0);

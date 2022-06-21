@@ -30,7 +30,7 @@ public class Slot {
         if(quantity >= 0 && quantity <= 20){
             this.quantity = quantity;
         } else {
-            throw new IllegalArgumentException("Coin quantity should between 0 and 20");
+            throw new IllegalArgumentException("Slot quantity should between 0 and 20");
         }
     }
 }
