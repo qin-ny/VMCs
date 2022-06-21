@@ -12,51 +12,33 @@ import java.util.stream.Collectors;
 
 public class JsonMachineConverter {
 
-    public Machine machine;
-    private boolean simulationStatus;
-
     //测试json转换
 //    public static void main(String[] args) {
 //        machineObjectToJson(jsonToMachineObject().get());
 //    }
 
-    public JsonMachineConverter() {
-        jsonToMachineObject();
-        this.simulationStatus = false;
-    }
-
-    public void beginSimulation() {
-        this.simulationStatus = true;
-    }
-
-    public void endSimulation() {
-        this.simulationStatus = false;
-    }
-
-    public boolean getSimulationStatus() {
-        return this.simulationStatus;
-    }
-
-    private void jsonToMachineObject() {
+    public static Machine jsonToMachineObject(String inputJsonFile) {
         Gson gson = new Gson();
         try {
-            Reader reader = new BufferedReader(new FileReader(Constants.DATA_SOURCE));
+            Reader reader = new BufferedReader(new FileReader(inputJsonFile));
             Machine sallowConversion = gson.fromJson(reader, Machine.class);
-            this.machine = unifyDrink(sallowConversion);
-//            System.out.println(gson.toJson(machine));
+            Machine machine = unifyDrink(sallowConversion);
+            //            System.out.println(gson.toJson(machine));
             reader.close();
-
+            return machine;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
+
 
     /**
      *
      * @param sallowConversion
      * @return
      */
-    private Machine unifyDrink(Machine sallowConversion){
+    private static Machine unifyDrink(Machine sallowConversion){
         String password = sallowConversion.getPassword();
         List<Slot> slots = new ArrayList<>();
         List<Coin> coins = sallowConversion.getCoins();
@@ -85,15 +67,17 @@ public class JsonMachineConverter {
      *
      * @param machine
      */
-    public void machineObjectToJson(Machine machine) {
+    public static String machineObjectToJson(Machine machine, String outputJsonFile) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(machine);
         try {
-            Writer writer = new BufferedWriter(new FileWriter(Constants.DATA_SOURCE));
+            String json = gson.toJson(machine);
+            Writer writer = new BufferedWriter(new FileWriter(outputJsonFile));
             writer.write(json);
             writer.close();
+            return json;
         } catch (IOException e) {
             e.printStackTrace();
+            return "";
         }
     }
 }

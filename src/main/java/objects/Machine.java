@@ -10,6 +10,8 @@ public class Machine {
     private List<Slot> slots;
     private List<Coin> coins;
     private transient Set<Drink> drinks;
+
+
 //    private Map<String, Coin> currentEnteredCoins;
 
     public String getMoneyType() {

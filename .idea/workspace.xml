@@ -33,10 +33,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/util/JsonMachineConverterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/CustomerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/CustomerPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handler/MachineryPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/MachineryPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Slot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/MaintainerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/MaintainerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/SimulatorControlPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/SimulatorControlPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/JsonMachineConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/JsonMachineConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestSuit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestSuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestSuit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +64,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -90,10 +108,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/util" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="util" />
       <recent name="objects" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestSuit">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="VMCs" />
@@ -135,34 +154,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoinTest.getCurrentEnteredTotalValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonMachineConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="objects.*" />
+          <option name="PATTERN" value="util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.CoinTest" />
-      <option name="METHOD_NAME" value="getCurrentEnteredTotalValue" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="util" />
+      <option name="MAIN_CLASS_NAME" value="util.JsonMachineConverterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoinTest.getTotalValueAfterOneCoinEntered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="objects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.CoinTest" />
-      <option name="METHOD_NAME" value="getTotalValueAfterOneCoinEntered" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSuit" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,17 +207,17 @@
       <item itemvalue="Application.Start" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CoinTest" />
-      <item itemvalue="JUnit.CoinTest.getCurrentEnteredTotalValue" />
-      <item itemvalue="JUnit.CoinTest.getTotalValueAfterOneCoinEntered" />
+      <item itemvalue="JUnit.JsonMachineConverterTest" />
+      <item itemvalue="JUnit.TestSuit" />
       <item itemvalue="Maven.vendingMach [hpi:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSuit" />
+        <item itemvalue="JUnit.JsonMachineConverterTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Start" />
         <item itemvalue="JUnit.CoinTest" />
-        <item itemvalue="JUnit.CoinTest.getCurrentEnteredTotalValue" />
-        <item itemvalue="JUnit.CoinTest.getTotalValueAfterOneCoinEntered" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +242,7 @@
       <workItem from="1655117939233" duration="993000" />
       <workItem from="1655124484692" duration="4571000" />
       <workItem from="1655187687964" duration="19087000" />
-      <workItem from="1655617584121" duration="36415000" />
+      <workItem from="1655617584121" duration="43802000" />
     </task>
     <servers />
   </component>

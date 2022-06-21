@@ -49,7 +49,7 @@ public class CustomerPanelController extends BaseController implements Initializ
 
     private void initCoinMenuHBox() {
 
-        for(Coin coin :Start.jsonMachineConverter.machine.getCoins()) {
+        for(Coin coin :Start.getMachine().getCoins()) {
             Button coinButton = new Button(coin.getName());
             coinButton.setId(coin.getName());
             coinButton.getStyleClass().add("coinButton");
@@ -66,8 +66,8 @@ public class CustomerPanelController extends BaseController implements Initializ
     }
 
     private void initDrinkMenuVBox(CustomerPanelView view) {
-        List<Slot> slots = Start.jsonMachineConverter.machine.getSlots();
-        String moneyType = Start.jsonMachineConverter.machine.getMoneyType();
+        List<Slot> slots = Start.getMachine().getSlots();
+        String moneyType = Start.getMachine().getMoneyType();
 //        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
         ToggleGroup toggleGroup = view.getDrinkToggleGroup();
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
@@ -164,13 +164,13 @@ public class CustomerPanelController extends BaseController implements Initializ
     }
 
     private void purchaseDrink(CustomerPanelView view, RadioButton selectedSlotButton) {
-        String moneyType = Start.jsonMachineConverter.machine.getMoneyType();
+        String moneyType = Start.getMachine().getMoneyType();
 //        System.out.println(selectedSlotButton.getId());
         String[] valueList = selectedSlotButton.getId().split("-");
 //        System.out.println(Arrays.toString(selectedSlotButton.getId().split(";")));
-        Slot selectedSlot = Start.jsonMachineConverter.machine.getSlotByIndex(valueList[1]).get();
+        Slot selectedSlot = Start.getMachine().getSlotByIndex(valueList[1]).get();
 
-        int currentEnteredMoney = Start.jsonMachineConverter.machine.getCurrentEnteredMoney();
+        int currentEnteredMoney = Start.getMachine().getCurrentEnteredMoney();
         int drinkPrice = selectedSlot.getDrink().getPrice();
 
 //        Label testStockLabel = (Label) view.getStage().getScene().lookup(
@@ -187,7 +187,7 @@ public class CustomerPanelController extends BaseController implements Initializ
 
             unFocusSlot(view, selectedSlotButton);
 
-            Start.jsonMachineConverter.machine.saveCurrentMoney();
+            Start.getMachine().saveCurrentMoney();
             currentEnteredMoney -= drinkPrice;
 
             if (slotFinalQuantity <= 0) {
@@ -198,7 +198,7 @@ public class CustomerPanelController extends BaseController implements Initializ
                 disableSlot(selectedSlotButton, slotStockLabel);
             }
 
-            refundMoney(currentEnteredMoney, moneyType, Start.jsonMachineConverter.machine.getCoins());
+            refundMoney(currentEnteredMoney, moneyType, Start.getMachine().getCoins());
             totalMoneyLabel.setText("0 " + moneyType);
         } else {
             totalMoneyLabel.setText(currentEnteredMoney + " " + moneyType);
@@ -216,15 +216,15 @@ public class CustomerPanelController extends BaseController implements Initializ
 
         RadioButton selectedSlotButton = (RadioButton) selectedToggle;
 
-        Coin coin = Start.jsonMachineConverter.machine.getCoinByName(button.getText()).get();
+        Coin coin = Start.getMachine().getCoinByName(button.getText()).get();
         coin.enterCoin();
 //        Start.jsonMachineConverter.machine.addCurrentMoney(coin);
         purchaseDrink(view, selectedSlotButton);
     }
 
     private void handleTerminateTransaction(CustomerPanelView view, Button button) {
-        int currentEnteredMoney = Start.jsonMachineConverter.machine.getCurrentEnteredMoney();
-        String moneyType = Start.jsonMachineConverter.machine.getMoneyType();
+        int currentEnteredMoney = Start.getMachine().getCurrentEnteredMoney();
+        String moneyType = Start.getMachine().getMoneyType();
         totalMoneyLabel.setText("0 " + moneyType);
         collectCoinLabel.setText(currentEnteredMoney + " " + moneyType);
     }

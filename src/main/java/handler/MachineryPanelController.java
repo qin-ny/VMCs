@@ -44,7 +44,7 @@ public class MachineryPanelController implements Initializable {
 
     private void initCoinMenuVBox() {
         int index = 0;
-        for(Coin coin : Start.jsonMachineConverter.machine.getCoins()) {
+        for(Coin coin : Start.getMachine().getCoins()) {
             BorderPane coinRow = new BorderPane();
             coinRow.setId(coin.getName());
             coinRow.getStyleClass().add("coinRow");
@@ -79,7 +79,7 @@ public class MachineryPanelController implements Initializable {
 
     private void initDrinkMenuVBox() {
         int index = 0;
-        for(Slot slot: Start.jsonMachineConverter.machine.getSlots()){
+        for(Slot slot: Start.getMachine().getSlots()){
             BorderPane slotRow = new BorderPane();
             slotRow.setId(String.join(";", "slot", String.valueOf(index)));
             slotRow.getStyleClass().add("slotRow");
@@ -112,14 +112,14 @@ public class MachineryPanelController implements Initializable {
     }
 
     private void initDoorLock() {
-        boolean isDoorLocked = !Start.jsonMachineConverter.machine.getDoor().isOpen();
+        boolean isDoorLocked = !Start.getMachine().getDoor().isOpen();
         doorLock.setSelected(isDoorLocked);
         coinMenuVBox.setDisable(isDoorLocked);
         drinkMenuVBox.setDisable(isDoorLocked);
         doorLock.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                Start.jsonMachineConverter.machine.getDoor().setDoorStatus(!newValue);
+                Start.getMachine().getDoor().setDoorStatus(!newValue);
                 coinMenuVBox.setDisable(newValue);
                 drinkMenuVBox.setDisable(newValue);
             }

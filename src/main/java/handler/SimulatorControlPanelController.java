@@ -86,15 +86,15 @@ public class SimulatorControlPanelController implements Initializable {
     }
 
     private boolean checkSimulationStatus() {
-        return  Start.jsonMachineConverter.getSimulationStatus();
+        return  Start.getSimulationStatus();
     }
 
     private void beginSimulation() {
-        Start.jsonMachineConverter.beginSimulation();
+        Start.beginSimulation();
     }
 
     private void endSimulation() {
-        Start.jsonMachineConverter.endSimulation();
+        Start.endSimulation();
         Iterator<String> iterator = Start.views.keySet().iterator();
         while (iterator.hasNext()) {
             Object key = iterator.next();

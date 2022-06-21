@@ -1,0 +1,36 @@
+{
+  "password": "123456",
+  "slots": [
+    {
+      "drink": {
+        "name": "testDrink1",
+        "price": 75
+      },
+      "quantity": 3
+    },
+    {
+      "drink": {
+        "name": "testDrink2",
+        "price": 75
+      },
+      "quantity": 6
+    }
+  ],
+  "coins": [
+    {
+      "name": "20c",
+      "weight": 20,
+      "quantity": 9
+    },
+    {
+      "name": "10c",
+      "weight": 10,
+      "quantity": 37
+    },
+    {
+      "name": "5c",
+      "weight": 5,
+      "quantity": 5
+    }
+  ]
+}

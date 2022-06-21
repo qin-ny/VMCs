@@ -51,7 +51,7 @@ public class MaintainerPanelController extends BaseController implements Initial
                 selectCoin((RadioButton) nValue);
             }
         });
-        List<Coin> coins = Start.jsonMachineConverter.machine.getCoins();
+        List<Coin> coins = Start.getMachine().getCoins();
         for (Coin coin: coins) {
             RadioButton coinButton = new RadioButton(coin.getName());
             setRadioButton(coinButton, toggleGroup);
@@ -69,7 +69,7 @@ public class MaintainerPanelController extends BaseController implements Initial
                 selectSlot((RadioButton) nValue);
             }
         });
-        List<Slot> slots = Start.jsonMachineConverter.machine.getSlots();
+        List<Slot> slots = Start.getMachine().getSlots();
         int index = 0;
         for (Slot slot: slots) {
             RadioButton slotButton = new RadioButton(slot.getDrink().getName());
@@ -88,7 +88,7 @@ public class MaintainerPanelController extends BaseController implements Initial
     }
 
     private void selectSlot(RadioButton radioButton) {
-        List<Slot> slots = Start.jsonMachineConverter.machine.getSlots();
+        List<Slot> slots = Start.getMachine().getSlots();
         String[] valueList = radioButton.getId().split(";");
 
         availableSlotNumLabel.setText(String.valueOf(slots.get(Integer.parseInt(valueList[1])).getQuantity()));
