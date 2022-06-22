@@ -10,10 +10,6 @@ public class Slot {
         this.quantity = quantity;
     }
 
-    public Boolean isAvailable() {
-        return quantity == 0;
-    }
-
     public Drink getDrink() {
         return drink;
     }

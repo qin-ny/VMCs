@@ -33,27 +33,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/TestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/objects/DoorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/objects/DrinkTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/objects/MachineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/objects/SlotTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Machine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/objects/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Slot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/maintainer_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/maintainer_panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/InterfaceCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/InterfaceCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/InterfaceMaintainerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/InterfaceMaintainerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/InterfaceOperatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/InterfaceOperatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/OperatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/OperatorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/CustomerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfaceCustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfaceCustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfaceCustomerPanelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfaceCustomerPanelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfaceMachineryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfaceMachineryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfaceMaintainerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfaceMaintainerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfacePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfacePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/InterfaceSimulatorControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/InterfaceSimulatorControlPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MachineryPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/MaintainerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/Panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/Panel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/Panel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/Panel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/Panel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/Panel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/Panel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/Panel$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/Panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/SimulatorControlPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Drink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Drink.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/objects/CoinTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/objects/CoinTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/util/JsonMachineConverterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/util/JsonMachineConverterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/objects/CoinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/objects/CoinTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/BaseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/BaseView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSuit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestSuit.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +109,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -81,23 +127,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37696335&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.37696335",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -107,11 +154,11 @@
       <recent name="$PROJECT_DIR$/src/main/java/util" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="util" />
       <recent name="objects" />
+      <recent name="util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuit">
+  <component name="RunManager" selected="JUnit.TestSuite">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="VMCs" />
@@ -125,20 +172,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Start" />
-      <module name="VMCs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DoorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
@@ -147,22 +181,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.CoinTest" />
+      <option name="MAIN_CLASS_NAME" value="objects.DoorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonMachineConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SlotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="util.*" />
+          <option name="PATTERN" value="objects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="util" />
-      <option name="MAIN_CLASS_NAME" value="util.JsonMachineConverterTest" />
+      <option name="PACKAGE_NAME" value="objects" />
+      <option name="MAIN_CLASS_NAME" value="objects.SlotTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,6 +206,15 @@
       <module name="VMCs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestSuit" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VMCs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSuite" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,20 +246,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Start" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CoinTest" />
-      <item itemvalue="JUnit.JsonMachineConverterTest" />
+      <item itemvalue="JUnit.DoorTest" />
+      <item itemvalue="JUnit.SlotTest" />
+      <item itemvalue="JUnit.TestSuite" />
       <item itemvalue="JUnit.TestSuit" />
       <item itemvalue="Maven.vendingMach [hpi:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="JUnit.DoorTest" />
         <item itemvalue="JUnit.TestSuit" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.JsonMachineConverterTest" />
-        <item itemvalue="Application.Start" />
-        <item itemvalue="JUnit.CoinTest" />
+        <item itemvalue="JUnit.SlotTest" />
       </list>
     </recent_temporary>
   </component>

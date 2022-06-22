@@ -3,8 +3,6 @@ package objects;
 public class Drink {
     private String name;
     private int price; //in Singapore cents
-    private final static String  type = "c";
-
 
     public Drink(String name, int price) {
         this.name = name;
@@ -25,7 +23,4 @@ public class Drink {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
-    }
 }
