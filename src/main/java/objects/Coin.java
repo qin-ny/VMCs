@@ -1,6 +1,8 @@
 package objects;
 
-public class Coin {
+import observer.CoinObservable;
+
+public class Coin extends CoinObservable {
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量
@@ -28,10 +30,14 @@ public class Coin {
     public void saveCurrentEnteredValue() {
         this.quantity += this.currentEnteredQuantity;
         this.currentEnteredQuantity = 0;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.TOTAL_QUANTITY);
     }
 
     public void enterCoin(int number) {
         this.currentEnteredQuantity += number;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
     }
 
     public String getName() {
@@ -40,6 +46,8 @@ public class Coin {
 
     public void setName(String name) {
         this.name = name;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.NAME);
     }
 
     public int getWeight() {
@@ -48,6 +56,8 @@ public class Coin {
 
     public void setWeight(int weight) {
         this.weight = weight;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.WEIGHT);
     }
 
     public int getTotalQuantity() {return quantity + currentEnteredQuantity;}
@@ -59,6 +69,8 @@ public class Coin {
     public void setQuantity(int quantity) {
         if(quantity >= 0 && quantity <= 40){
             this.quantity = quantity;
+            setCoinChanged();
+            notifyCoinObservers(CoinObserverType.QUANTITY);
         } else {
             throw new IllegalArgumentException("Coin quantity should between 0 and 40");
         }
@@ -70,5 +82,7 @@ public class Coin {
 
     public void setCurrentEnteredQuantity(int quantity) {
         this.currentEnteredQuantity = quantity;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
     }
 }

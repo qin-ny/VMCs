@@ -8,7 +8,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="handler.CustomerPanelController"
+            fx:controller="controller.CustomerPanelController"
             prefHeight="350.0" prefWidth="300.0"
             styleClass="frameBPane">
     <top>
@@ -19,7 +19,7 @@
         </BorderPane>
     </top>
     <center>
-        <HBox styleClass="box2Spacing">
+        <HBox fx:id="centerVBox" styleClass="box2Spacing">
             <VBox styleClass="box20Spacing">
                 <VBox styleClass="box10Spacing">
                     <Label text="Enter Coins Here"/>
@@ -49,7 +49,7 @@
     </center>
 
     <bottom>
-        <BorderPane>
+        <BorderPane fx:id="bottomBPane">
             <center>
                 <VBox alignment="CENTER" styleClass="box10Spacing">
                     <BorderPane styleClass="collectCoinBPane">

@@ -21,7 +21,6 @@ public abstract class BaseView {
     protected String css, fxml, title;
 
     public void init() throws IOException {
-        //        PasswordField pass = new PasswordField();
 //        Platform.runLater(new Runnable() {
 //          @Override
 //          public void run() {
@@ -30,12 +29,6 @@ public abstract class BaseView {
 //        }
 //        );
 
-//        Group group = new Group();
-//        group.getChildren().add(button);
-//        Parent root = FXMLLoader.load(getClass().getResource("fxml/simulator_control_panel.fxml"),
-//                ResourceBundle.getBundle("config/config"));
-//        URL resource = getClass().getResource("");
-//        System.out.println(resource.toString());
         Parent root = FXMLLoader.load(getClass().getResource(baseFxmlPath + fxml));
         Scene scene = new Scene(root);
 
@@ -62,20 +55,8 @@ public abstract class BaseView {
         alert.showAndWait();
     }
 
-    public void setSuccessButton(Button button) {
-        button.setStyle("-fx-background-color: #33CC33");
-    }
-
-
     public Stage getStage() {
         return this.stage;
     }
 
-    public void setNormalRadioButton(RadioButton radioButton) {
-//        radioButton.
-    }
-
-    public void setUnFocusRadioButton(RadioButton radioButton) {
-
-    }
 }

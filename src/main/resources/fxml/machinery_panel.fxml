@@ -9,7 +9,7 @@
 <?import com.sun.javafx.charts.Legend?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="handler.MachineryPanelController"
+            fx:controller="controller.MachineryPanelController"
             prefHeight="350.0" prefWidth="300.0"
             styleClass="frameBPane">
     <top>
@@ -30,7 +30,7 @@
 
                         </VBox>
                     </ScrollPane>
-                    <Label fx:id="coinWarning" text="Quantity should between 0 and 40" styleClass="warningLabel"/>
+                    <Label fx:id="coinWarning" text="Quantity Should Between 0 and 40 And A Number" styleClass="warningLabel"/>
                 </VBox>
                 <VBox alignment="CENTER" styleClass="drinkVBox">
                     <Label text="Quantity of Cans"/>
@@ -39,7 +39,7 @@
 
                         </VBox>
                     </ScrollPane>
-                    <Label fx:id="drinkWarning" text="Quantity should between 0 and 20" styleClass="warningLabel"/>
+                    <Label fx:id="drinkWarning" text="Quantity should between 0 and 20 And A Number" styleClass="warningLabel"/>
                 </VBox>
             </VBox>
         </HBox>

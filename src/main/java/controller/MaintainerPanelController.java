@@ -1,10 +1,8 @@
-package handler;
+package controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -14,15 +12,18 @@ import javafx.scene.layout.VBox;
 import main.Start;
 import objects.Coin;
 import objects.Slot;
-import view.CustomerPanelView;
+import observer.CoinObservable;
+import observer.InterfaceCoinObserver;
+import observer.InterfaceSlotObserver;
+import observer.SlotObservable;
 import view.MaintainerPanelView;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
-public class MaintainerPanelController extends BaseController implements Initializable {
+public class MaintainerPanelController extends BaseController
+        implements Initializable, InterfaceSlotObserver, InterfaceCoinObserver {
 
     @FXML
     public PasswordField maintainerPasswdField;
@@ -48,12 +49,19 @@ public class MaintainerPanelController extends BaseController implements Initial
     public Label collectCashLabel;
     @FXML
     public Button logoutButton;
+    @FXML
+    public VBox centerVBox;
+    @FXML
+    public VBox bottomVBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
         initCoinContent(view);
         initSlotContent(view);
+        if (!Start.getMachine().getAuthorization()) {
+            lockPanel();
+        }
     }
 
     private void initCoinContent(MaintainerPanelView view) {
@@ -61,20 +69,21 @@ public class MaintainerPanelController extends BaseController implements Initial
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-                if (!view.getAuthorization()) {
-                    view.createAlert(Alert.AlertType.WARNING, "you haven't logged in yet!");
+                if (Start.getMachine().getAuthorization() | nValue == null) {
+                    handleSelectCoin((RadioButton) nValue);
                     return;
                 }
-                handleSelectCoin((RadioButton) nValue);
+                createLoginAlert(view);
             }
         });
         List<Coin> coins = Start.getMachine().getCoins();
         for (Coin coin: coins) {
             RadioButton coinButton = new RadioButton(coin.getName());
             setRadioButton(coinButton, toggleGroup);
-            coinButton.getStyleClass().add("radioButton");
-//            coinButton.getStyleClass().add("");
+            addStyleClass(coinButton, "radioButton");
             coinContentVBox.getChildren().add(coinButton);
+
+            registerCoinObserver(coin, this);
         }
     }
 
@@ -83,25 +92,33 @@ public class MaintainerPanelController extends BaseController implements Initial
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-                if (!view.getAuthorization()) {
-                    view.createAlert(Alert.AlertType.WARNING, "you haven't logged in yet!");
+                if (Start.getMachine().getAuthorization() | nValue == null) {
+                    handleSelectSlot((RadioButton) nValue);
                     return;
                 }
-                handleSelectSlot((RadioButton) nValue);
+                createLoginAlert(view);
             }
         });
         List<Slot> slots = Start.getMachine().getSlots();
-        int index = 0;
         for (Slot slot: slots) {
-            RadioButton slotButton = new RadioButton(slot.getDrink().getName());
-            slotButton.setId(getUniqueId("slot", index, "button"));
+            RadioButton slotButton = new RadioButton(slot.getName());
+            slotButton.setId(getUniqueId("slot", slot.getId(), "button"));
             setRadioButton(slotButton, toggleGroup);
-            slotButton.getStyleClass().add("radioButton");
-//            coinButton.getStyleClass().add("");
+            addStyleClass(slotButton, "radioButton");
             slotContentVBox.getChildren().add(slotButton);
 
-            index++;
+            registerSlotObserver(slot, this);
         }
+    }
+
+    private void lockPanel() {
+        centerVBox.setDisable(true);
+        bottomVBox.setDisable(true);
+    }
+
+    private void unlockPanel() {
+        centerVBox.setDisable(false);
+        bottomVBox.setDisable(false);
     }
 
     private void handleShowTotalCash(MaintainerPanelView view, Button button) {
@@ -118,19 +135,35 @@ public class MaintainerPanelController extends BaseController implements Initial
                         " " +
                         Start.getMachine().getMoneyType()
         );
-        handleShowTotalCash(view, button);
+//        handleShowTotalCash(view, button);
     }
 
     private void handleLogout(MaintainerPanelView view, Button button) {
-        view.setAuthorization(false);
-        setDefaultLabel(validPasswdLabel);
-        setFailureLabel(invalidPasswdLabel);
-        maintainerPasswdField.clear();
+        if (!Start.getMachine().getAuthorization()) {
+            lockPanel();
+            return;
+        };
+        if (!Start.getMachine().getDoor().isOpen()) {
+            Start.getMachine().setAuthorization(false);
+            setDefaultLabel(validPasswdLabel);
+            setDefaultLabel(invalidPasswdLabel);
+            maintainerPasswdField.clear();
+            if (view.getSlotToggleGroup().getSelectedToggle() != null) {
+                view.getSlotToggleGroup().getSelectedToggle().setSelected(false);
+            }
+            if (view.getCoinToggleGroup().getSelectedToggle() != null) {
+                view.getCoinToggleGroup().getSelectedToggle().setSelected(false);
+            }
+            lockPanel();
+        } else {
+            view.createAlert(Alert.AlertType.WARNING, "You Haven't Locked The Door!");
+        }
     }
 
     private void handleLogin(MaintainerPanelView view, PasswordField field) {
-        if (view.getAuthorization()) {
+        if (Start.getMachine().getAuthorization()) {
             view.createAlert(Alert.AlertType.INFORMATION, "You Have Already Logged In!");
+            unlockPanel();
             return;
         }
 
@@ -140,7 +173,9 @@ public class MaintainerPanelController extends BaseController implements Initial
             return;
         }
         if (passwd.equals(Start.getMachine().getPassword())) {
-            view.setAuthorization(true);
+            Start.getMachine().setAuthorization(true);
+            unlockPanel();
+            Start.getMachine().getDoor().setDoorStatus(true);
             setSuccessLabel(validPasswdLabel);
             setDefaultLabel(invalidPasswdLabel);
         } else {
@@ -155,7 +190,7 @@ public class MaintainerPanelController extends BaseController implements Initial
     }
 
     private void handleSlotPriceChange(MaintainerPanelView view, TextField field) {
-        if (!view.getAuthorization()) {
+        if (!Start.getMachine().getAuthorization()) {
             createLoginAlert(view);
             return;
         }
@@ -173,13 +208,17 @@ public class MaintainerPanelController extends BaseController implements Initial
         }
 
         RadioButton slotButton = (RadioButton) selectedToggle;
-        Start.getMachine().getSlotByIndex(getSlotIndexByFXId(slotButton.getId())).get()
-                .getDrink().setPrice(Integer.parseInt(value));
+        Start.getMachine().getSlotById(getSlotIdByUniqueId(slotButton.getId())).get()
+                .setPrice(Integer.parseInt(value));
         view.createAlert(Alert.AlertType.INFORMATION, "Successful to Change The Quantity of " + slotButton.getText() + "!");
-        field.setText(value + " " + Start.getMachine().getMoneyType());
+//        field.setText(value + " " + Start.getMachine().getMoneyType());
     }
 
     private void handleSelectCoin(RadioButton radioButton) {
+        if (radioButton == null) {
+            availableCoinNumLabel.setText("");
+            return;
+        }
         availableCoinNumLabel.setText(
             String.valueOf(
                 Start.getMachine().getCoinByName(radioButton.getText()).get().getTotalQuantity()
@@ -188,10 +227,15 @@ public class MaintainerPanelController extends BaseController implements Initial
     }
 
     private void handleSelectSlot(RadioButton radioButton) {
+        if (radioButton == null) {
+            availableSlotNumLabel.setText("");
+            slotPriceTField.setText("");
+            return;
+        }
         List<Slot> slots = Start.getMachine().getSlots();
-        Slot slot = slots.get(getSlotIndexByFXId(radioButton.getId()));
+        Slot slot = slots.get(getSlotIdByUniqueId(radioButton.getId()));
         availableSlotNumLabel.setText(String.valueOf(slot.getQuantity()));
-        slotPriceTField.setText(slot.getDrink().getPrice() + Start.getMachine().getMoneyType());
+        slotPriceTField.setText(slot.getPrice() + " " + Start.getMachine().getMoneyType());
     }
 
     @FXML
@@ -214,7 +258,7 @@ public class MaintainerPanelController extends BaseController implements Initial
     public void handleButtonAction(ActionEvent actionEvent) {
         MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
         Button button = (Button)actionEvent.getSource();
-        if (!view.getAuthorization()) {
+        if (!Start.getMachine().getAuthorization()) {
             createLoginAlert(view);
             return;
         }
@@ -231,4 +275,58 @@ public class MaintainerPanelController extends BaseController implements Initial
         }
     }
 
+    private void refreshCoinQuantity(Coin coin) {
+        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
+        Toggle toggle = view.getCoinToggleGroup().getSelectedToggle();
+        if (!Start.getMachine().getAuthorization() | toggle == null) return;
+        RadioButton coinButton = (RadioButton) toggle;
+
+        if (showTotalCashLabel.getText() != "") {
+            showTotalCashLabel.setText(Start.getMachine().getTotalCash() + " " + Start.getMachine().getMoneyType());
+        }
+
+        if (coinButton == null | !coinButton.getText().equals(coin.getName())) return;
+        availableCoinNumLabel.setText(String.valueOf(coin.getTotalQuantity()));
+    }
+
+    private void refreshSlotPrice(Slot slot) {
+        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
+        Toggle toggle = view.getCoinToggleGroup().getSelectedToggle();
+        if (!Start.getMachine().getAuthorization() | toggle == null) return;
+        RadioButton slotButton = (RadioButton) toggle;
+        if (getSlotIdByUniqueId(slotButton.getId()) != slot.getId()) return;
+        slotPriceTField.setText(slot.getPrice() + " " + Start.getMachine().getMoneyType());
+    }
+
+    private void refreshSlotQuantity(Slot slot) {
+        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
+        Toggle toggle = view.getSlotToggleGroup().getSelectedToggle();
+        if (!Start.getMachine().getAuthorization() | toggle == null) return;
+        RadioButton slotButton = (RadioButton) toggle;
+        if (getSlotIdByUniqueId(slotButton.getId()) != slot.getId()) return;
+        availableSlotNumLabel.setText(String.valueOf(slot.getQuantity()));
+    }
+
+    @Override
+    public void updateCoin(CoinObservable coin, Object arg) {
+        switch (((CoinObservable.CoinObserverType) arg)) {
+            case CURRENT_ENTERED_QUANTITY:
+            case QUANTITY:
+            case TOTAL_QUANTITY:
+                refreshCoinQuantity((Coin) coin);
+                break;
+        }
+    }
+
+    @Override
+    public void updateSlot(SlotObservable slot, Object arg) {
+        switch ((SlotObservable.SlotObserverType) arg) {
+            case PRICE:
+                refreshSlotPrice((Slot) slot);
+                break;
+            case QUANTITY:
+                refreshSlotQuantity((Slot) slot);
+                break;
+        }
+    }
 }

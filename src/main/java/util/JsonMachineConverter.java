@@ -18,6 +18,7 @@ public class JsonMachineConverter {
 //    }
 
     public static Machine jsonToMachineObject(String inputJsonFile) {
+
         Gson gson = new Gson();
         try {
             Reader reader = new BufferedReader(new FileReader(inputJsonFile));
@@ -48,15 +49,16 @@ public class JsonMachineConverter {
                 .collect(Collectors.toList());
 
         sallowConversion.getSlots().forEach(slot -> {
-            String drinkName = slot.getDrink().getName();
-            int drinkPrice = slot.getDrink().getPrice();
+            String drinkName = slot.getName();
+            int drinkPrice = slot.getPrice();
             int drinkQuantity = slot.getQuantity();
+            int slotId = slot.getId();
             if(!drinksMap.containsKey(drinkName)){
                 Drink drink = new Drink(drinkName, drinkPrice);
                 drinksMap.put(drinkName, drink);
-                slots.add(new Slot(drink, drinkQuantity));
+                slots.add(new Slot(slotId, drink, drinkQuantity));
             } else {
-                slots.add(new Slot(drinksMap.get(drinkName),drinkQuantity));
+                slots.add(new Slot(slotId, drinksMap.get(drinkName),drinkQuantity));
             }
         });
 

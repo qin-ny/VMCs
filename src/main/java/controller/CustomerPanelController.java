@@ -1,4 +1,4 @@
-package handler;
+package controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -6,27 +6,24 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import main.Start;
 import objects.Coin;
-import objects.Drink;
+import objects.Machine;
 import objects.Slot;
+import observer.*;
 import view.CustomerPanelView;
-import view.SimulatorControlPanelView;
+import view.MaintainerPanelView;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
-public class CustomerPanelController extends BaseController implements Initializable {
+public class CustomerPanelController extends BaseController
+        implements Initializable, InterfaceCoinObserver, InterfaceSlotObserver, InterfaceAuthorizationObserver {
     @FXML
     public HBox coinMenuHBox;
     @FXML
@@ -45,6 +42,10 @@ public class CustomerPanelController extends BaseController implements Initializ
     public Label totalMoneyLabel;
     @FXML
     public Button invalidCoin;
+    @FXML
+    public HBox centerVBox;
+    @FXML
+    public BorderPane bottomBPane;
 
 
     @Override
@@ -52,6 +53,7 @@ public class CustomerPanelController extends BaseController implements Initializ
         CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
         initCoinMenuHBox();
         initDrinkMenuVBox(view);
+        registerAuthorizationObserver(Start.getMachine(), this);
     }
 
     private void initCoinMenuHBox() {
@@ -59,7 +61,7 @@ public class CustomerPanelController extends BaseController implements Initializ
         for(Coin coin :Start.getMachine().getCoins()) {
             Button coinButton = new Button(coin.getName());
             coinButton.setId(coin.getName());
-            coinButton.getStyleClass().add("coinButton");
+            addStyleClass(coinButton, "coinButton");
             coinButton.setOnAction(new EventHandler<ActionEvent>(){
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -69,42 +71,38 @@ public class CustomerPanelController extends BaseController implements Initializ
             });
             coinMenuHBox.getChildren().add(0, coinButton);
 
+            registerCoinObserver(coin, this);
         }
     }
 
     private void initDrinkMenuVBox(CustomerPanelView view) {
         List<Slot> slots = Start.getMachine().getSlots();
         String moneyType = Start.getMachine().getMoneyType();
-//        CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
         ToggleGroup toggleGroup = view.getDrinkToggleGroup();
         toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-//                CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
                 if (nValue == null) return;
                 purchaseDrink(view, (RadioButton) nValue);
-//                System.out.println(nValue.toString());
-//                handleToggleSelection(observableValue, oValue, nValue, slots);
             }
         });
-        int index = 0;
         for (Slot slot: slots) {
             BorderPane drinkBPane = new BorderPane();
-//            drinkBPane.setId(String.join(";", slot.getDrink().getName(), String.valueOf(index)));
-            drinkBPane.getStyleClass().add("drinkBPane");
+            addStyleClass(drinkBPane, "drinkBPane");
 
-            RadioButton radioButton = new RadioButton(slot.getDrink().getName());
-            radioButton.setId(getUniqueId("slot", index, "button"));
+            RadioButton radioButton = new RadioButton(slot.getName());
+            int slotId = slot.getId();
+            radioButton.setId(getUniqueId("slot", slotId, "button"));
             setRadioButton(radioButton, toggleGroup);
             drinkBPane.setLeft(radioButton);
 
-            Label priceLabel = new Label(slot.getDrink().getPrice() + " " + moneyType);
-            priceLabel.setId(getUniqueId("slot", index, "price"));
-            priceLabel.getStyleClass().add("drinkPriceLabel");
+            Label priceLabel = new Label(slot.getPrice() + " " + moneyType);
+            priceLabel.setId(getUniqueId("slot", slotId, "price"));
+            addStyleClass(priceLabel, "drinkPriceLabel");
             drinkBPane.setCenter(priceLabel);
 
             Label stockLabel = new Label();
-            stockLabel.setId(getUniqueId("slot", index, "stock"));
+            stockLabel.setId(getUniqueId("slot", slotId, "stock"));
             if (slot.getQuantity() <= 0) {
                 disableSlot(radioButton, stockLabel);
             } else {
@@ -113,7 +111,7 @@ public class CustomerPanelController extends BaseController implements Initializ
             drinkBPane.setRight(stockLabel);
             drinkMenuVBox.getChildren().add(drinkBPane);
 
-            index++;
+            registerSlotObserver(slot, this);
         }
 //        view.setDrinkToggleGroup(toggleGroup);
 //        ((CustomerPanelView) Start.views.get("customerPanelView")).setDrinkToggleGroup(toggleGroup);
@@ -123,7 +121,7 @@ public class CustomerPanelController extends BaseController implements Initializ
     private int popDrink(Slot slot) {
 //        System.out.println(slot.getQuantity());
         slot.setQuantity(slot.getQuantity() - 1);
-        collectCanLabel.setText(slot.getDrink().getName());
+        collectCanLabel.setText(slot.getName());
         return  slot.getQuantity();
 //        System.out.println(Start.jsonMachineConverter.machine.getSlotByName(slot.getDrink().getName()).get().getQuantity());
     }
@@ -168,11 +166,11 @@ public class CustomerPanelController extends BaseController implements Initializ
 
     private void purchaseDrink(CustomerPanelView view, RadioButton selectedSlotButton) {
         String moneyType = Start.getMachine().getMoneyType();
-        int slotIndex = getSlotIndexByFXId(selectedSlotButton.getId());
-        Slot selectedSlot = Start.getMachine().getSlotByIndex(slotIndex).get();
+        int slotIndex = getSlotIdByUniqueId(selectedSlotButton.getId());
+        Slot selectedSlot = Start.getMachine().getSlotById(slotIndex).get();
 
         int currentEnteredMoney = Start.getMachine().getCurrentEnteredMoney();
-        int drinkPrice = selectedSlot.getDrink().getPrice();
+        int drinkPrice = selectedSlot.getPrice();
 
         if (currentEnteredMoney >= drinkPrice) {
             int slotFinalQuantity = popDrink(selectedSlot);
@@ -182,19 +180,19 @@ public class CustomerPanelController extends BaseController implements Initializ
             Start.getMachine().saveCurrentMoney();
             currentEnteredMoney -= drinkPrice;
 
-            if (slotFinalQuantity <= 0) {
-//                System.out.println(getUniqueId("slot", slotIndex, "stock"));
-                Label slotStockLabel = (Label) view.getStage().getScene().lookup(
-                        "#" + getUniqueId("slot", slotIndex, "stock")
-                );
-                disableSlot(selectedSlotButton, slotStockLabel);
-            }
+//            if (slotFinalQuantity <= 0) {
+//                Label slotStockLabel = (Label) view.getStage().getScene().lookup(
+//                        "#" + getUniqueId("slot", slotIndex, "stock")
+//                );
+//                disableSlot(selectedSlotButton, slotStockLabel);
+//            }
 
             refundMoney(currentEnteredMoney, moneyType, Start.getMachine().getCoins());
-            totalMoneyLabel.setText("0 " + moneyType);
-        } else {
-            totalMoneyLabel.setText(currentEnteredMoney + " " + moneyType);
+//            totalMoneyLabel.setText("0 " + moneyType);
         }
+//        else {
+//            totalMoneyLabel.setText(currentEnteredMoney + " " + moneyType);
+//        }
     }
 
     // valueList = [slotName, index, suffix]
@@ -222,17 +220,18 @@ public class CustomerPanelController extends BaseController implements Initializ
     }
 
     private void disableSlot(RadioButton radioButton, Label stockLabel) {
-
         radioButton.setDisable(true);
-        radioButton.getStyleClass().add("unFocusRadioButton");
+        radioButton.getStyleClass().remove("radioButton");
+        addStyleClass(radioButton, "unFocusRadioButton");
 
         stockLabel.setText("Not In Stock");
         setFailureLabel(stockLabel);
-        stockLabel.getStyleClass().add("failureLabel");
     }
 
     private void activateSlot(RadioButton radioButton, Label stockLabel) {
-        radioButton.getStyleClass().add("radioButton");
+        radioButton.setDisable(false);
+        radioButton.getStyleClass().remove("unFocusRadioButton");
+        addStyleClass(radioButton, "radioButton");
 
         stockLabel.setText("In Stock");
         setSuccessLabel(stockLabel);
@@ -255,15 +254,100 @@ public class CustomerPanelController extends BaseController implements Initializ
         }
     }
 
-//    public void handleToggleSelection(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue, List<Slot> slots) {
-//        RadioButton selectedButton = (RadioButton) nValue;
-//        for (Slot slot: slots) {
-//            if (slot.getDrink().getName().equals(selectedButton.getText())) {
-//                CustomerPanelView view = (CustomerPanelView) Start.views.get("customerPanelView");
-//                view.selectSlot(slot);
-//                break;
-//            }
-//        }
-//
-//    }
+    private void refreshCurrentEnteredCash(Coin coin) {
+        String moneyType = Start.getMachine().getMoneyType();
+        totalMoneyLabel.setText(coin.getCurrentEnteredTotalValue() + moneyType);
+    }
+
+    private void refreshCash(Coin coin) {
+        return;
+    }
+
+    private void refreshTotalCash(Coin coin) {
+        refreshCash(coin);
+        refreshCurrentEnteredCash(coin);
+    }
+
+    private void refreshSlotPrice(Slot slot) {
+        CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
+        Label slotPriceLabel = (Label) view.getStage().getScene().lookup(
+                "#" + getUniqueId("slot", slot.getId(), "price")
+        );
+        slotPriceLabel.setText(String.valueOf(slot.getPrice()));
+    }
+
+    private void refreshSlotQuantity(Slot slot, CustomerPanelView view) {
+        Label slotStockLabel = (Label) view.getStage().getScene().lookup(
+                "#" + getUniqueId("slot", slot.getId(), "stock")
+        );
+        RadioButton slotButton = (RadioButton)  view.getStage().getScene().lookup(
+                "#" + getUniqueId("slot", slot.getId(), "button")
+        );
+
+        if (slot.getQuantity() <= 0) {
+            slotButton.setSelected(false);
+            disableSlot(slotButton, slotStockLabel);
+        } else {
+            activateSlot(slotButton, slotStockLabel);
+        }
+    }
+
+    private void lockPanel(CustomerPanelView view) {
+        Toggle toggle = view.getDrinkToggleGroup().getSelectedToggle();
+        if (toggle != null) {
+            toggle.setSelected(false);
+        }
+
+        String moneyType = Start.getMachine().getMoneyType();
+        collectCoinLabel.setText(Start.getMachine().collectCurrentEnteredCash() + " " + moneyType);
+
+        centerVBox.setDisable(true);
+        bottomBPane.setDisable(true);
+    }
+
+    private void unlockPanel(CustomerPanelView view) {
+        centerVBox.setDisable(false);
+        bottomBPane.setDisable(false);
+    }
+
+    @Override
+    public void updateCoin(CoinObservable coin, Object arg) {
+        switch (((CoinObservable.CoinObserverType) arg)) {
+            case CURRENT_ENTERED_QUANTITY:
+                refreshCurrentEnteredCash((Coin) coin);
+                break;
+            case QUANTITY:
+//                refreshCash((Coin) coin);
+                break;
+            case TOTAL_QUANTITY:
+                refreshTotalCash((Coin) coin);
+                break;
+            case WEIGHT:
+                break;
+        }
+    }
+
+    @Override
+    public void updateSlot(SlotObservable slot, Object arg) {
+        CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
+        switch ((SlotObservable.SlotObserverType) arg) {
+            case PRICE:
+                refreshSlotPrice((Slot) slot);
+                break;
+            case QUANTITY:
+                refreshSlotQuantity((Slot) slot, view);
+                break;
+        }
+    }
+
+    @Override
+    public void updateAuthorization(AuthorizationObservable authorization, Object arg) {
+        CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
+        Machine machine =  (Machine) authorization;
+        if (machine.getAuthorization()) {
+            lockPanel(view);
+        } else {
+            unlockPanel(view);
+        }
+    }
 }

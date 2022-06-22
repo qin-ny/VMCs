@@ -1,10 +1,8 @@
 package main;
 
-import controller.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import handler.*;
 import objects.Machine;
 import util.Constants;
 import util.JsonMachineConverter;
@@ -30,7 +28,6 @@ public class Start extends Application {
     private static Map<ViewType, BaseView> views = new HashMap<>(){};
     private static Machine machine;
     private static boolean simulationStatus;
-
 
     public static BaseView getView(ViewType view) {
         return views.get(view);

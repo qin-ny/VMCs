@@ -1,10 +1,13 @@
 package objects;
 
-public class Door {
+import observer.DoorObservable;
+
+public class Door extends DoorObservable {
 
     private boolean isOpen;
 
     public Door(boolean isOpen) {
+        super();
         this.isOpen = isOpen;
     }
 
@@ -14,6 +17,8 @@ public class Door {
 
     public void setDoorStatus(boolean open) {
         isOpen = open;
+        setDoorChanged();
+        notifyDoorObservers();
     }
 
 
