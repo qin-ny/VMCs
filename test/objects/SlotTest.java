@@ -17,9 +17,36 @@ public class SlotTest {
     }
 
     @Test
+    public void getId() {
+        assertEquals(0, colaSlot.getId());
+    }
+
+    @Test
     public void getDrink() {
         assertEquals("Coca-Cola", colaSlot.getDrink().getName());
         assertEquals(55, colaSlot.getDrink().getPrice());
+    }
+
+    @Test
+    public void getName() {
+        assertEquals("Coca-Cola", colaSlot.getName());
+    }
+
+    @Test
+    public void setName() {
+        colaSlot.setName("Coca-Colala");
+        assertEquals("Coca-Colala", colaSlot.getName());
+    }
+
+    @Test
+    public void getPrice() {
+        assertEquals(55, colaSlot.getPrice());
+    }
+
+    @Test
+    public void setPrice() {
+        colaSlot.setPrice(20);
+        assertEquals(20, colaSlot.getPrice());
     }
 
 //    @Test

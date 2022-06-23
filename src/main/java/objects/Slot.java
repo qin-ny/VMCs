@@ -45,10 +45,6 @@ public class Slot extends SlotObservable {
         notifySlotObservers(SlotObserverType.PRICE);
     }
 
-    public String getType() {
-        return drink.getType();
-    }
-
     public int getQuantity() {
         return quantity;
     }
