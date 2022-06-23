@@ -7,6 +7,7 @@ public class DoorObservable {
     private transient Vector doorObs;
 
     public DoorObservable() {
+        doorObs = new Vector();
     }
 
     protected synchronized void setDoorChanged() {

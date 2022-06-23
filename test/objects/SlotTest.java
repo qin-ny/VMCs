@@ -13,7 +13,7 @@ public class SlotTest {
     @Before
     public void setUp() throws Exception {
         cocaCola = new Drink("Coca-Cola", 55);
-        colaSlot = new Slot(cocaCola, 20);
+        colaSlot = new Slot(0, cocaCola, 20);
     }
 
     @Test
@@ -22,13 +22,13 @@ public class SlotTest {
         assertEquals(55, colaSlot.getDrink().getPrice());
     }
 
-    @Test
-    public void setDrink() {
-        Drink newDrink = new Drink("newDrink", 999);
-        colaSlot.setDrink(newDrink);
-        assertEquals("newDrink", colaSlot.getDrink().getName());
-        assertEquals(999, colaSlot.getDrink().getPrice());
-    }
+//    @Test
+//    public void setDrink() {
+//        Drink newDrink = new Drink("newDrink", 999);
+//        colaSlot.setDrink(newDrink);
+//        assertEquals("newDrink", colaSlot.getDrink().getName());
+//        assertEquals(999, colaSlot.getDrink().getPrice());
+//    }
 
     @Test
     public void getQuantity() {

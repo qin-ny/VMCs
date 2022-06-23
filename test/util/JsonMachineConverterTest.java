@@ -23,6 +23,7 @@ public class JsonMachineConverterTest {
                 "  \"password\": \"123456\",\n" +
                 "  \"slots\": [\n" +
                 "    {\n" +
+                "      \"id\": 0,\n" +
                 "      \"drink\": {\n" +
                 "        \"name\": \"testDrink1\",\n" +
                 "        \"price\": 75\n" +
@@ -30,6 +31,7 @@ public class JsonMachineConverterTest {
                 "      \"quantity\": 3\n" +
                 "    },\n" +
                 "    {\n" +
+                "      \"id\": 1,\n" +
                 "      \"drink\": {\n" +
                 "        \"name\": \"testDrink2\",\n" +
                 "        \"price\": 75\n" +

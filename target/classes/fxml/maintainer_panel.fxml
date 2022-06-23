@@ -8,14 +8,14 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="handler.MaintainerPanelController"
+            fx:controller="controller.MaintainerPanelController"
             prefHeight="350.0" prefWidth="300.0"
             styleClass="frameBPane">
     <top>
         <VBox styleClass="box5Spacing">
             <BorderPane>
                 <center>
-                    <Label styleClass="fxml_title" text="Customer Panel"/>
+                    <Label styleClass="fxml_title" text="Maintainer Panel"/>
                 </center>
             </BorderPane>
             <HBox styleClass="box2Spacing">
@@ -30,7 +30,7 @@
     </top>
 
     <center>
-        <VBox styleClass="box20Spacing">
+        <VBox fx:id="centerVBox" styleClass="box20Spacing">
             <Label text="Quantity of Coins Available"/>
             <HBox styleClass="box5Spacing">
                 <ScrollPane>
@@ -59,7 +59,7 @@
     </center>
 
     <bottom>
-        <VBox styleClass="box10Spacing">
+        <VBox fx:id="bottomVBox" styleClass="box10Spacing">
             <HBox styleClass="box5Spacing">
                 <Button fx:id="showTotalCashButton" text="Show Total Cash Held" onAction="#handleButtonAction"/>
                 <Label fx:id="showTotalCashLabel" styleClass="visibleLabel"/>

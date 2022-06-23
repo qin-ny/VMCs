@@ -2,6 +2,7 @@
   "password": "123456",
   "slots": [
     {
+      "id": 0,
       "drink": {
         "name": "testDrink1",
         "price": 75
@@ -9,6 +10,7 @@
       "quantity": 3
     },
     {
+      "id": 1,
       "drink": {
         "name": "testDrink2",
         "price": 75

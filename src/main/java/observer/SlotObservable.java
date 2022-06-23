@@ -13,6 +13,7 @@ public class SlotObservable {
     private transient Vector slotObs;
 
     public SlotObservable() {
+        slotObs = new Vector();
     }
 
     protected synchronized void setSlotChanged() {

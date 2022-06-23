@@ -12,9 +12,10 @@ public class CoinObservable {
     }
 
     private transient boolean changed = false;
-    private transient Vector coinObs = new Vector();
+    private transient Vector coinObs;
 
     public CoinObservable() {
+        coinObs = new Vector();
     }
 
     protected synchronized void setCoinChanged() {
