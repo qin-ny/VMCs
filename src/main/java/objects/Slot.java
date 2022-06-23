@@ -59,7 +59,7 @@ public class Slot extends SlotObservable {
             setSlotChanged();
             notifySlotObservers(SlotObserverType.QUANTITY);
         } else {
-            throw new IllegalArgumentException("Coin quantity should between 0 and 20");
+            throw new IllegalArgumentException("Slot quantity should between 0 and 20");
         }
     }
 }

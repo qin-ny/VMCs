@@ -3,8 +3,8 @@ package observer;
 import java.util.Vector;
 
 public class DoorObservable {
-    private boolean changed = false;
-    private Vector doorObs = new Vector();
+    private transient boolean changed = false;
+    private transient Vector doorObs;
 
     public DoorObservable() {
     }

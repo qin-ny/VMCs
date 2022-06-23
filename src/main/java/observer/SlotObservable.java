@@ -9,8 +9,8 @@ public class SlotObservable {
         QUANTITY
     }
 
-    private boolean changed = false;
-    private Vector slotObs = new Vector();;
+    private transient boolean changed = false;
+    private transient Vector slotObs;
 
     public SlotObservable() {
     }
