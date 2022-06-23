@@ -16,7 +16,6 @@ import objects.Door;
 import objects.Slot;
 import observer.*;
 import view.MachineryPanelView;
-import view.MaintainerPanelView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -71,20 +70,7 @@ public class MachineryPanelController extends BaseController
                 }
             });
 
-            coinQuantity.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                    String newValue) {
-                    if (!newValue.matches("^\\d*$")){
-                        coinQuantity.setText(oldValue);
-                        coinWarning.setVisible(true);
-                    } else {
-                        coinWarning.setVisible(false);
-                    }
-//                        coinQuantity.setText(newValue.replaceAll("\\D", ""));
-                }
-            });
-
+            addTextChangeHandler(coinQuantity, coinWarning);
             coinRow.setLeft(coinLabel);
             coinRow.setRight(coinQuantity);
             coinMenuVBox.getChildren().add(coinRow);
@@ -119,25 +105,28 @@ public class MachineryPanelController extends BaseController
                 }
             });
 
-            slotQuantity.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                    String newValue) {
-                    if (!newValue.matches("^\\d*$")){
-                        slotQuantity.setText(oldValue);
-                        drinkWarning.setVisible(true);
-                    } else {
-                        drinkWarning.setVisible(false);
-                    }
-                }
-            });
-
+            addTextChangeHandler(slotQuantity, drinkWarning);
             slotRow.setLeft(slotLabel);
             slotRow.setRight(slotQuantity);
             drinkMenuVBox.getChildren().add(slotRow);
 
             registerSlotObserver(slot, this);
         }
+    }
+
+    private void addTextChangeHandler(TextField quantityField, Label warning) {
+        quantityField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("^\\d*$")){
+                    quantityField.setText(oldValue);
+                    warning.setVisible(true);
+                } else {
+                    warning.setVisible(false);
+                }
+            }
+        });
     }
 
     private void initDoorLock() {
@@ -177,13 +166,15 @@ public class MachineryPanelController extends BaseController
     private void updateCoinQuantity(MachineryPanelView view, Coin coin, String newQuantityString) {
         try{
             coin.saveCurrentEnteredValue();
-            coin.setQuantity(Integer.parseInt(newQuantityString));
-            view.createAlert(Alert.AlertType.INFORMATION, "Successful To Change The Number!");
+            int newQuantity = Integer.parseInt(newQuantityString);
+            if(newQuantity >= 0 && newQuantity <= 40) {
+                coin.setQuantity(newQuantity);
+                view.createAlert(Alert.AlertType.INFORMATION, "Successful To Change The Number!");
+            } else {
+                coinWarning.setVisible(true);
+                return;
+            }
         } catch (NumberFormatException e){
-            coinWarning.setVisible(true);
-//            System.out.println("Invalid integer parsing " + e.getMessage());
-            return;
-        } catch (IllegalArgumentException e){
             coinWarning.setVisible(true);
             return;
         }
@@ -192,13 +183,15 @@ public class MachineryPanelController extends BaseController
 
     private void updateSlotQuantity(MachineryPanelView view, Slot slot, String newQuantityString) {
         try{
-            slot.setQuantity(Integer.parseInt(newQuantityString));
-            view.createAlert(Alert.AlertType.INFORMATION, "Successful To Change The Number!");
+            int newQuantity = Integer.parseInt(newQuantityString);
+            if(newQuantity >= 0 && newQuantity <= 20) {
+                slot.setQuantity(newQuantity);
+                view.createAlert(Alert.AlertType.INFORMATION, "Successful To Change The Number!");
+            } else {
+                drinkWarning.setVisible(true);
+                return;
+            }
         } catch (NumberFormatException e){
-            drinkWarning.setVisible(true);
-//            System.out.println("Invalid integer parsing " + e.getMessage());
-            return;
-        }catch (IllegalArgumentException e){
             drinkWarning.setVisible(true);
             return;
         }

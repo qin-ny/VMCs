@@ -50,26 +50,26 @@ public class CoinTest {
         assertEquals(40, fiftyCents.getQuantity());
     }
 
-    @Test
-    public void setQuantityOverForty() {
-        try {
-            fiftyCents.setQuantity(41);
-            fail();
-        } catch (IllegalArgumentException e){
-            assertEquals("Coin quantity should between 0 and 40", e.getMessage());
-        }
+//    @Test
+//    public void setQuantityOverForty() {
+//        try {
+//            fiftyCents.setQuantity(41);
+//            fail();
+//        } catch (IllegalArgumentException e){
+//            assertEquals("Coin quantity should between 0 and 40", e.getMessage());
+//        }
+//
+//    }
 
-    }
-
-    @Test
-    public void setQuantityLessZero() {
-        try {
-            fiftyCents.setQuantity(-1);
-            fail();
-        } catch (IllegalArgumentException e){
-            assertEquals("Coin quantity should between 0 and 40", e.getMessage());
-        }
-    }
+//    @Test
+//    public void setQuantityLessZero() {
+//        try {
+//            fiftyCents.setQuantity(-1);
+//            fail();
+//        } catch (IllegalArgumentException e){
+//            assertEquals("Coin quantity should between 0 and 40", e.getMessage());
+//        }
+//    }
 
     @Test
     public void enterOneFiveCentsCoin() {

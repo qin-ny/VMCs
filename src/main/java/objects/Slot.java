@@ -54,12 +54,8 @@ public class Slot extends SlotObservable {
     }
 
     public void setQuantity(int quantity) {
-        if(quantity >= 0 && quantity <= 20){
-            this.quantity = quantity;
-            setSlotChanged();
-            notifySlotObservers(SlotObserverType.QUANTITY);
-        } else {
-            throw new IllegalArgumentException("Slot quantity should between 0 and 20");
-        }
+        this.quantity = quantity;
+        setSlotChanged();
+        notifySlotObservers(SlotObserverType.QUANTITY);
     }
 }

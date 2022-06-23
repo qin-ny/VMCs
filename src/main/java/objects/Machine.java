@@ -12,7 +12,6 @@ public class Machine extends AuthorizationObservable {
     private String password;
     private List<Slot> slots;
     private List<Coin> coins;
-    private transient Set<Drink> drinks;
     private transient boolean isAuthorized;
 
     public String getMoneyType() {
@@ -24,7 +23,6 @@ public class Machine extends AuthorizationObservable {
         this.password = password;
         this.slots = slots;
         this.coins = coins;
-        this.drinks = recordAllDrinks(slots);
         this.isAuthorized = false;
     }
 
@@ -84,36 +82,6 @@ public class Machine extends AuthorizationObservable {
     }
 
 
-    /**
-     * Check if the input a correct password.
-     * @return boolean representing whether the password is correct
-     */
-    public boolean isValidPassword(String input){
-        return password.equals(input);
-    }
-
-    public Set<Drink> recordAllDrinks(List<Slot> slots){
-        Set<Drink> drinks = new HashSet<>();
-        slots.forEach(slot -> drinks.add(slot.getDrink()));
-        return drinks;
-    }
-
-    /**
-     * check if the drink name exist in the drinks,
-     * @param name drink name
-     * @return Option<Drink> means either the Drink was found or it is empty.
-     */
-    public Optional<Drink> getDrinkByName(String name){
-        for(Drink drink: drinks){
-            if (drink.getName().equals(name)) return Optional.of(drink);
-        }
-        return Optional.empty();
-    }
-
-    public Optional<Slot> getSlotById(String id) {
-        return getSlotById(Integer.parseInt(id));
-    }
-
     public Optional<Slot> getSlotById(int id) {
         for(Slot slot: slots){
             if (slot.getId() == id) return Optional.of(slot);
@@ -134,14 +102,9 @@ public class Machine extends AuthorizationObservable {
         return Optional.empty();
     }
 
-
     public Door getDoor() {
         return door;
     }
-
-//    public void setDoor(Door door) {
-//        this.door = door;
-//    }
 
     public String getPassword() {
         return password;
@@ -155,24 +118,8 @@ public class Machine extends AuthorizationObservable {
         return slots;
     }
 
-//    public void setSlots(List<Slot> slots) {
-//        this.slots = slots;
-//    }
-
     public List<Coin> getCoins() {
         return coins;
     }
-
-//    public void setCoins(List<Coin> coins) {
-//        this.coins = coins;
-//    }
-
-    public Set<Drink> getDrinks() {
-        return drinks;
-    }
-
-//    public void setDrinks(Set<Drink> drinks) {
-//        this.drinks = drinks;
-//    }
 
 }

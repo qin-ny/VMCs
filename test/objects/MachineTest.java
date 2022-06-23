@@ -40,6 +40,17 @@ public class MachineTest {
     }
 
     @Test
+    public void getAuthorization() {
+        assertFalse(testMachine.getAuthorization());
+    }
+
+    @Test
+    public void setAuthorization() {
+        testMachine.setAuthorization(true);
+        assertTrue(testMachine.getAuthorization());
+    }
+
+    @Test
     public void getCurrentEnteredMoney() {
         assertEquals(0, testMachine.getCurrentEnteredMoney());
     }
@@ -113,11 +124,11 @@ public class MachineTest {
 //        assertEquals(Optional.empty(), testMachine.getSlotByIndex(5));
 //    }
 //
-//    @Test
-//    public void getSlotByIndex() {
-//        Slot firstSlot = testMachine.getSlots().get(0);
-//        assertEquals(firstSlot, testMachine.getSlotByIndex(0).get());
-//    }
+    @Test
+    public void getSlotById() {
+        Slot firstSlot = testMachine.getSlots().get(0);
+        assertEquals(firstSlot, testMachine.getSlotById(0).get());
+    }
 
     @Test
     public void getCoinByNameFiveCents() {

@@ -67,13 +67,9 @@ public class Coin extends CoinObservable {
     }
 
     public void setQuantity(int quantity) {
-        if(quantity >= 0 && quantity <= 40){
-            this.quantity = quantity;
-            setCoinChanged();
-            notifyCoinObservers(CoinObserverType.QUANTITY);
-        } else {
-            throw new IllegalArgumentException("Coin quantity should between 0 and 40");
-        }
+        this.quantity = quantity;
+        setCoinChanged();
+        notifyCoinObservers(CoinObserverType.QUANTITY);
     }
 
     public int getCurrentEnteredQuantity() {
