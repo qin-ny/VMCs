@@ -15,7 +15,7 @@
         <VBox styleClass="box5Spacing">
             <BorderPane>
                 <center>
-                    <Label styleClass="fxml_title" text="Customer Panel"/>
+                    <Label styleClass="fxml_title" text="Maintainer Panel"/>
                 </center>
             </BorderPane>
             <HBox styleClass="box2Spacing">

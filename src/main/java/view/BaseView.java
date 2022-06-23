@@ -1,12 +1,10 @@
 package view;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.BackgroundFill;
 import javafx.stage.Stage;
 
@@ -21,14 +19,6 @@ public abstract class BaseView {
     protected String css, fxml, title;
 
     public void init() throws IOException {
-//        Platform.runLater(new Runnable() {
-//          @Override
-//          public void run() {
-//
-//          }
-//        }
-//        );
-
         Parent root = FXMLLoader.load(getClass().getResource(baseFxmlPath + fxml));
         Scene scene = new Scene(root);
 
@@ -57,6 +47,34 @@ public abstract class BaseView {
 
     public Stage getStage() {
         return this.stage;
+    }
+
+    protected void addStyleClass(Node node, String styleClass) {
+        if (!node.getStyleClass().contains(styleClass)) node.getStyleClass().add(styleClass);
+    }
+
+    protected void setSuccessLabel(Label label) {
+        label.getStyleClass().remove("failureLabel");
+        label.getStyleClass().remove("originLabel");
+        addStyleClass(label, "successLabel");
+    }
+
+    protected void setFailureLabel(Label label) {
+        label.getStyleClass().remove("successLabel");
+        label.getStyleClass().remove("originLabel");
+        addStyleClass(label, "failureLabel");
+    }
+
+    protected void setDefaultLabel(Label label) {
+        label.getStyleClass().remove("successLabel");
+        label.getStyleClass().remove("failureLabel");
+        addStyleClass(label, "originLabel");
+    }
+
+    protected void setRadioButton(RadioButton radioButton, ToggleGroup toggleGroup) {
+        radioButton.getStyleClass().remove("radio-button");
+        addStyleClass(radioButton, "toggle-button");
+        radioButton.setToggleGroup(toggleGroup);
     }
 
 }

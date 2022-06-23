@@ -92,7 +92,9 @@ public class SimulatorControlPanelController implements Initializable {
 
     private void endSimulation() {
         Start.endSimulation();
-        Start.getView(Start.ViewType.SIMULATOR_CONTROL_PANEL_VIEW).exit();
+        Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW).exit();
+        Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW).exit();
+        Start.getView(Start.ViewType.MACHINERY_PANEL_VIEW).exit();
     }
 
     public void activePanel(Start.ViewType viewType) {

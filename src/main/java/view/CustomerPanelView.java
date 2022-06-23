@@ -13,8 +13,7 @@ import java.io.IOException;
 
 public class CustomerPanelView extends BaseView {
 
-//    private Slot selectedSlot;
-//    private boolean isSelected;
+
     private ToggleGroup drinkToggleGroup;
 
     public CustomerPanelView() {
@@ -34,17 +33,4 @@ public class CustomerPanelView extends BaseView {
         return this.drinkToggleGroup;
     }
 
-//    public void selectSlot(Slot slot) {
-//        selectedSlot = slot;
-//        isSelected = true;
-//    }
-
-//    public boolean getSelectedStatus() {
-//        return isSelected;
-//    }
-
-//    @Override
-//    public void init() throws IOException {
-//
-//    };
 }

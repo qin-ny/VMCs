@@ -51,6 +51,7 @@ public class CustomerPanelController extends BaseController
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         CustomerPanelView view = (CustomerPanelView) Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW);
+
         initCoinMenuHBox();
         initDrinkMenuVBox(view);
         registerAuthorizationObserver(Start.getMachine(), this);

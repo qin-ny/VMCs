@@ -232,8 +232,7 @@ public class MaintainerPanelController extends BaseController
             slotPriceTField.setText("");
             return;
         }
-        List<Slot> slots = Start.getMachine().getSlots();
-        Slot slot = slots.get(getSlotIdByUniqueId(radioButton.getId()));
+        Slot slot = Start.getMachine().getSlotById(getSlotIdByUniqueId(radioButton.getId())).get();
         availableSlotNumLabel.setText(String.valueOf(slot.getQuantity()));
         slotPriceTField.setText(slot.getPrice() + " " + Start.getMachine().getMoneyType());
     }
@@ -291,7 +290,7 @@ public class MaintainerPanelController extends BaseController
 
     private void refreshSlotPrice(Slot slot) {
         MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        Toggle toggle = view.getCoinToggleGroup().getSelectedToggle();
+        Toggle toggle = view.getSlotToggleGroup().getSelectedToggle();
         if (!Start.getMachine().getAuthorization() | toggle == null) return;
         RadioButton slotButton = (RadioButton) toggle;
         if (getSlotIdByUniqueId(slotButton.getId()) != slot.getId()) return;

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Start extends Application {
 
-    public enum ViewType {
+    public static enum ViewType {
         MACHINERY_PANEL_VIEW,
         SIMULATOR_CONTROL_PANEL_VIEW,
         MAINTAINER_PANEL_VIEW,

@@ -14,7 +14,6 @@ public class Machine extends AuthorizationObservable {
     private List<Coin> coins;
     private transient Set<Drink> drinks;
     private transient boolean isAuthorized;
-//    private Map<String, Coin> currentEnteredCoins;
 
     public String getMoneyType() {
         return SGD;
@@ -27,7 +26,6 @@ public class Machine extends AuthorizationObservable {
         this.coins = coins;
         this.drinks = recordAllDrinks(slots);
         this.isAuthorized = false;
-//        this.currentEnteredCoins = new HashMap<>();
     }
 
     public boolean getAuthorization() {
@@ -67,37 +65,10 @@ public class Machine extends AuthorizationObservable {
         return allCash;
     }
 
-//    public Optional<Coin> getCurrentEnteredCoin(String name) {
-//        return Optional.of(currentEnteredCoins.get(name));
-//    }
-
-//    public void setCurrentMoney(Coin coin, int quantity) {
-//        if (currentEnteredCoins.containsKey(coin.getName())) {
-//            currentEnteredCoins.get(coin.getName()).setQuantity(quantity);
-//        } else {
-//            currentEnteredCoins.put(coin.getName(), new Coin(coin.getName(), coin.getWeight(), quantity));
-//        }
-//
-//    }
-
-//    public void addCurrentMoney(Coin coin) {
-//        if (currentEnteredCoins.containsKey(coin.getName())) {
-//            currentEnteredCoins.get(coin.getName()).setQuantity(currentEnteredCoins.get(coin.getName()).getQuantity() + 1);
-//        } else {
-//            currentEnteredCoins.put(coin.getName(), new Coin(coin.getName(), coin.getWeight(), 1));
-//        }
-//    }
-
     public void saveCurrentMoney() {
         for (Coin coin: coins) {
             coin.saveCurrentEnteredValue();
-//            if (currentEnteredCoins.containsKey(coin.getName())){
-//                Coin currentCoin = currentEnteredCoins.get(coin.getName());
-//                coin.setQuantity(currentCoin.getQuantity() + coin.getQuantity());
-//                currentCoin.setQuantity(0);
-//            }
         }
-
     }
 
     /**
