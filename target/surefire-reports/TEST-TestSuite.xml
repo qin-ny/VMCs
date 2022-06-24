@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="TestSuite" time="0" errors="0" skipped="0">
+<testsuite tests="50" failures="0" name="TestSuite" time="0.02" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.1+0"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/16.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/helloworld/Documents/NUS/Final Project/VMCs"/>
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="path.separator" value=":"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="user.country" value="CN"/>
@@ -16,7 +14,9 @@
     <property name="user.dir" value="/Users/helloworld/Documents/NUS/Final Project/VMCs"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="16.0.1+0"/>
+    <property name="basedir" value="/Users/helloworld/Documents/NUS/Final Project/VMCs"/>
     <property name="os.arch" value="x86_64"/>
+    <property name="surefire.real.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter14876740509496110184.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/9_/80tj8jsd0tl10lh4gt_8624m0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -24,28 +24,25 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="https.proxyHost" value="127.0.0.1"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.8.1/libexec/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="http.proxyPort" value="7890"/>
     <property name="java.library.path" value="/Users/helloworld/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="maven.conf" value="/usr/local/Cellar/maven/3.8.1/libexec/conf"/>
+    <property name="surefire.test.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/test-classes:/Users/helloworld/Documents/NUS/Final Project/VMCs/target/classes:/Users/helloworld/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/helloworld/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-mac.jar:/Users/helloworld/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="60.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="12.4"/>
-    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.8.1/libexec/lib/jansi-native"/>
     <property name="http.nonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com"/>
     <property name="user.home" value="/Users/helloworld"/>
-    <property name="user.timezone" value="Asia/Shanghai"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="16"/>
     <property name="user.name" value="helloworld"/>
-    <property name="java.class.path" value="/usr/local/Cellar/maven/3.8.1/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/test-classes:/Users/helloworld/Documents/NUS/Final Project/VMCs/target/classes:/Users/helloworld/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/helloworld/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-fxml/11.0.2/javafx-fxml-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-mac.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar:/Users/helloworld/.m2/repository/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-mac.jar:/Users/helloworld/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:"/>
     <property name="socksProxyHost" value="127.0.0.1"/>
     <property name="java.vm.specification.version" value="16"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter14876740509496110184.jar /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire17000238376585045779tmp /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire3403777988029814306tmp"/>
     <property name="java.home" value="/usr/local/Cellar/openjdk/16.0.1/libexec/openjdk.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -53,7 +50,7 @@
     <property name="java.version" value="16.0.1"/>
     <property name="http.proxyHost" value="127.0.0.1"/>
     <property name="java.vendor" value="Homebrew"/>
-    <property name="maven.home" value="/usr/local/Cellar/maven/3.8.1/libexec"/>
+    <property name="localRepository" value="/Users/helloworld/.m2/repository"/>
     <property name="file.separator" value="/"/>
     <property name="java.version.date" value="2021-04-20"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
@@ -64,4 +61,54 @@
     <property name="socksNonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com"/>
     <property name="ftp.nonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com"/>
   </properties>
+  <testcase classname="objects.CoinTest" name="getCurrentEnteredQuantity1" time="0"/>
+  <testcase classname="objects.CoinTest" name="getCurrentEnteredQuantity2" time="0"/>
+  <testcase classname="objects.CoinTest" name="getCurrentEnteredTotalValue1" time="0"/>
+  <testcase classname="objects.CoinTest" name="getCurrentEnteredTotalValue2" time="0"/>
+  <testcase classname="objects.CoinTest" name="saveCurrentEnteredValue1" time="0"/>
+  <testcase classname="objects.CoinTest" name="saveCurrentEnteredValue2" time="0"/>
+  <testcase classname="objects.CoinTest" name="getTotalValueAfterOneCoinEntered" time="0"/>
+  <testcase classname="objects.CoinTest" name="setWeight" time="0"/>
+  <testcase classname="objects.CoinTest" name="setQuantity" time="0"/>
+  <testcase classname="objects.CoinTest" name="getQuantity" time="0"/>
+  <testcase classname="objects.CoinTest" name="enterOneFiveCentsCoin" time="0"/>
+  <testcase classname="objects.CoinTest" name="getWeight" time="0"/>
+  <testcase classname="objects.CoinTest" name="getTotalValueWithZeroCoin" time="0"/>
+  <testcase classname="objects.CoinTest" name="setCurrentEnteredQuantity" time="0"/>
+  <testcase classname="objects.CoinTest" name="setCoinName" time="0"/>
+  <testcase classname="objects.CoinTest" name="getCoinName" time="0"/>
+  <testcase classname="objects.DoorTest" name="isOpen" time="0"/>
+  <testcase classname="objects.DoorTest" name="setDoorStatus" time="0.001"/>
+  <testcase classname="objects.DrinkTest" name="getName" time="0"/>
+  <testcase classname="objects.DrinkTest" name="setPrice" time="0"/>
+  <testcase classname="objects.DrinkTest" name="getPrice" time="0"/>
+  <testcase classname="objects.DrinkTest" name="setName" time="0"/>
+  <testcase classname="objects.SlotTest" name="getName" time="0"/>
+  <testcase classname="objects.SlotTest" name="getId" time="0"/>
+  <testcase classname="objects.SlotTest" name="getQuantity" time="0"/>
+  <testcase classname="objects.SlotTest" name="setPrice" time="0"/>
+  <testcase classname="objects.SlotTest" name="getDrink" time="0"/>
+  <testcase classname="objects.SlotTest" name="getPrice" time="0"/>
+  <testcase classname="objects.SlotTest" name="setName" time="0"/>
+  <testcase classname="objects.SlotTest" name="setQuantityToZero" time="0"/>
+  <testcase classname="objects.MachineTest" name="collectALlCash" time="0"/>
+  <testcase classname="objects.MachineTest" name="getMoneyType" time="0"/>
+  <testcase classname="objects.MachineTest" name="getCoinByNameFiveCents" time="0"/>
+  <testcase classname="objects.MachineTest" name="getCurrentEnteredMoneyEnterOneFiveCents" time="0"/>
+  <testcase classname="objects.MachineTest" name="getCurrentEnteredMoney" time="0"/>
+  <testcase classname="objects.MachineTest" name="setPassword" time="0"/>
+  <testcase classname="objects.MachineTest" name="getPassword" time="0"/>
+  <testcase classname="objects.MachineTest" name="getTotalCash" time="0"/>
+  <testcase classname="objects.MachineTest" name="getDoor" time="0"/>
+  <testcase classname="objects.MachineTest" name="setAuthorization" time="0"/>
+  <testcase classname="objects.MachineTest" name="getSlotById" time="0"/>
+  <testcase classname="objects.MachineTest" name="collectALlCashEnterOneFiveCents" time="0"/>
+  <testcase classname="objects.MachineTest" name="getAuthorization" time="0"/>
+  <testcase classname="objects.MachineTest" name="saveCurrentMoneyEnterTwoFiftyCents" time="0"/>
+  <testcase classname="objects.MachineTest" name="getCoins" time="0"/>
+  <testcase classname="objects.MachineTest" name="getSlots" time="0"/>
+  <testcase classname="objects.MachineTest" name="getTotalCashEnterTwoFiveCents" time="0"/>
+  <testcase classname="objects.MachineTest" name="saveCurrentMoneyEnterOneFiveCents" time="0"/>
+  <testcase classname="util.JsonMachineConverterTest" name="machineObjectToJson" time="0.004"/>
+  <testcase classname="util.JsonMachineConverterTest" name="jsonToMachineObject" time="0.002"/>
 </testsuite>

@@ -30,7 +30,7 @@
 
                         </VBox>
                     </ScrollPane>
-                    <Label fx:id="coinWarning" text="Quantity Should Between 0 and 40 And A Number" styleClass="warningLabel"/>
+                    <Label fx:id="coinWarning" text="Should be number Between 0 and 40" styleClass="warningLabel"/>
                 </VBox>
                 <VBox alignment="CENTER" styleClass="drinkVBox">
                     <Label text="Quantity of Cans"/>
@@ -39,7 +39,7 @@
 
                         </VBox>
                     </ScrollPane>
-                    <Label fx:id="drinkWarning" text="Quantity should between 0 and 20 And A Number" styleClass="warningLabel"/>
+                    <Label fx:id="drinkWarning" text="Should be number between 0 and 20" styleClass="warningLabel"/>
                 </VBox>
             </VBox>
         </HBox>
