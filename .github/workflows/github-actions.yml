@@ -1,0 +1,35 @@
+name: Maven CI
+
+on: [push]
+
+jobs:
+  build:
+
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v1
+
+        - name: Set up JDK 1.11
+          uses: actions/setup-java@v2
+          with:
+            java-version: '11'
+            distribution: 'adopt'
+
+        - name: Build
+          run: mvn --batch-mode -DskipTests package #building the application, but skipping the tests
+
+        - name: Test
+          run: mvn --batch-mode -Dmaven.test.failure.ignore=true test #this allows you to defer the response to failed tests to the test processing action
+
+        #Generate a report from the JUnit XML file.
+        - name: Report
+          uses: dorny/test-reporter@v1
+          if: always() #generate the report even if the Test step above was set to fail in the event of failed tests.
+          with:
+            name: Maven Tests
+            path: target/surefire-reports/*.xml
+            reporter: java-junit
+            fail-on-error: true #this property is set to true to fail this workflow if there were failed tests. This is an example of deferring the response to failed tests to the test processing action
+
