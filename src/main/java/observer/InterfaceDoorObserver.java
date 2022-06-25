@@ -1,6 +1,6 @@
 package observer;
 
-public interface InterfaceDoorObserver {
+public interface InterfaceDoorObserver extends InterfaceObserver {
 
     public void updateDoor(DoorObservable door, Object arg);
 }

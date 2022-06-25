@@ -9,27 +9,13 @@ import objects.Coin;
 import objects.Door;
 import objects.Machine;
 import objects.Slot;
-import observer.InterfaceAuthorizationObserver;
-import observer.InterfaceCoinObserver;
-import observer.InterfaceDoorObserver;
-import observer.InterfaceSlotObserver;
+import observer.*;
 
 public abstract class BaseController {
 
-    protected void registerCoinObserver(Coin coin, InterfaceCoinObserver observer) {
-        coin.addCoinObserver(observer);
+    protected void registerObserver(Observable observable, InterfaceObserver observer) {
+        observable.addObserver(observer);
     }
-
-    protected void registerSlotObserver(Slot slot, InterfaceSlotObserver observer) {
-        slot.addSlotObserver(observer);
-    }
-
-    protected void registerDoorObserver(Door door, InterfaceDoorObserver observer) {
-        door.addDoorObserver(observer);
-    }
-
-    protected void registerAuthorizationObserver(Machine machine, InterfaceAuthorizationObserver observer) {
-        machine.addAuthorizationObserver(observer);}
 
     protected void addStyleClass(Node node, String styleClass) {
         if (!node.getStyleClass().contains(styleClass)) node.getStyleClass().add(styleClass);

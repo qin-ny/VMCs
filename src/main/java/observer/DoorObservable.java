@@ -2,44 +2,22 @@ package observer;
 
 import java.util.Vector;
 
-public class DoorObservable {
-    private transient boolean changed = false;
-    private transient Vector doorObs;
+public class DoorObservable extends Observable {
 
     public DoorObservable() {
-        doorObs = new Vector();
+        super();
     }
 
-    protected synchronized void setDoorChanged() {
-        changed = true;
-    }
-
-    protected synchronized void clearDoorChange() {
-        changed = false;
-    }
-
-    protected synchronized boolean hasDoorChanged() {return changed;}
-
-    public void notifyDoorObservers() {notifyDoorObservers(null);}
-
-    public void notifyDoorObservers(Object arg) {
+    public void notifyObservers(Object arg) {
         Object[] arrLocal;
         synchronized (this) {
             if (!changed)
                 return;
-            arrLocal = doorObs.toArray();
-            clearDoorChange();
+            arrLocal = obs.toArray();
+            clearChange();
         }
         for (int i = arrLocal.length-1; i>=0; i--)
             ((InterfaceDoorObserver)arrLocal[i]).updateDoor(this, arg);
     }
 
-    public synchronized void addDoorObserver(InterfaceDoorObserver obs) {
-        if (doorObs == null) doorObs = new Vector();
-        if (obs == null) throw new NullPointerException();
-        if (!doorObs.contains(obs)) {doorObs.addElement(obs);}
-    }
-    public synchronized void deleteDoorObserver(InterfaceDoorObserver obs) {
-        doorObs.removeElement(obs);
-    }
 }

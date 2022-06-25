@@ -30,14 +30,14 @@ public class Coin extends CoinObservable {
     public void saveCurrentEnteredValue() {
         this.quantity += this.currentEnteredQuantity;
         this.currentEnteredQuantity = 0;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.TOTAL_QUANTITY);
+        setChanged();
+        notifyObservers(CoinObserverType.TOTAL_QUANTITY);
     }
 
     public void enterCoin(int number) {
         this.currentEnteredQuantity += number;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
+        setChanged();
+        notifyObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
     }
 
     public String getName() {
@@ -46,8 +46,8 @@ public class Coin extends CoinObservable {
 
     public void setName(String name) {
         this.name = name;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.NAME);
+        setChanged();
+        notifyObservers(CoinObserverType.NAME);
     }
 
     public int getWeight() {
@@ -56,8 +56,8 @@ public class Coin extends CoinObservable {
 
     public void setWeight(int weight) {
         this.weight = weight;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.WEIGHT);
+        setChanged();
+        notifyObservers(CoinObserverType.WEIGHT);
     }
 
     public int getTotalQuantity() {return quantity + currentEnteredQuantity;}
@@ -68,8 +68,8 @@ public class Coin extends CoinObservable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.QUANTITY);
+        setChanged();
+        notifyObservers(CoinObserverType.QUANTITY);
     }
 
     public int getCurrentEnteredQuantity() {
@@ -78,7 +78,7 @@ public class Coin extends CoinObservable {
 
     public void setCurrentEnteredQuantity(int quantity) {
         this.currentEnteredQuantity = quantity;
-        setCoinChanged();
-        notifyCoinObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
+        setChanged();
+        notifyObservers(CoinObserverType.CURRENT_ENTERED_QUANTITY);
     }
 }

@@ -83,7 +83,7 @@ public class MaintainerPanelController extends BaseController
             addStyleClass(coinButton, "radioButton");
             coinContentVBox.getChildren().add(coinButton);
 
-            registerCoinObserver(coin, this);
+            registerObserver(coin, this);
         }
     }
 
@@ -107,7 +107,7 @@ public class MaintainerPanelController extends BaseController
             addStyleClass(slotButton, "radioButton");
             slotContentVBox.getChildren().add(slotButton);
 
-            registerSlotObserver(slot, this);
+            registerObserver(slot, this);
         }
     }
 
@@ -210,7 +210,7 @@ public class MaintainerPanelController extends BaseController
         RadioButton slotButton = (RadioButton) selectedToggle;
         Start.getMachine().getSlotById(getSlotIdByUniqueId(slotButton.getId())).get()
                 .setPrice(Integer.parseInt(value));
-        view.createAlert(Alert.AlertType.INFORMATION, "Successful to Change The Quantity of " + slotButton.getText() + "!");
+        view.createAlert(Alert.AlertType.INFORMATION, "Successful to Change The Price of " + slotButton.getText() + "!");
 //        field.setText(value + " " + Start.getMachine().getMoneyType());
     }
 

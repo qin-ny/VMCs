@@ -75,7 +75,7 @@ public class MachineryPanelController extends BaseController
             coinRow.setRight(coinQuantity);
             coinMenuVBox.getChildren().add(coinRow);
 
-            registerCoinObserver(coin, this);
+            registerObserver(coin, this);
         }
     }
 
@@ -110,7 +110,7 @@ public class MachineryPanelController extends BaseController
             slotRow.setRight(slotQuantity);
             drinkMenuVBox.getChildren().add(slotRow);
 
-            registerSlotObserver(slot, this);
+            registerObserver(slot, this);
         }
     }
 
@@ -150,7 +150,7 @@ public class MachineryPanelController extends BaseController
             }
         });
 
-        registerDoorObserver(door, this);
+        registerObserver(door, this);
     }
 
     private void lockPanel() {

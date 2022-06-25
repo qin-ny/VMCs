@@ -33,16 +33,16 @@ public class Slot extends SlotObservable {
 
     public void setName(String name) {
         drink.setName(name);
-        setSlotChanged();
-        notifySlotObservers(SlotObserverType.NAME);
+        setChanged();
+        notifyObservers(SlotObserverType.NAME);
     }
 
     public int getPrice() { return drink.getPrice(); }
 
     public void setPrice(int price) {
         drink.setPrice(price);
-        setSlotChanged();
-        notifySlotObservers(SlotObserverType.PRICE);
+        setChanged();
+        notifyObservers(SlotObserverType.PRICE);
     }
 
     public int getQuantity() {
@@ -51,7 +51,7 @@ public class Slot extends SlotObservable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-        setSlotChanged();
-        notifySlotObservers(SlotObserverType.QUANTITY);
+        setChanged();
+        notifyObservers(SlotObserverType.QUANTITY);
     }
 }

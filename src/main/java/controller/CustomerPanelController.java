@@ -54,7 +54,7 @@ public class CustomerPanelController extends BaseController
 
         initCoinMenuHBox();
         initDrinkMenuVBox(view);
-        registerAuthorizationObserver(Start.getMachine(), this);
+        registerObserver(Start.getMachine(), this);
     }
 
     private void initCoinMenuHBox() {
@@ -72,7 +72,7 @@ public class CustomerPanelController extends BaseController
             });
             coinMenuHBox.getChildren().add(0, coinButton);
 
-            registerCoinObserver(coin, this);
+            registerObserver(coin, this);
         }
     }
 
@@ -112,7 +112,7 @@ public class CustomerPanelController extends BaseController
             drinkBPane.setRight(stockLabel);
             drinkMenuVBox.getChildren().add(drinkBPane);
 
-            registerSlotObserver(slot, this);
+            registerObserver(slot, this);
         }
 //        view.setDrinkToggleGroup(toggleGroup);
 //        ((CustomerPanelView) Start.views.get("customerPanelView")).setDrinkToggleGroup(toggleGroup);

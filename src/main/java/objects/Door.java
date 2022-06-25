@@ -17,8 +17,8 @@ public class Door extends DoorObservable {
 
     public void setDoorStatus(boolean open) {
         isOpen = open;
-        setDoorChanged();
-        notifyDoorObservers();
+        setChanged();
+        notifyObservers();
     }
 
 

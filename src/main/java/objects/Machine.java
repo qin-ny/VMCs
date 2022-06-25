@@ -32,8 +32,8 @@ public class Machine extends AuthorizationObservable {
 
     public void setAuthorization(boolean status) {
         this.isAuthorized = status;
-        setAuthorizationChanged();
-        notifyAuthorizationObservers();
+        setChanged();
+        notifyObservers();
     }
 
     public int getCurrentEnteredMoney() {
