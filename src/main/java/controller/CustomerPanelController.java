@@ -119,12 +119,16 @@ public class CustomerPanelController extends BaseController
     }
 
     // return the final quantity of specified slot
-    private int popDrink(Slot slot) {
+    private int dispenseDrink(Slot slot) {
 //        System.out.println(slot.getQuantity());
         slot.setQuantity(slot.getQuantity() - 1);
         collectCanLabel.setText(slot.getName());
         return  slot.getQuantity();
 //        System.out.println(Start.jsonMachineConverter.machine.getSlotByName(slot.getDrink().getName()).get().getQuantity());
+    }
+
+    private void refundCoin(String coinString) {
+        collectCoinLabel.setText(coinString);
     }
 
     private void handleInvalidCoin(CustomerPanelView view, Button button) {
@@ -133,10 +137,10 @@ public class CustomerPanelController extends BaseController
             return;
         }
         setFailureLabel(enterStatusLabel);
-        collectCoinLabel.setText("Invalid Coin");
+        refundCoin("Invalid Coin");
     }
 
-    private void refundMoney(int requiredMoney, String moneyType, List<Coin> coins) {
+    private void computeRefundCoin(int requiredMoney, String moneyType, List<Coin> coins) {
         int refundMoney = 0;
         for (Coin coin: coins) {
 //            System.out.println(coin.getWeight());
@@ -158,7 +162,8 @@ public class CustomerPanelController extends BaseController
         if (requiredMoney > 0) {
             setFailureLabel(noChangeAvaLabel);
         }
-        collectCoinLabel.setText(refundMoney + " " + moneyType);
+
+        refundCoin(refundMoney + " " + moneyType);
     }
 
     private void unFocusSlot(CustomerPanelView view, RadioButton selectedSlotButton) {
@@ -174,26 +179,15 @@ public class CustomerPanelController extends BaseController
         int drinkPrice = selectedSlot.getPrice();
 
         if (currentEnteredMoney >= drinkPrice) {
-            int slotFinalQuantity = popDrink(selectedSlot);
+            dispenseDrink(selectedSlot);
 
             unFocusSlot(view, selectedSlotButton);
 
             Start.getMachine().saveCurrentMoney();
             currentEnteredMoney -= drinkPrice;
 
-//            if (slotFinalQuantity <= 0) {
-//                Label slotStockLabel = (Label) view.getStage().getScene().lookup(
-//                        "#" + getUniqueId("slot", slotIndex, "stock")
-//                );
-//                disableSlot(selectedSlotButton, slotStockLabel);
-//            }
-
-            refundMoney(currentEnteredMoney, moneyType, Start.getMachine().getCoins());
-//            totalMoneyLabel.setText("0 " + moneyType);
+            computeRefundCoin(currentEnteredMoney, moneyType, Start.getMachine().getCoins());
         }
-//        else {
-//            totalMoneyLabel.setText(currentEnteredMoney + " " + moneyType);
-//        }
     }
 
     // valueList = [slotName, index, suffix]
@@ -213,10 +207,14 @@ public class CustomerPanelController extends BaseController
         purchaseDrink(view, selectedSlotButton);
     }
 
-    private void handleTerminateTransaction(CustomerPanelView view, Button button) {
-        int currentEnteredMoney = Start.getMachine().getCurrentEnteredMoney();
+    private void handleTerminateTransaction(CustomerPanelView view) {
+        Toggle toggle = view.getDrinkToggleGroup().getSelectedToggle();
+        if (toggle != null) {
+            toggle.setSelected(false);
+        }
+        int currentEnteredMoney = Start.getMachine().collectCurrentEnteredCash();
         String moneyType = Start.getMachine().getMoneyType();
-        totalMoneyLabel.setText("0 " + moneyType);
+//        totalMoneyLabel.setText("0 " + moneyType);
         collectCoinLabel.setText(currentEnteredMoney + " " + moneyType);
     }
 
@@ -247,7 +245,7 @@ public class CustomerPanelController extends BaseController
                 handleInvalidCoin(view, button);
                 break;
             case "terminateButton":
-                handleTerminateTransaction(view, button);
+                handleTerminateTransaction(view);
                 break;
             default:
                 handleNormalCoin(view, button);
@@ -294,13 +292,7 @@ public class CustomerPanelController extends BaseController
     }
 
     private void lockPanel(CustomerPanelView view) {
-        Toggle toggle = view.getDrinkToggleGroup().getSelectedToggle();
-        if (toggle != null) {
-            toggle.setSelected(false);
-        }
-
-        String moneyType = Start.getMachine().getMoneyType();
-        collectCoinLabel.setText(Start.getMachine().collectCurrentEnteredCash() + " " + moneyType);
+        handleTerminateTransaction(view);
 
         centerVBox.setDisable(true);
         bottomBPane.setDisable(true);
