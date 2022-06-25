@@ -131,7 +131,7 @@ public class MaintainerPanelController extends BaseController
 
     private void handleCollectAllCash(MaintainerPanelView view, Button button) {
         collectCashLabel.setText(
-                Start.getMachine().collectALlCash() +
+                Start.getMachine().collectAllCash() +
                         " " +
                         Start.getMachine().getMoneyType()
         );

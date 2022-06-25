@@ -70,7 +70,7 @@ public class MachineryPanelController extends BaseController
                 }
             });
 
-            addTextChangeHandler(coinQuantity, coinWarning);
+            textChangeHandler(coinQuantity, coinWarning);
             coinRow.setLeft(coinLabel);
             coinRow.setRight(coinQuantity);
             coinMenuVBox.getChildren().add(coinRow);
@@ -105,7 +105,7 @@ public class MachineryPanelController extends BaseController
                 }
             });
 
-            addTextChangeHandler(slotQuantity, drinkWarning);
+            textChangeHandler(slotQuantity, drinkWarning);
             slotRow.setLeft(slotLabel);
             slotRow.setRight(slotQuantity);
             drinkMenuVBox.getChildren().add(slotRow);
@@ -114,7 +114,7 @@ public class MachineryPanelController extends BaseController
         }
     }
 
-    private void addTextChangeHandler(TextField quantityField, Label warning) {
+    private void textChangeHandler(TextField quantityField, Label warning) {
         quantityField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue,
@@ -142,11 +142,6 @@ public class MachineryPanelController extends BaseController
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 Start.getMachine().getDoor().setDoorStatus(!newValue);
-//                if (newValue) {
-//                    lockPanel();
-//                } else {
-//                    unlockPanel();
-//                }
             }
         });
 
