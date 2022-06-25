@@ -33,35 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/github-actions.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VMCs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VMCs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/BaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/machinery_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/machinery_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Drink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Drink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/AuthorizationObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/AuthorizationObservable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceAuthorizationObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceAuthorizationObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceCoinObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceCoinObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceDoorObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceDoorObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceSlotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceSlotObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.CoinTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.CoinTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DoorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DoorTest.xml" afterDir="false" />
@@ -69,18 +41,9 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.MachineTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.MachineTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.SlotTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.SlotTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-util.JsonMachineConverterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-util.JsonMachineConverterTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuit.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.CoinTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.CoinTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.DoorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.DoorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.DrinkTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.DrinkTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.MachineTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.MachineTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.SlotTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.SlotTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/util.JsonMachineConverterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/util.JsonMachineConverterTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/objects/CoinTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/objects/CoinTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/objects/MachineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/objects/MachineTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/objects/SlotTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/objects/SlotTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -63,7 +63,7 @@ public class MachineTest {
 
     @Test
     public void collectALlCash() {
-        assertEquals(300, testMachine.collectALlCash());
+        assertEquals(300, testMachine.collectAllCash());
         testMachine.getCoins().forEach(coin -> {
             assertEquals(0, coin.getQuantity());
             assertEquals(0, coin.getCurrentEnteredQuantity());
@@ -73,7 +73,7 @@ public class MachineTest {
     @Test
     public void collectALlCashEnterOneFiveCents() {
         testMachine.getCoins().get(0).enterCoin(1);
-        assertEquals(305, testMachine.collectALlCash());
+        assertEquals(305, testMachine.collectAllCash());
         testMachine.getCoins().forEach(coin -> {
             assertEquals(0, coin.getQuantity());
             assertEquals(0, coin.getCurrentEnteredQuantity());

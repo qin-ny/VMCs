@@ -16,7 +16,7 @@
     <property name="java.runtime.version" value="16.0.1+0"/>
     <property name="basedir" value="/Users/helloworld/Documents/NUS/Final Project/VMCs"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter14876740509496110184.jar"/>
+    <property name="surefire.real.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter17681059187658850733.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/9_/80tj8jsd0tl10lh4gt_8624m0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="socksProxyHost" value="127.0.0.1"/>
     <property name="java.vm.specification.version" value="16"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter14876740509496110184.jar /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire17000238376585045779tmp /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire3403777988029814306tmp"/>
+    <property name="sun.java.command" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter17681059187658850733.jar /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire10868973501943397327tmp /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire12239083159983173968tmp"/>
     <property name="java.home" value="/usr/local/Cellar/openjdk/16.0.1/libexec/openjdk.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -68,7 +68,7 @@
   <testcase classname="objects.CoinTest" name="saveCurrentEnteredValue1" time="0"/>
   <testcase classname="objects.CoinTest" name="saveCurrentEnteredValue2" time="0"/>
   <testcase classname="objects.CoinTest" name="getTotalValueAfterOneCoinEntered" time="0"/>
-  <testcase classname="objects.CoinTest" name="setWeight" time="0"/>
+  <testcase classname="objects.CoinTest" name="setWeight" time="0.001"/>
   <testcase classname="objects.CoinTest" name="setQuantity" time="0"/>
   <testcase classname="objects.CoinTest" name="getQuantity" time="0"/>
   <testcase classname="objects.CoinTest" name="enterOneFiveCentsCoin" time="0"/>
@@ -76,5 +76,5 @@
   <testcase classname="objects.CoinTest" name="getTotalValueWithZeroCoin" time="0"/>
   <testcase classname="objects.CoinTest" name="setCurrentEnteredQuantity" time="0"/>
   <testcase classname="objects.CoinTest" name="setCoinName" time="0"/>
-  <testcase classname="objects.CoinTest" name="getCoinName" time="0"/>
+  <testcase classname="objects.CoinTest" name="getCoinName" time="0.001"/>
 </testsuite>
