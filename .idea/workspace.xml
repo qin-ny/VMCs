@@ -33,7 +33,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_easymock_easymock_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/observer/AuthorizationObservableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/observer/CoinObservableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/observer/DoorObservableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/observer/ObservableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/observer/SlotObservableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/github-actions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/github-actions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VMCs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VMCs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/AuthorizationObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/AuthorizationObservable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/CoinObservable$CoinObserverType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/CoinObservable$CoinObserverType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/CoinObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/CoinObservable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/DoorObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/DoorObservable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceAuthorizationObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceAuthorizationObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceCoinObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceCoinObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceDoorObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceDoorObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceSlotObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceSlotObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/Observable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/Observable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/SlotObservable$SlotObserverType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/SlotObservable$SlotObserverType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/SlotObservable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/SlotObservable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.CoinTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.CoinTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DoorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DoorTest.xml" afterDir="false" />
@@ -42,8 +90,14 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.SlotTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.SlotTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-util.JsonMachineConverterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-util.JsonMachineConverterTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.CoinTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.CoinTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.DoorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.DoorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.MachineTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.MachineTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.SlotTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/objects.SlotTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/util.JsonMachineConverterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/util.JsonMachineConverterTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/vendingMach-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +108,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -71,25 +125,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/helloworld/Documents/NUS/Final Project/VMCs",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.37696335",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/helloworld/Documents/NUS/Final Project/VMCs&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37696335&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -103,6 +158,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/util" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="observer" />
       <recent name="objects" />
       <recent name="util" />
     </key>
@@ -121,46 +177,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoinObservableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="objects.*" />
+          <option name="PATTERN" value="observer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.CoinTest" />
+      <option name="PACKAGE_NAME" value="observer" />
+      <option name="MAIN_CLASS_NAME" value="observer.CoinObservableTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DoorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DoorObservableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="objects.*" />
+          <option name="PATTERN" value="observer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="objects" />
-      <option name="MAIN_CLASS_NAME" value="objects.DoorTest" />
+      <option name="PACKAGE_NAME" value="observer" />
+      <option name="MAIN_CLASS_NAME" value="observer.DoorObservableTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonMachineConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SlotObservableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="util.*" />
+          <option name="PATTERN" value="observer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="util" />
-      <option name="MAIN_CLASS_NAME" value="util.JsonMachineConverterTest" />
+      <option name="PACKAGE_NAME" value="observer" />
+      <option name="MAIN_CLASS_NAME" value="observer.SlotObservableTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,19 +258,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DoorTest" />
+      <item itemvalue="JUnit.CoinObservableTest" />
+      <item itemvalue="JUnit.DoorObservableTest" />
+      <item itemvalue="JUnit.SlotObservableTest" />
       <item itemvalue="JUnit.TestSuite" />
-      <item itemvalue="JUnit.CoinTest" />
-      <item itemvalue="JUnit.JsonMachineConverterTest" />
       <item itemvalue="Maven.vendingMach [hpi:run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.JsonMachineConverterTest" />
-        <item itemvalue="JUnit.CoinTest" />
-        <item itemvalue="JUnit.DoorTest" />
+        <item itemvalue="JUnit.SlotObservableTest" />
+        <item itemvalue="JUnit.CoinObservableTest" />
+        <item itemvalue="JUnit.DoorObservableTest" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +296,7 @@
       <workItem from="1655124484692" duration="4571000" />
       <workItem from="1655187687964" duration="19087000" />
       <workItem from="1655617584121" duration="43802000" />
+      <workItem from="1656235799159" duration="7031000" />
     </task>
     <servers />
   </component>

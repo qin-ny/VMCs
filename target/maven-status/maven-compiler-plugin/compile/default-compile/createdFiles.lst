@@ -18,8 +18,10 @@ controller/CustomerPanelController$2.class
 controller/MachineryPanelController$5.class
 view/CustomerPanelView.class
 util/JsonMachineConverter.class
+observer/InterfaceObserver.class
 controller/BaseController.class
 controller/MaintainerPanelController$1.class
+observer/Observable.class
 observer/AuthorizationObservable.class
 main/Start$1.class
 observer/SlotObservable.class

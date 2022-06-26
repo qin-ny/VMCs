@@ -14,14 +14,14 @@ jobs:
         - name: Set up JDK 1.11
           uses: actions/setup-java@v2
           with:
-            java-version: '11'
+            java-version: '11' #Set up the Java environment to version 11
             distribution: 'adopt'
 
         - name: Build
           run: mvn --batch-mode -DskipTests package #building the application, but skipping the tests
 
         - name: Test
-          run: mvn --batch-mode -Dmaven.test.failure.ignore=true test #this allows you to defer the response to failed tests to the test processing action
+          run: mvn --batch-mode -Dmaven.test.failure.ignore=true test #defer the response to failed tests to the test processing action
 
         #Generate a report from the JUnit XML file.
         - name: Report
@@ -31,5 +31,6 @@ jobs:
             name: Maven Tests
             path: target/surefire-reports/*.xml
             reporter: java-junit
-            fail-on-error: true #this property is set to true to fail this workflow if there were failed tests. This is an example of deferring the response to failed tests to the test processing action
+            fail-on-error: true #to fail this workflow if there were failed tests. This is an example of deferring the response to
+              #failed tests to the test processing action
 

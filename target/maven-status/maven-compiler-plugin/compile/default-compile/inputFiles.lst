@@ -10,6 +10,7 @@
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/util/JsonMachineConverter.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/objects/Door.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/util/Constants.java
+/Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/observer/Observable.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/view/CustomerPanelView.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/BaseController.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/CustomerPanelController.java
@@ -23,5 +24,6 @@
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/main/Start.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/observer/CoinObservable.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/controller/SimulatorControlPanelController.java
+/Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/observer/InterfaceObserver.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/observer/InterfaceSlotObserver.java
 /Users/helloworld/Documents/NUS/Final Project/VMCs/src/main/java/objects/Drink.java

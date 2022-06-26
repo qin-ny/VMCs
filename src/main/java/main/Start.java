@@ -56,7 +56,8 @@ public class Start extends Application {
 
     public static void endSimulation() {
         simulationStatus = false;
-//        JsonMachineConverter.machineObjectToJson(machine, Constants.DATA_SOURCE);
+        //Save the machine data to json file
+        JsonMachineConverter.machineObjectToJson(machine, Constants.DATA_SOURCE);
     }
 
     public static boolean getSimulationStatus() {
