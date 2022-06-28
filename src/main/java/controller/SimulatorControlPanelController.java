@@ -12,85 +12,23 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SimulatorControlPanelController implements Initializable {
+public class SimulatorControlPanelController extends BaseController {
 
-    @FXML
-    private Button beginSimulation;
-    @FXML
-    private Button endSimulation;
-    @FXML
-    private Button customerPanel;
-    @FXML
-    private Button maintainerPanel;
-    @FXML
-    private Button machineryPanel;
+    private final SimulatorControlPanelView view;
 
-//    @FXML
-//    protected void onHelloButtonClick() {
-//
-//    }
-
-//    @FXML
-//    public void initialize(Start startObj) {
-//
-//        List<Panel> activatePanels = startObj.getActivatingPanels();
-//        for (Panel panel: activatePanels) {
-//            Button button = new Button("Activate " + panel.name);
-//            button.setId(panel.name);
-//            VBActiveButtons.getChildren().add(button);
-//        }
-//    }
-
-
-
-    @FXML
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        System.out.println("test");
+    public SimulatorControlPanelController() {
+        this.view = (SimulatorControlPanelView) Start.getView(Start.ViewType.SIMULATOR_CONTROL_PANEL_VIEW);
     }
 
-    public void handleButtonAction(ActionEvent actionEvent) {
-        SimulatorControlPanelView view = (SimulatorControlPanelView) Start.getView(Start.ViewType.SIMULATOR_CONTROL_PANEL_VIEW);
-        Button button = (Button)actionEvent.getSource();
-        switch (button.getId()) {
-            case "beginSimulation":
-                beginSimulation();
-                break;
-            case "endSimulation":
-                endSimulation();
-                break;
-            case "customerPanel":
-                if (checkSimulationStatus()) {
-                    activePanel(Start.ViewType.CUSTOMER_PANEL_VIEW);
-                } else {
-                    view.createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
-                }
-                break;
-            case "maintainerPanel":
-                if (checkSimulationStatus()) {
-                    activePanel(Start.ViewType.MAINTAINER_PANEL_VIEW);
-                } else {
-                    view.createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
-                }
-                break;
-            case "machineryPanel":
-                if (checkSimulationStatus()) {
-                    activePanel(Start.ViewType.MACHINERY_PANEL_VIEW);
-                } else {
-                    view.createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
-                }
-                break;
-        }
-    }
-
-    private boolean checkSimulationStatus() {
+    public boolean checkSimulationStatus() {
         return  Start.getSimulationStatus();
     }
 
-    private void beginSimulation() {
+    public void beginSimulation() {
         Start.beginSimulation();
     }
 
-    private void endSimulation() {
+    public void endSimulation() {
         Start.endSimulation();
         Start.getView(Start.ViewType.CUSTOMER_PANEL_VIEW).exit();
         Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW).exit();
@@ -98,15 +36,15 @@ public class SimulatorControlPanelController implements Initializable {
     }
 
     public void activePanel(Start.ViewType viewType) {
-        try {
-            Start.getView(viewType).init();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (Start.getSimulationStatus()) {
+            try {
+                Start.getView(viewType).init();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            view.createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
         }
-    }
-
-    public void update() {
-
     }
 
 }

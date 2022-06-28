@@ -8,7 +8,7 @@
 
 <?import javafx.geometry.Insets?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.SimulatorControlPanelController"
+            fx:controller="view.SimulatorControlPanelView"
             prefHeight="350.0" prefWidth="300.0"
             styleClass="frameBPane">
     <top>

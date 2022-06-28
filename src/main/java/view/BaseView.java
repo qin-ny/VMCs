@@ -17,16 +17,21 @@ public abstract class BaseView {
     protected final static String normalFontFamily = "sans-serif";
     protected Stage stage;
     protected String css, fxml, title;
+    protected BaseView viewHandler;
 
     public void init() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(baseFxmlPath + fxml));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(baseFxmlPath + fxml));
+        Parent root = loader.load();
+        viewHandler = loader.getController();
+        viewHandler.setStage(stage);
+
         Scene scene = new Scene(root);
 
         scene.getStylesheets().add(getClass().getResource(baseCssPath + baseCss).toExternalForm());
         scene.getStylesheets().add(getClass().getResource(baseCssPath + css).toExternalForm());
 
         scene.getRoot().setStyle("-fx-font-family: " + normalFontFamily);
-        this.stage.setTitle(title);
+        stage.setTitle(title);
         stage.setScene(scene);
         stage.setMinWidth(300);
         stage.setMinHeight(350);
@@ -34,7 +39,7 @@ public abstract class BaseView {
     };
 
     public void exit() {
-        this.stage.close();
+        stage.close();
     }
 
     public void createAlert(Alert.AlertType alertType, String msg) {
@@ -47,6 +52,10 @@ public abstract class BaseView {
 
     public Stage getStage() {
         return this.stage;
+    }
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     protected void addStyleClass(Node node, String styleClass) {
@@ -75,6 +84,19 @@ public abstract class BaseView {
         radioButton.getStyleClass().remove("radio-button");
         addStyleClass(radioButton, "toggle-button");
         radioButton.setToggleGroup(toggleGroup);
+    }
+
+    protected String getUniqueId(String type, String id, String suffix) {
+        return String.join("-", String.valueOf(id), type, suffix);
+    }
+
+    protected String getUniqueId(String type, int id, String suffix) {
+        return getUniqueId(type, String.valueOf(id), suffix);
+    }
+
+    protected String fetchIdByUniqueId(String uniqueId) {
+        String[] valueList = uniqueId.split("-");
+        return valueList[0];
     }
 
 }

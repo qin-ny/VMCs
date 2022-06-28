@@ -8,7 +8,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.MaintainerPanelController"
+            fx:controller="view.MaintainerPanelView"
             prefHeight="350.0" prefWidth="300.0"
             styleClass="frameBPane">
     <top>

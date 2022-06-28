@@ -16,6 +16,7 @@ import observer.CoinObservable;
 import observer.InterfaceCoinObserver;
 import observer.InterfaceSlotObserver;
 import observer.SlotObservable;
+import view.CustomerPanelView;
 import view.MaintainerPanelView;
 
 import java.net.URL;
@@ -23,308 +24,108 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MaintainerPanelController extends BaseController
-        implements Initializable, InterfaceSlotObserver, InterfaceCoinObserver {
+        implements InterfaceSlotObserver, InterfaceCoinObserver {
 
-    @FXML
-    public PasswordField maintainerPasswdField;
-    @FXML
-    public Label validPasswdLabel;
-    @FXML
-    public Label invalidPasswdLabel;
-    @FXML
-    public VBox coinContentVBox;
-    @FXML
-    public VBox slotContentVBox;
-    @FXML
-    public Label availableCoinNumLabel;
-    @FXML
-    public Label availableSlotNumLabel;
-    @FXML
-    public Button collectAllCashButton;
-    @FXML
-    public TextField slotPriceTField;
-    @FXML
-    public Label showTotalCashLabel;
-    @FXML
-    public Label collectCashLabel;
-    @FXML
-    public Button logoutButton;
-    @FXML
-    public VBox centerVBox;
-    @FXML
-    public VBox bottomVBox;
+    private MaintainerPanelView view;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        initCoinContent(view);
-        initSlotContent(view);
-        if (!Start.getMachine().getAuthorization()) {
-            lockPanel();
-        }
-    }
+    public MaintainerPanelController() {
+        this.view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
 
-    private void initCoinContent(MaintainerPanelView view) {
-        ToggleGroup toggleGroup = view.getCoinToggleGroup();
-        toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-                if (Start.getMachine().getAuthorization() | nValue == null) {
-                    handleSelectCoin((RadioButton) nValue);
-                    return;
-                }
-                createLoginAlert(view);
-            }
-        });
-        List<Coin> coins = Start.getMachine().getCoins();
-        for (Coin coin: coins) {
-            RadioButton coinButton = new RadioButton(coin.getName());
-            setRadioButton(coinButton, toggleGroup);
-            addStyleClass(coinButton, "radioButton");
-            coinContentVBox.getChildren().add(coinButton);
-
+        for(Coin coin: Start.getMachine().getCoins()) {
             registerObserver(coin, this);
         }
-    }
 
-    private void initSlotContent(MaintainerPanelView view) {
-        ToggleGroup toggleGroup = view.getSlotToggleGroup();
-        toggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle oValue, Toggle nValue) {
-                if (Start.getMachine().getAuthorization() | nValue == null) {
-                    handleSelectSlot((RadioButton) nValue);
-                    return;
-                }
-                createLoginAlert(view);
-            }
-        });
-        List<Slot> slots = Start.getMachine().getSlots();
-        for (Slot slot: slots) {
-            RadioButton slotButton = new RadioButton(slot.getName());
-            slotButton.setId(getUniqueId("slot", slot.getId(), "button"));
-            setRadioButton(slotButton, toggleGroup);
-            addStyleClass(slotButton, "radioButton");
-            slotContentVBox.getChildren().add(slotButton);
-
+        for(Slot slot: Start.getMachine().getSlots()) {
             registerObserver(slot, this);
         }
     }
 
-    private void lockPanel() {
-        centerVBox.setDisable(true);
-        bottomVBox.setDisable(true);
+    public boolean isAuthorization() {
+        return Start.getMachine().getAuthorization();
     }
 
-    private void unlockPanel() {
-        centerVBox.setDisable(false);
-        bottomVBox.setDisable(false);
-    }
-
-    private void handleShowTotalCash(MaintainerPanelView view, Button button) {
-        showTotalCashLabel.setText(
+    public void handleShowTotalCash() {
+        view.getHandler().displayTotalCash(
                 Start.getMachine().getTotalCash() +
-                        " " +
-                        Start.getMachine().getMoneyType()
+                " " +
+                Start.getMachine().getMoneyType()
         );
     }
 
-    private void handleCollectAllCash(MaintainerPanelView view, Button button) {
-        collectCashLabel.setText(
+    public void handleCollectAllCash() {
+        view.getHandler().collectCash(
                 Start.getMachine().collectAllCash() +
-                        " " +
-                        Start.getMachine().getMoneyType()
+                " " +
+                Start.getMachine().getMoneyType()
         );
-//        handleShowTotalCash(view, button);
     }
 
-    private void handleLogout(MaintainerPanelView view, Button button) {
+    public boolean handleLogout() {
         if (!Start.getMachine().getAuthorization()) {
-            lockPanel();
-            return;
+            return false;
         };
         if (!Start.getMachine().getDoor().isOpen()) {
             Start.getMachine().setAuthorization(false);
-            setDefaultLabel(validPasswdLabel);
-            setDefaultLabel(invalidPasswdLabel);
-            maintainerPasswdField.clear();
-            if (view.getSlotToggleGroup().getSelectedToggle() != null) {
-                view.getSlotToggleGroup().getSelectedToggle().setSelected(false);
-            }
-            if (view.getCoinToggleGroup().getSelectedToggle() != null) {
-                view.getCoinToggleGroup().getSelectedToggle().setSelected(false);
-            }
-            lockPanel();
+            return true;
         } else {
-            view.createAlert(Alert.AlertType.WARNING, "You Haven't Locked The Door!");
+            view.getHandler().createAlert(Alert.AlertType.WARNING, "You Haven't Locked The Door!");
+            return false;
         }
     }
 
-    private void handleLogin(MaintainerPanelView view, PasswordField field) {
-        if (Start.getMachine().getAuthorization()) {
-            view.createAlert(Alert.AlertType.INFORMATION, "You Have Already Logged In!");
-            unlockPanel();
-            return;
-        }
-
-        String passwd = field.getText();
-        if (!passwd.matches("^[0-9a-zA-Z]{1,6}$")) {
-            view.createAlert(Alert.AlertType.WARNING, "Incorrect Password Format!");
-            return;
-        }
+    public boolean handleLogin(String passwd) {
         if (passwd.equals(Start.getMachine().getPassword())) {
             Start.getMachine().setAuthorization(true);
-            unlockPanel();
+            view.getHandler().unlockPanel();
             Start.getMachine().getDoor().setDoorStatus(true);
-            setSuccessLabel(validPasswdLabel);
-            setDefaultLabel(invalidPasswdLabel);
-        } else {
-            setFailureLabel(invalidPasswdLabel);
-            setDefaultLabel(validPasswdLabel);
+            return true;
         }
-        field.clear();
+        return false;
     }
 
-    private void createLoginAlert(MaintainerPanelView view) {
-        view.createAlert(Alert.AlertType.WARNING, "You Haven't Logged In Yet!");
+    public void handleSlotPriceChange(String slotId, int nPrice) {
+        Slot slot = Start.getMachine().getSlotById(Integer.parseInt(slotId)).get();
+        slot.setPrice(nPrice);
+        view.getHandler().createAlert(Alert.AlertType.INFORMATION, "Successful to Change The Price of " + slot.getName() + "!");
     }
 
-    private void handleSlotPriceChange(MaintainerPanelView view, TextField field) {
-        if (!Start.getMachine().getAuthorization()) {
-            createLoginAlert(view);
-            return;
-        }
-
-        String value = field.getText();
-        if (!value.matches("^\\d+$")) {
-            view.createAlert(Alert.AlertType.WARNING, "Incorrect Quantity Format!");
-            return;
-        }
-
-        Toggle selectedToggle = view.getSlotToggleGroup().getSelectedToggle();
-        if (selectedToggle == null) {
-            view.createAlert(Alert.AlertType.WARNING, "You Haven't Selected A Slot Yet!");
-            return;
-        }
-
-        RadioButton slotButton = (RadioButton) selectedToggle;
-        Start.getMachine().getSlotById(getSlotIdByUniqueId(slotButton.getId())).get()
-                .setPrice(Integer.parseInt(value));
-        view.createAlert(Alert.AlertType.INFORMATION, "Successful to Change The Price of " + slotButton.getText() + "!");
-//        field.setText(value + " " + Start.getMachine().getMoneyType());
+    public void handleSelectCoin(String coinId) {
+        view.getHandler().displayCoinInfo(Start.getMachine().getCoinByName(coinId).get().getTotalQuantity());
     }
 
-    private void handleSelectCoin(RadioButton radioButton) {
-        if (radioButton == null) {
-            availableCoinNumLabel.setText("");
-            return;
-        }
-        availableCoinNumLabel.setText(
-            String.valueOf(
-                Start.getMachine().getCoinByName(radioButton.getText()).get().getTotalQuantity()
-            )
-        );
-    }
+    public void handleSelectSlot(String slotId) {
+        Slot slot = Start.getMachine().getSlotById(Integer.parseInt(slotId)).get();
+        view.getHandler().displaySlotInfo(
+                slot.getQuantity(), slot.getPrice() + " " + Start.getMachine().getMoneyType());
 
-    private void handleSelectSlot(RadioButton radioButton) {
-        if (radioButton == null) {
-            availableSlotNumLabel.setText("");
-            slotPriceTField.setText("");
-            return;
-        }
-        Slot slot = Start.getMachine().getSlotById(getSlotIdByUniqueId(radioButton.getId())).get();
-        availableSlotNumLabel.setText(String.valueOf(slot.getQuantity()));
-        slotPriceTField.setText(slot.getPrice() + " " + Start.getMachine().getMoneyType());
-    }
-
-    @FXML
-    public void handleFieldAction(KeyEvent keyEvent) {
-        if (keyEvent.getCode() != KeyCode.ENTER) return;
-
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        TextField field = (TextField) keyEvent.getSource();
-        switch (field.getId()) {
-            case "maintainerPasswdField":
-                handleLogin(view, (PasswordField)field);
-                break;
-            case "slotPriceTField":
-                handleSlotPriceChange(view, field);
-                break;
-        }
-    }
-
-    @FXML
-    public void handleButtonAction(ActionEvent actionEvent) {
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        Button button = (Button)actionEvent.getSource();
-        if (!Start.getMachine().getAuthorization()) {
-            createLoginAlert(view);
-            return;
-        }
-        switch (button.getId()) {
-            case "showTotalCashButton":
-                handleShowTotalCash(view, button);
-                break;
-            case "collectAllCashButton":
-                handleCollectAllCash(view, button);
-                break;
-            case "logoutButton":
-                handleLogout(view, button);
-                break;
-        }
-    }
-
-    private void refreshCoinQuantity(Coin coin) {
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        Toggle toggle = view.getCoinToggleGroup().getSelectedToggle();
-        if (!Start.getMachine().getAuthorization() | toggle == null) return;
-        RadioButton coinButton = (RadioButton) toggle;
-
-        if (showTotalCashLabel.getText() != "") {
-            showTotalCashLabel.setText(Start.getMachine().getTotalCash() + " " + Start.getMachine().getMoneyType());
-        }
-
-        if (coinButton == null | !coinButton.getText().equals(coin.getName())) return;
-        availableCoinNumLabel.setText(String.valueOf(coin.getTotalQuantity()));
-    }
-
-    private void refreshSlotPrice(Slot slot) {
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        Toggle toggle = view.getSlotToggleGroup().getSelectedToggle();
-        if (!Start.getMachine().getAuthorization() | toggle == null) return;
-        RadioButton slotButton = (RadioButton) toggle;
-        if (getSlotIdByUniqueId(slotButton.getId()) != slot.getId()) return;
-        slotPriceTField.setText(slot.getPrice() + " " + Start.getMachine().getMoneyType());
-    }
-
-    private void refreshSlotQuantity(Slot slot) {
-        MaintainerPanelView view = (MaintainerPanelView) Start.getView(Start.ViewType.MAINTAINER_PANEL_VIEW);
-        Toggle toggle = view.getSlotToggleGroup().getSelectedToggle();
-        if (!Start.getMachine().getAuthorization() | toggle == null) return;
-        RadioButton slotButton = (RadioButton) toggle;
-        if (getSlotIdByUniqueId(slotButton.getId()) != slot.getId()) return;
-        availableSlotNumLabel.setText(String.valueOf(slot.getQuantity()));
     }
 
     @Override
-    public void updateCoin(CoinObservable coin, Object arg) {
+    public void updateCoin(CoinObservable coinObservable, Object arg) {
+        if (view.getHandler() == null) return;
         switch (((CoinObservable.CoinObserverType) arg)) {
             case CURRENT_ENTERED_QUANTITY:
             case QUANTITY:
             case TOTAL_QUANTITY:
-                refreshCoinQuantity((Coin) coin);
+                if (!Start.getMachine().getAuthorization()) return;
+                String totalCash = Start.getMachine().getTotalCash() + " " + Start.getMachine().getMoneyType();
+                Coin coin = (Coin) coinObservable;
+                view.getHandler().refreshCoinQuantity(coin.getName(), totalCash, coin.getTotalQuantity());
                 break;
         }
     }
 
     @Override
-    public void updateSlot(SlotObservable slot, Object arg) {
+    public void updateSlot(SlotObservable slotObservable, Object arg) {
+        Slot slot = (Slot) slotObservable;
+        if (view.getHandler() == null) return;
         switch ((SlotObservable.SlotObserverType) arg) {
             case PRICE:
-                refreshSlotPrice((Slot) slot);
+                view.getHandler().refreshSlotPrice(
+                        String.valueOf(slot.getId()), slot.getPrice() + " " + Start.getMachine().getMoneyType());
                 break;
             case QUANTITY:
-                refreshSlotQuantity((Slot) slot);
+                view.getHandler().refreshSlotQuantity(String.valueOf(slot.getId()), slot.getQuantity());
                 break;
         }
     }
