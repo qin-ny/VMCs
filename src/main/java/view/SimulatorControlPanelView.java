@@ -36,6 +36,10 @@ public class SimulatorControlPanelView extends BaseView implements Initializable
         this.title = "VMCs - Simulator Control Panel";
     }
 
+    public SimulatorControlPanelView getHandler() {
+        return (SimulatorControlPanelView) viewHandler;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

@@ -90,7 +90,7 @@ public class CustomerPanelController extends BaseController
             int refundMoney = computeRefundCoin(
                     requiredMoney, Start.getMachine().getCoins());
             view.getHandler().refundCoin(refundMoney + " " + moneyType);
-            if (refundMoney < requiredMoney) view.highlightNoChangeAvaLabel();
+            if (refundMoney < requiredMoney) view.getHandler().highlightNoChangeAvaLabel();
 
             return true;
         }
@@ -115,7 +115,7 @@ public class CustomerPanelController extends BaseController
         switch (((CoinObservable.CoinObserverType) arg)) {
             case CURRENT_ENTERED_QUANTITY:
             case TOTAL_QUANTITY:
-                view.getHandler().refreshCurrentEnteredCash(((Coin) coinObservable).getCurrentEnteredTotalValue() + moneyType);
+                view.getHandler().refreshCurrentEnteredCash(Start.getMachine().getCurrentEnteredMoney() + " " + moneyType);
                 break;
             case QUANTITY:
 //                refreshCash((Coin) coin);

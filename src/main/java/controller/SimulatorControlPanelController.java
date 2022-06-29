@@ -20,10 +20,6 @@ public class SimulatorControlPanelController extends BaseController {
         this.view = (SimulatorControlPanelView) Start.getView(Start.ViewType.SIMULATOR_CONTROL_PANEL_VIEW);
     }
 
-    public boolean checkSimulationStatus() {
-        return  Start.getSimulationStatus();
-    }
-
     public void beginSimulation() {
         Start.beginSimulation();
     }
@@ -43,7 +39,7 @@ public class SimulatorControlPanelController extends BaseController {
                 e.printStackTrace();
             }
         } else {
-            view.createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
+            view.getHandler().createAlert(Alert.AlertType.WARNING, "System hasn't begun the simulation yet!");
         }
     }
 

@@ -20,6 +20,10 @@ public abstract class BaseView {
     protected BaseView viewHandler;
 
     public void init() throws IOException {
+        if (stage.isShowing()) {
+            return;
+        }
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource(baseFxmlPath + fxml));
         Parent root = loader.load();
         viewHandler = loader.getController();

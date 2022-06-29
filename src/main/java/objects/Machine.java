@@ -47,7 +47,9 @@ public class Machine extends AuthorizationObservable {
     public int collectCurrentEnteredCash() {
         int currentTotalCash = 0;
         for (Coin coin: coins) {
-            currentTotalCash += coin.getCurrentEnteredTotalValue();
+            int value = coin.getCurrentEnteredTotalValue();
+            if (value == 0) continue;
+            currentTotalCash += value;
             coin.setCurrentEnteredQuantity(0);
         }
         return currentTotalCash;
