@@ -24,8 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class CustomerPanelController extends BaseController
-        implements InterfaceCoinObserver, InterfaceSlotObserver, InterfaceAuthorizationObserver {
+public class CustomerPanelController extends BaseController implements InterfaceObserver {
 
     private CustomerPanelView view;
 
@@ -108,7 +107,6 @@ public class CustomerPanelController extends BaseController
         view.getHandler().refundCoin(currentEnteredMoney + " " + moneyType);
     }
 
-    @Override
     public void updateCoin(Observable coinObservable, Object arg) {
         String moneyType = Start.getMachine().getMoneyType();
         if (view.getHandler() == null) return;
@@ -125,7 +123,6 @@ public class CustomerPanelController extends BaseController
         }
     }
 
-    @Override
     public void updateSlot(Observable slotObservable, Object arg) {
         String moneyType = Start.getMachine().getMoneyType();
         Slot slot = (Slot) slotObservable;
@@ -140,7 +137,6 @@ public class CustomerPanelController extends BaseController
         }
     }
 
-    @Override
     public void updateAuthorization(Observable authorizationObservable, Object arg) {
         Machine machine =  (Machine) authorizationObservable;
         if (view.getHandler() == null) return;
@@ -149,6 +145,21 @@ public class CustomerPanelController extends BaseController
             view.getHandler().lockPanel();
         } else {
             view.getHandler().unlockPanel();
+        }
+    }
+
+    @Override
+    public void update(Observable observable, ObserverType observerType, Object arg) {
+        switch (observerType) {
+            case COIN:
+                updateCoin(observable, arg);
+                break;
+            case SLOT:
+                updateSlot(observable, arg);
+                break;
+            case AUTHORIZATION:
+                updateAuthorization(observable, arg);
+                break;
         }
     }
 }

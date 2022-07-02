@@ -17,6 +17,13 @@ import java.util.Map;
 
 public abstract class BaseController {
 
+    public enum ObserverType {
+        AUTHORIZATION,
+        COIN,
+        DOOR,
+        SLOT
+    }
+
     protected void registerObserver(Observable observable, InterfaceObserver observer) {
         observable.addObserver(observer);
     }

@@ -20,8 +20,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MaintainerPanelController extends BaseController
-        implements InterfaceSlotObserver, InterfaceCoinObserver {
+public class MaintainerPanelController extends BaseController implements InterfaceObserver {
 
     private MaintainerPanelView view;
 
@@ -97,7 +96,6 @@ public class MaintainerPanelController extends BaseController
 
     }
 
-    @Override
     public void updateCoin(Observable coinObservable, Object arg) {
         if (view.getHandler() == null) return;
         switch (((Coin.CoinObserverType) arg)) {
@@ -112,7 +110,6 @@ public class MaintainerPanelController extends BaseController
         }
     }
 
-    @Override
     public void updateSlot(Observable slotObservable, Object arg) {
         Slot slot = (Slot) slotObservable;
         if (view.getHandler() == null) return;
@@ -123,6 +120,18 @@ public class MaintainerPanelController extends BaseController
                 break;
             case QUANTITY:
                 view.getHandler().refreshSlotQuantity(String.valueOf(slot.getId()), slot.getQuantity());
+                break;
+        }
+    }
+
+    @Override
+    public void update(Observable observable, ObserverType observerType, Object arg) {
+        switch (observerType) {
+            case COIN:
+                updateCoin(observable, arg);
+                break;
+            case SLOT:
+                updateSlot(observable, arg);
                 break;
         }
     }

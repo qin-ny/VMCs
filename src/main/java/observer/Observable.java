@@ -1,5 +1,7 @@
 package observer;
 
+import controller.BaseController;
+
 import java.util.Vector;
 
 public class Observable {
@@ -35,16 +37,16 @@ public class Observable {
             for (int i = arrLocal.length-1; i>=0; i--)
                 switch (slice[slice.length-1]) {
                     case "Machine":
-                        ((InterfaceAuthorizationObserver)arrLocal[i]).updateAuthorization(this, arg);
+                        ((InterfaceObserver)arrLocal[i]).update(this, BaseController.ObserverType.AUTHORIZATION, arg);
                         break;
                     case "Coin":
-                        ((InterfaceCoinObserver)arrLocal[i]).updateCoin(this, arg);
+                        ((InterfaceObserver)arrLocal[i]).update(this, BaseController.ObserverType.COIN, arg);
                         break;
                     case "Door":
-                        ((InterfaceDoorObserver)arrLocal[i]).updateDoor(this, arg);
+                        ((InterfaceObserver)arrLocal[i]).update(this, BaseController.ObserverType.DOOR, arg);
                         break;
                     case "Slot":
-                        ((InterfaceSlotObserver)arrLocal[i]).updateSlot(this, arg);
+                        ((InterfaceObserver)arrLocal[i]).update(this, BaseController.ObserverType.SLOT, arg);
                         break;
                 }
     };
