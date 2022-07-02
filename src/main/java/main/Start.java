@@ -1,6 +1,8 @@
 package main;
 
 import controller.*;
+import factory.ControllerFactory;
+import factory.ViewFactory;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -47,15 +49,15 @@ public class Start extends Application {
         machine = JsonMachineConverter.jsonToMachineObject(Constants.DATA_SOURCE);
         simulationStatus = false;
 
-        views.put(ViewType.MACHINERY_PANEL_VIEW, new MachineryPanelView());
-        views.put(ViewType.SIMULATOR_CONTROL_PANEL_VIEW, new SimulatorControlPanelView());
-        views.put(ViewType.MAINTAINER_PANEL_VIEW, new MaintainerPanelView());
-        views.put(ViewType.CUSTOMER_PANEL_VIEW, new CustomerPanelView());
+        views.put(ViewType.MACHINERY_PANEL_VIEW, ViewFactory.getView(ViewType.MACHINERY_PANEL_VIEW));
+        views.put(ViewType.SIMULATOR_CONTROL_PANEL_VIEW, ViewFactory.getView(ViewType.SIMULATOR_CONTROL_PANEL_VIEW));
+        views.put(ViewType.MAINTAINER_PANEL_VIEW, ViewFactory.getView(ViewType.MAINTAINER_PANEL_VIEW));
+        views.put(ViewType.CUSTOMER_PANEL_VIEW, ViewFactory.getView(ViewType.CUSTOMER_PANEL_VIEW));
 
-        controllers.put(ControllerType.MACHINERY_PANEL_CONTROLLER, new MachineryPanelController());
-        controllers.put(ControllerType.SIMULATOR_CONTROL_PANEL_CONTROLLER, new SimulatorControlPanelController());
-        controllers.put(ControllerType.MAINTAINER_PANEL_CONTROLLER, new MaintainerPanelController());
-        controllers.put(ControllerType.CUSTOMER_PANEL_CONTROLLER, new CustomerPanelController());
+        controllers.put(ControllerType.MACHINERY_PANEL_CONTROLLER, ControllerFactory.getController(ControllerType.MACHINERY_PANEL_CONTROLLER));
+        controllers.put(ControllerType.SIMULATOR_CONTROL_PANEL_CONTROLLER, ControllerFactory.getController(ControllerType.SIMULATOR_CONTROL_PANEL_CONTROLLER));
+        controllers.put(ControllerType.MAINTAINER_PANEL_CONTROLLER, ControllerFactory.getController(ControllerType.MAINTAINER_PANEL_CONTROLLER));
+        controllers.put(ControllerType.CUSTOMER_PANEL_CONTROLLER, ControllerFactory.getController(ControllerType.CUSTOMER_PANEL_CONTROLLER));
 
         getView(ViewType.SIMULATOR_CONTROL_PANEL_VIEW).init();
 

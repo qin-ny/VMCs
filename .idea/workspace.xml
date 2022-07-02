@@ -33,94 +33,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ControllerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ViewFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MachineData.json" beforeDir="false" afterPath="$PROJECT_DIR$/MachineData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MachineryPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MachineryPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaintainerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaintainerPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SimulatorControlPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SimulatorControlPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MachineryPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MachineryPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MaintainerPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MaintainerPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/SimulatorControlPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SimulatorControlPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/SimulatorControlPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SimulatorControlPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/customer_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/customer_panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/customer_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/customer_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/machinery_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/machinery_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/maintainer_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/simulator_control_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/simulator_control_panel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Start$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ControllerType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Drink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Drink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/AuthorizationObservable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/CoinObservable$CoinObserverType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/CoinObservable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/DoorObservable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceAuthorizationObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceCoinObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceDoorObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceSlotObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/Observable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/Observable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/SlotObservable$SlotObserverType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/observer/SlotObservable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/BaseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/BaseView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MachineryPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MachineryPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.CoinTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DoorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.DrinkTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.MachineTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-objects.SlotTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-observer.AuthorizationObservableTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-observer.CoinObservableTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-observer.DoorObservableTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-observer.ObservableTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-observer.SlotObservableTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-util.JsonMachineConverterTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.CoinTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.DoorTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.DrinkTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.MachineTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/objects.SlotTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/observer.AuthorizationObservableTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/observer.CoinObservableTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/observer.DoorObservableTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/observer.ObservableTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/observer.SlotObservableTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/util.JsonMachineConverterTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/AuthorizationObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/AuthorizationObservableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/CoinObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/CoinObservableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/DoorObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/DoorObservableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/ObservableTest$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/observer/ObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/ObservableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/SlotObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/SlotObservableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/observer/AuthorizationObservableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/observer/CoinObservableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/observer/DoorObservableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/observer/ObservableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/observer/ObservableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/observer/SlotObservableTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,40 +132,44 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/util" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="util.Constants" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="factory" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="factory" />
       <recent name="observer" />
       <recent name="objects" />
       <recent name="util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
-    <configuration name="ObservableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.main.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="observer.*" />
+          <option name="PATTERN" value="factory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="observer" />
-      <option name="MAIN_CLASS_NAME" value="observer.ObservableTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObservableTest.notifyAuthorizationObservers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="observer.*" />
+          <option name="PATTERN" value="factory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="observer" />
-      <option name="MAIN_CLASS_NAME" value="observer.ObservableTest" />
-      <option name="METHOD_NAME" value="notifyAuthorizationObservers" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="factory" />
+      <option name="MAIN_CLASS_NAME" value="factory.ControllerFactoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,26 +190,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObservableTest.notifySlotObservers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="VMCs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="observer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="observer" />
-      <option name="MAIN_CLASS_NAME" value="observer.ObservableTest" />
-      <option name="METHOD_NAME" value="notifySlotObservers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="VMCs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VMCs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="factory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="factory" />
+      <option name="MAIN_CLASS_NAME" value="factory.ViewFactoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -285,20 +240,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.ObservableTest" />
-      <item itemvalue="JUnit.ObservableTest.notifyAuthorizationObservers" />
+      <item itemvalue="Application.main.Main" />
+      <item itemvalue="JUnit.ControllerFactoryTest" />
       <item itemvalue="JUnit.ObservableTest.notifyDoorObservers" />
-      <item itemvalue="JUnit.ObservableTest.notifySlotObservers" />
+      <item itemvalue="JUnit.ViewFactoryTest" />
       <item itemvalue="JUnit.TestSuite" />
       <item itemvalue="Maven.vendingMach [hpi:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main.Main" />
         <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="JUnit.ViewFactoryTest" />
+        <item itemvalue="JUnit.ControllerFactoryTest" />
         <item itemvalue="JUnit.ObservableTest.notifyDoorObservers" />
-        <item itemvalue="JUnit.ObservableTest.notifyAuthorizationObservers" />
-        <item itemvalue="JUnit.ObservableTest" />
-        <item itemvalue="JUnit.ObservableTest.notifySlotObservers" />
       </list>
     </recent_temporary>
   </component>
