@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="observer.DoorObservableTest" time="0.018" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="observer.DoorObservableTest" time="0.023" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.1+0"/>
@@ -16,7 +16,7 @@
     <property name="java.runtime.version" value="16.0.1+0"/>
     <property name="basedir" value="/Users/helloworld/Documents/NUS/Final Project/VMCs"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter16615820709865701341.jar"/>
+    <property name="surefire.real.class.path" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter15579451303794645287.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/9_/80tj8jsd0tl10lh4gt_8624m0000gn/T/"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="socksProxyHost" value="127.0.0.1"/>
     <property name="java.vm.specification.version" value="16"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter16615820709865701341.jar /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire3152820890777908198tmp /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire10262573471925389662tmp"/>
+    <property name="sun.java.command" value="/Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefirebooter15579451303794645287.jar /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire1050915136684558096tmp /Users/helloworld/Documents/NUS/Final Project/VMCs/target/surefire/surefire4732322807449886726tmp"/>
     <property name="java.home" value="/usr/local/Cellar/openjdk/16.0.1/libexec/openjdk.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -61,5 +61,5 @@
     <property name="socksNonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com"/>
     <property name="ftp.nonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com"/>
   </properties>
-  <testcase classname="observer.DoorObservableTest" name="notifyObservers" time="0.017"/>
+  <testcase classname="observer.DoorObservableTest" name="notifyObservers" time="0.02"/>
 </testsuite>
