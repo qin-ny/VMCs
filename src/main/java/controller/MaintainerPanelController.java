@@ -12,10 +12,7 @@ import javafx.scene.layout.VBox;
 import main.Start;
 import objects.Coin;
 import objects.Slot;
-import observer.CoinObservable;
-import observer.InterfaceCoinObserver;
-import observer.InterfaceSlotObserver;
-import observer.SlotObservable;
+import observer.*;
 import view.CustomerPanelView;
 import view.MaintainerPanelView;
 
@@ -101,9 +98,9 @@ public class MaintainerPanelController extends BaseController
     }
 
     @Override
-    public void updateCoin(CoinObservable coinObservable, Object arg) {
+    public void updateCoin(Observable coinObservable, Object arg) {
         if (view.getHandler() == null) return;
-        switch (((CoinObservable.CoinObserverType) arg)) {
+        switch (((Coin.CoinObserverType) arg)) {
             case CURRENT_ENTERED_QUANTITY:
             case QUANTITY:
             case TOTAL_QUANTITY:
@@ -116,10 +113,10 @@ public class MaintainerPanelController extends BaseController
     }
 
     @Override
-    public void updateSlot(SlotObservable slotObservable, Object arg) {
+    public void updateSlot(Observable slotObservable, Object arg) {
         Slot slot = (Slot) slotObservable;
         if (view.getHandler() == null) return;
-        switch ((SlotObservable.SlotObserverType) arg) {
+        switch ((Slot.SlotObserverType) arg) {
             case PRICE:
                 view.getHandler().refreshSlotPrice(
                         String.valueOf(slot.getId()), slot.getPrice() + " " + Start.getMachine().getMoneyType());

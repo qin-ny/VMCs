@@ -1,8 +1,16 @@
 package objects;
 
-import observer.CoinObservable;
+import observer.Observable;
 
-public class Coin extends CoinObservable {
+public class Coin extends Observable {
+    public enum CoinObserverType {
+        NAME,
+        WEIGHT,
+        QUANTITY,
+        CURRENT_ENTERED_QUANTITY,
+        TOTAL_QUANTITY
+    }
+
     private String name;
     private int weight; //面值 in Singapore cents
     private int quantity; //硬币数量

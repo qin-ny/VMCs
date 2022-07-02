@@ -194,7 +194,7 @@ public class CustomerPanelView extends BaseView implements Initializable {
         totalMoneyLabel.setText(cash);
     }
 
-    public void refreshSlotPrice(int slotId, int slotPrice) {
+    public void refreshSlotPrice(int slotId, String slotPrice) {
         Label slotPriceLabel = (Label) stage.getScene().lookup(
                 "#" + getUniqueId("slot", slotId, "price")
         );

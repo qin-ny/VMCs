@@ -1,8 +1,8 @@
 package objects;
 
-import observer.DoorObservable;
+import observer.Observable;
 
-public class Door extends DoorObservable {
+public class Door extends Observable {
 
     private boolean isOpen;
 

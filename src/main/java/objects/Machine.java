@@ -1,11 +1,10 @@
 package objects;
 
-import observer.AuthorizationObservable;
-import observer.CoinObservable;
+import observer.Observable;
 
 import java.util.*;
 
-public class Machine extends AuthorizationObservable {
+public class Machine extends Observable {
     private final static String SGD = "c";
 
     private transient Door door;

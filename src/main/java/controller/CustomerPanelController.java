@@ -109,10 +109,10 @@ public class CustomerPanelController extends BaseController
     }
 
     @Override
-    public void updateCoin(CoinObservable coinObservable, Object arg) {
+    public void updateCoin(Observable coinObservable, Object arg) {
         String moneyType = Start.getMachine().getMoneyType();
         if (view.getHandler() == null) return;
-        switch (((CoinObservable.CoinObserverType) arg)) {
+        switch (((Coin.CoinObserverType) arg)) {
             case CURRENT_ENTERED_QUANTITY:
             case TOTAL_QUANTITY:
                 view.getHandler().refreshCurrentEnteredCash(Start.getMachine().getCurrentEnteredMoney() + " " + moneyType);
@@ -126,12 +126,13 @@ public class CustomerPanelController extends BaseController
     }
 
     @Override
-    public void updateSlot(SlotObservable slotObservable, Object arg) {
+    public void updateSlot(Observable slotObservable, Object arg) {
+        String moneyType = Start.getMachine().getMoneyType();
         Slot slot = (Slot) slotObservable;
         if (view.getHandler() == null) return;
-        switch ((SlotObservable.SlotObserverType) arg) {
+        switch ((Slot.SlotObserverType) arg) {
             case PRICE:
-                view.getHandler().refreshSlotPrice(slot.getId(), slot.getPrice());
+                view.getHandler().refreshSlotPrice(slot.getId(), slot.getPrice() + " " + moneyType);
                 break;
             case QUANTITY:
                 view.getHandler().refreshSlotQuantity(slot.getId(), slot.getQuantity());
@@ -140,7 +141,7 @@ public class CustomerPanelController extends BaseController
     }
 
     @Override
-    public void updateAuthorization(AuthorizationObservable authorizationObservable, Object arg) {
+    public void updateAuthorization(Observable authorizationObservable, Object arg) {
         Machine machine =  (Machine) authorizationObservable;
         if (view.getHandler() == null) return;
         if (machine.getAuthorization()) {

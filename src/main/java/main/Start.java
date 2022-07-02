@@ -58,6 +58,7 @@ public class Start extends Application {
         controllers.put(ControllerType.CUSTOMER_PANEL_CONTROLLER, new CustomerPanelController());
 
         getView(ViewType.SIMULATOR_CONTROL_PANEL_VIEW).init();
+
     }
 
     public static Machine getMachine() {

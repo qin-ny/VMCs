@@ -1,8 +1,14 @@
 package objects;
 
-import observer.SlotObservable;
+import observer.Observable;
 
-public class Slot extends SlotObservable {
+public class Slot extends Observable {
+
+    public enum SlotObserverType {
+        PRICE,
+        NAME,
+        QUANTITY
+    }
 
     private int id;
     private Drink drink;

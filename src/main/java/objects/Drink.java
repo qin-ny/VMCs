@@ -1,7 +1,5 @@
 package objects;
 
-import observer.SlotObservable;
-
 public class Drink {
     private String name;
     private int price; //in Singapore cents

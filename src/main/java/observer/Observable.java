@@ -2,7 +2,7 @@ package observer;
 
 import java.util.Vector;
 
-public abstract class Observable {
+public class Observable {
     protected transient boolean changed = false;
     protected transient Vector obs;
 
@@ -22,7 +22,32 @@ public abstract class Observable {
 
     public void notifyObservers() {notifyObservers(null);}
 
-    public abstract void notifyObservers(Object arg);
+    public void notifyObservers(Object arg) {
+            Object[] arrLocal;
+            synchronized (this) {
+                if (!changed)
+                    return;
+                arrLocal = obs.toArray();
+                clearChange();
+            }
+            String[] slice = this.getClass().getName().split("\\.");
+//            System.out.println(slice[slice.length-1]);
+            for (int i = arrLocal.length-1; i>=0; i--)
+                switch (slice[slice.length-1]) {
+                    case "Machine":
+                        ((InterfaceAuthorizationObserver)arrLocal[i]).updateAuthorization(this, arg);
+                        break;
+                    case "Coin":
+                        ((InterfaceCoinObserver)arrLocal[i]).updateCoin(this, arg);
+                        break;
+                    case "Door":
+                        ((InterfaceDoorObserver)arrLocal[i]).updateDoor(this, arg);
+                        break;
+                    case "Slot":
+                        ((InterfaceSlotObserver)arrLocal[i]).updateSlot(this, arg);
+                        break;
+                }
+    };
 
     public synchronized void addObserver(InterfaceObserver inputOb) {
         if (obs == null) obs = new Vector();
