@@ -5,26 +5,6 @@
     -fx-background-radius: 0;
 }
 
-/*#successButton, #failureButton {*/
-/*    -fx-pref-width: 150;*/
-/*    -fx-pref-height: 30;*/
-/*}*/
-
-/*#failureButton {*/
-/*    -fx-pref-width: 150;*/
-/*    -fx-pref-height: 30;*/
-/*}*/
-
-/*radio-button {*/
-/*    -fx-pref-width: 100;*/
-/*    -fx-pref-height: 30;*/
-/*    -fx-background-radius: 10;*/
-/*    -fx-font-size: 15;*/
-/*    -fx-opacity: 0.8;*/
-/*    -fx-background-color: #CCCCFF;*/
-/*    -fx-cursor: hand;*/
-/*}*/
-
 #noChangeAvaLabel {
     -fx-pref-width: 200;
 }

@@ -12,11 +12,7 @@ import util.JsonMachineConverterTest;
         SlotTest.class,
         MachineTest.class,
         JsonMachineConverterTest.class,
-        ObservableTest.class,
-        CoinObservableTest.class,
-        DoorObservableTest.class,
-        AuthorizationObservableTest.class,
-        SlotObservableTest.class
+        ObservableTest.class
 })
 public class TestSuite {
 }
