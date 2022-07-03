@@ -33,20 +33,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c6248-56f6-4125-b043-07cf39b63fd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ControllerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ViewFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MachineData.json" beforeDir="false" afterPath="$PROJECT_DIR$/MachineData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MachineryPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MachineryPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaintainerPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaintainerPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SimulatorControlPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SimulatorControlPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MachineryPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MachineryPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MaintainerPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MaintainerPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SimulatorControlPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SimulatorControlPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController$ObserverType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/BaseController$ObserverType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/BaseController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomerPanelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MachineryPanelController$1.class" afterDir="false" />
@@ -54,12 +43,26 @@
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MaintainerPanelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/SimulatorControlPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/SimulatorControlPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ControllerFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ControllerFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ControllerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ControllerFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ViewFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ViewFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ViewFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ViewFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Start$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Start$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ControllerType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ControllerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$ControllerType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start$ViewType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin$CoinObserverType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin$CoinObserverType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Drink.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Drink.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Machine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot$SlotObserverType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot$SlotObserverType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/Slot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/objects/Slot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/InterfaceObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/observer/Observable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/observer/Observable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JsonMachineConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CustomerPanelView.class" afterDir="false" />
@@ -72,7 +75,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MaintainerPanelView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SimulatorControlPanelView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/observer/ObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/observer/ObservableTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

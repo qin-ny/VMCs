@@ -1,4 +1,3 @@
-observer/InterfaceCoinObserver.class
 controller/MachineryPanelController.class
 view/MachineryPanelView$3.class
 objects/Machine.class
@@ -7,7 +6,6 @@ main/Start$ViewType.class
 controller/CustomerPanelController.class
 controller/CustomerPanelController$1.class
 objects/Drink.class
-observer/InterfaceAuthorizationObserver.class
 view/CustomerPanelView$2.class
 objects/Door.class
 controller/SimulatorControlPanelController.class
@@ -34,9 +32,7 @@ view/MachineryPanelView$1.class
 view/MachineryPanelView$4.class
 controller/MachineryPanelController$1.class
 main/Start$2.class
-observer/InterfaceDoorObserver.class
 util/Constants.class
 objects/Slot.class
-observer/InterfaceSlotObserver.class
 view/BaseView.class
 controller/MaintainerPanelController.class
